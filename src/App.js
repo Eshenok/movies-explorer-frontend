@@ -10,33 +10,38 @@ function App() {
       <header className="header">
         <img className="header__logo" alt="logo" src={logo}/>
         <div className="header__container">
-          <p className="header__text">Регистрация</p>
-          <button className="button button_type_green button_place_header">Войти</button>
+          <a className="header__link">Регистрация</a>
+          <button className="button button_theme_green button_place_header">Войти</button>
         </div>
       </header>
-      <main>
+
+      <main className="main">
+
         <section className="section hero">
           <h1 className="hero__title">
             Учебный проект студента факультета Веб-разработки.
           </h1>
-          <ul className="hero__links">
-            <a className="hero__link"><li>О проекте</li></a>
-            <a className="hero__link"><li>Технологии</li></a>
-            <a className="hero__link"><li>Студент</li></a>
+        </section>
+
+        <section className="section navTab">
+          <ul className="navTab__links">
+            <a className="navTab__link" href="#"><li>О проекте</li></a>
+            <a className="navTab__link" href="#"><li>Технологии</li></a>
+            <a className="navTab__link" href="#"><li>Студент</li></a>
           </ul>
         </section>
 
-        <section className="section about-project">
+        <section className="section promo">
           <h2 className="section__title">О проекте</h2>
           <h3 className="section__title">Дипломный проект включал 5 этапов</h3>
           <p className="section__text">Составление плана, работу над бэкендом, вёрстку, добавление функциональности и финальные доработки.</p>
           <h3 className="section__title">На выполнение диплома ушло 5 недель</h3>
           <p className="section__text">У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать, чтобы успешно защититься.</p>
-          <div className="about-project__time">
-            <p className="about-project__time_block_green">1 неделя</p>
-            <p className="about-project__time_block_grey">4 недели</p>
-            <p className="about-project__time_text">Back-end</p>
-            <p className="about-project__time_text">Front-end</p>
+          <div className="promo__time">
+            <p className="promo__time_block_green">1 неделя</p>
+            <p className="promo__time_block_grey">4 недели</p>
+            <p className="promo__time_text">Back-end</p>
+            <p className="promo__time_text">Front-end</p>
           </div>
         </section>
 

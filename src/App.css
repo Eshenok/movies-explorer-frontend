@@ -1,38 +1,119 @@
-.App {
-  text-align: center;
+.page {
+  background-color: var(--color-darkgrey);
+  color: var(--color-white);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.section__title {
+  /**/
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header {
+  background-color: var(--color-darkblue);
+  padding: 1.125rem .875rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header__logo {
+  height: 2.375rem;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  gap: .875rem;
+}
+
+.header__link {
+  text-decoration: none;
+  color: var(--color-white);
+  margin: 0;
+  /*Шрифт*/
+  font-family: 'Intel', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: .625rem;
+  line-height: 1rem;
+}
+
+.button {
+  outline: none;
+  border: none;
+  background: transparent;
+
+}
+
+.button_theme_green {
+  background: var(--color-green);
+  color: var(--color-black);
+  font-family: 'Intel', Arial, sans-serif;
+}
+
+.button_place_header {
+  border-radius: 3px;
+  padding: .3125rem .75rem;
+  /*Шрифт*/
+  font-style: normal;
+  font-weight: 500;
+  font-size: .625em;
+  line-height: 1em;
+  /*Анимация*/
+  transition: box-shadow linear 0.1s, filter linear 0.1s;
+}
+
+.button_place_header:active {
+  /*Анимация*/
+  filter: hue-rotate(30deg);
+  box-shadow: inset 0px 0px 2px var(--color-black);
+}
+
+.section {
+  padding: 0 10px;
+}
+
+.hero {
+  background: var(--color-darkblue) url("./images/landingLogo.svg") no-repeat;
+  background-position: center top 8.875rem;
+  height: 35.625rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.hero__title {
+  margin: 12.9375rem 0 0;
+  padding: 0;
+  /*Шрифт*/
+  letter-spacing: -0.04em;
+  font-family: 'Intel', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.9375rem;
+  line-height: 2.4375rem;
+  text-align: center;
+}
+
+.navTab {
+  background-color: var(--color-grey);
+}
+
+.navTab__links {
+  margin: 0;
+  padding: 1.5625rem 0;
+  list-style: none;
+  display: flex;
+  gap: 24px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navTab__link {
+  margin: 0;
+  color: var(--color-white);
+  /*Шрифт*/
+  font-family: 'Intel', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: .6875rem;
+  line-height: 1rem;
 }
