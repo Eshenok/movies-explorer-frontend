@@ -31,24 +31,26 @@ function App() {
           </ul>
         </section>
 
-        <section className="section promo">
-          <h2 className="section__title">О проекте</h2>
-          <h3 className="section__title">Дипломный проект включал 5 этапов</h3>
-          <p className="section__text">Составление плана, работу над бэкендом, вёрстку, добавление функциональности и финальные доработки.</p>
-          <h3 className="section__title">На выполнение диплома ушло 5 недель</h3>
-          <p className="section__text">У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать, чтобы успешно защититься.</p>
+        <section className="section section_margin promo">
+          <h2 className="section__title section__title_border_white">О проекте</h2>
+          <div className="promo__brief">
+            <h3 className="section__title promo__subtitle">Дипломный проект включал 5 этапов</h3>
+            <p className="section__text promo__text">Составление плана, работу над бэкендом, вёрстку, добавление функциональности и финальные доработки.</p>
+            <h3 className="section__title promo__subtitle">На выполнение диплома ушло 5 недель</h3>
+            <p className="section__text promo__text">У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать, чтобы успешно защититься.</p>
+          </div>
           <div className="promo__time">
-            <p className="promo__time_block_green">1 неделя</p>
-            <p className="promo__time_block_grey">4 недели</p>
-            <p className="promo__time_text">Back-end</p>
-            <p className="promo__time_text">Front-end</p>
+            <p className="promo__block promo__block_theme_green">1 неделя</p>
+            <p className="promo__block promo__block_theme_grey">4 недели</p>
+            <p className="promo__block-caption">Back-end</p>
+            <p className="promo__block-caption">Front-end</p>
           </div>
         </section>
 
-        <section className="section tech">
-          <h2 className="section__title">Технологии</h2>
+        <section className="section section_margin tech">
+          <h2 className="section__title section__title_border_black">Технологии</h2>
           <h3 className="tech__subtitle">7 технологий</h3>
-          <p className="section__text">На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.</p>
+          <p className="section__text tech__text">На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.</p>
           <div className="tech__tile">
             <p className="tech__tile_item">HTML</p>
             <p className="tech__tile_item">CSS</p>
@@ -60,8 +62,8 @@ function App() {
           </div>
         </section>
 
-        <section className="section student">
-          <h2 className="section__title">Студент</h2>
+        <section className="section section_margin student">
+          <h2 className="section__title section__title_border_white">Студент</h2>
           <figure className="student__brief">
             <img className="student__image" />
             <figcaption className="student__name">Александр</figcaption>
