@@ -1,4 +1,5 @@
 import logo from './images/logo.svg';
+import personalPhoto from './images/personalphoto.jpg';
 import './App.css';
 
 function App() {
@@ -33,11 +34,15 @@ function App() {
 
         <section className="section section_margin promo">
           <h2 className="section__title section__title_border_white">О проекте</h2>
-          <div className="promo__brief">
-            <h3 className="section__title promo__subtitle">Дипломный проект включал 5 этапов</h3>
-            <p className="section__text promo__text">Составление плана, работу над бэкендом, вёрстку, добавление функциональности и финальные доработки.</p>
-            <h3 className="section__title promo__subtitle">На выполнение диплома ушло 5 недель</h3>
-            <p className="section__text promo__text">У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать, чтобы успешно защититься.</p>
+          <div className="promo__container">
+            <article className="promo__brief">
+              <h3 className="section__title promo__subtitle">Дипломный проект включал 5 этапов</h3>
+              <p className="section__text promo__text">Составление плана, работу над бэкендом, вёрстку, добавление функциональности и финальные доработки.</p>
+            </article>
+            <article className="promo__brief">
+              <h3 className="section__title promo__subtitle">На выполнение диплома ушло 5 недель</h3>
+              <p className="section__text promo__text">У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать, чтобы успешно защититься.</p>
+            </article>
           </div>
           <div className="promo__time">
             <p className="promo__block promo__block_theme_green">1 неделя</p>
@@ -48,7 +53,7 @@ function App() {
         </section>
 
         <section className="section section_margin tech">
-          <h2 className="section__title section__title_border_black">Технологии</h2>
+          <h2 className="section__title section__title_border_white">Технологии</h2>
           <h3 className="tech__subtitle">7 технологий</h3>
           <p className="section__text tech__text">На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.</p>
           <div className="tech__tile">
@@ -64,16 +69,12 @@ function App() {
 
         <section className="section section_margin student">
           <h2 className="section__title section__title_border_white">Студент</h2>
-          <figure className="student__brief">
-            <img className="student__image" />
-            <figcaption className="student__name">Александр</figcaption>
-            <p className="student__about">Фронтенд-разработчик, 23 года</p>
-            <p className="student__info">
-              Я родился и вырос в Москве, закончил Политехнический колледж по специальности "Прикладная информатика"
-              Мое хобби: Гитара, 10+ лет, играю в стиле fingerstyle. Ранее работал в Интернет-провайдере и сети кинотеатров.
-              В 2021 году решил сменить профессию и начал учиться на курсах Яндекс.Практикум.
-            </p>
-          </figure>
+          <img className="student__image" src={personalPhoto} alt="Портрет. Александр Волошин"/>
+          <h3 className="student__name">Александр</h3>
+          <p className="student__text">Фронтенд-разработчик, 23 года</p>
+          <p className="student__text">Я родился и вырос в Москве, закончил Политехнический колледж по специальности "Прикладная информатика".
+            Мое хобби: Гитара, 10+ лет, играю в стиле fingerstyle. Ранее работал в Интернет-провайдере и сети кинотеатров.
+            В 2021 году решил сменить профессию и начал учиться на курсах Яндекс.Практикум.</p>
           <a className="student__ghlink">Github</a>
           <h3 className="student__subtitle">Портфолио</h3>
           <ul className="student__links">
@@ -88,10 +89,10 @@ function App() {
       <footer className="footer">
         <p className="footer__text">Учебный проект Яндекс.Практикум х BeatFilm.</p>
         <ul className="footer__links">
-          <a className="footer__link"><li></li></a>
-          <a className="footer__link"><li></li></a>
+          <a className="footer__link"><li>Яндекс.Практикум</li></a>
+          <a className="footer__link"><li>Github</li></a>
         </ul>
-        <p>&copy;2020</p>
+        <p className="footer__copyright">&copy;{new Date().getFullYear()}</p>
       </footer>
 
     </>
