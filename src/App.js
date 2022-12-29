@@ -1,6 +1,6 @@
-import logo from './images/logo.svg';
 import personalPhoto from './images/personalphoto.jpg';
 import './App.css';
+import Header from './components/Header/Header'
 
 function App() {
 
@@ -8,16 +8,8 @@ function App() {
 
   return (
     <>
-      <header className="header">
-        <img className="header__logo" alt="logo" src={logo}/>
-        <div className="header__container">
-          <a className="header__link">Регистрация</a>
-          <button className="button button_theme_green button_place_header">Войти</button>
-        </div>
-      </header>
-
+      <Header />
       <main className="main">
-
         <section className="hero">
           <h1 className="hero__title">Учебный проект студента факультета Веб-разработки.</h1>
         </section>
@@ -67,7 +59,7 @@ function App() {
 
         <section className="student">
           <h2 className="student__title">Студент</h2>
-          <img className="student__image" src={personalPhoto} alt="Портрет. Александр Волошин"/>
+          <img className="student__image" alt="Портрет. Александр Волошин"/>
           <h3 className="student__name">Александр</h3>
           <p className="student__text">Фронтенд-разработчик, 23 года</p>
           <p className="student__text">Я родился и вырос в Москве, закончил Политехнический колледж по специальности "Прикладная информатика".
