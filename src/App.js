@@ -18,13 +18,11 @@ function App() {
 
       <main className="main">
 
-        <section className="section hero">
-          <h1 className="hero__title">
-            Учебный проект студента факультета Веб-разработки.
-          </h1>
+        <section className="hero">
+          <h1 className="hero__title">Учебный проект студента факультета Веб-разработки.</h1>
         </section>
 
-        <section className="section navTab">
+        <section className="navTab">
           <ul className="navTab__links">
             <a className="navTab__link" href="#"><li>О проекте</li></a>
             <a className="navTab__link" href="#"><li>Технологии</li></a>
@@ -32,16 +30,16 @@ function App() {
           </ul>
         </section>
 
-        <section className="section section_margin promo">
-          <h2 className="section__title section__title_border_white">О проекте</h2>
+        <section className="promo">
+          <h2 className="promo__title">О проекте</h2>
           <div className="promo__container">
             <article className="promo__brief">
-              <h3 className="section__title promo__subtitle">Дипломный проект включал 5 этапов</h3>
-              <p className="section__text promo__text">Составление плана, работу над бэкендом, вёрстку, добавление функциональности и финальные доработки.</p>
+              <h3 className="promo__subtitle">Дипломный проект включал 5 этапов</h3>
+              <p className="promo__text">Составление плана, работу над бэкендом, вёрстку, добавление функциональности и финальные доработки.</p>
             </article>
             <article className="promo__brief">
-              <h3 className="section__title promo__subtitle">На выполнение диплома ушло 5 недель</h3>
-              <p className="section__text promo__text">У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать, чтобы успешно защититься.</p>
+              <h3 className="promo__subtitle">На выполнение диплома ушло 5 недель</h3>
+              <p className="promo__text">У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать, чтобы успешно защититься.</p>
             </article>
           </div>
           <div className="promo__time">
@@ -52,10 +50,10 @@ function App() {
           </div>
         </section>
 
-        <section className="section section_margin tech">
-          <h2 className="section__title section__title_border_white">Технологии</h2>
+        <section className="tech">
+          <h2 className="tech__title">Технологии</h2>
           <h3 className="tech__subtitle">7 технологий</h3>
-          <p className="section__text tech__text">На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.</p>
+          <p className="tech__text">На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.</p>
           <div className="tech__tile">
             <p className="tech__tile_item">HTML</p>
             <p className="tech__tile_item">CSS</p>
@@ -67,8 +65,8 @@ function App() {
           </div>
         </section>
 
-        <section className="section section_margin student">
-          <h2 className="section__title section__title_border_white">Студент</h2>
+        <section className="student">
+          <h2 className="student__title">Студент</h2>
           <img className="student__image" src={personalPhoto} alt="Портрет. Александр Волошин"/>
           <h3 className="student__name">Александр</h3>
           <p className="student__text">Фронтенд-разработчик, 23 года</p>
@@ -76,14 +74,15 @@ function App() {
             Мое хобби: Гитара, 10+ лет, играю в стиле fingerstyle. Ранее работал в Интернет-провайдере и сети кинотеатров.
             В 2021 году решил сменить профессию и начал учиться на курсах Яндекс.Практикум.</p>
           <a className="student__ghlink">Github</a>
-          <h3 className="student__subtitle">Портфолио</h3>
-          <ul className="student__links">
-            <a className="student__link"><li>Статичный сайт</li></a>
-            <a className="student__link"><li>Адаптивный сайт</li></a>
-            <a className="student__link"><li>Одностраничное приложение</li></a>
+        </section>
+        <section className="portfolio">
+          <h3 className="portfolio__title">Портфолио</h3>
+          <ul className="portfolio__links">
+            <a className="portfolio__link"><li>Статичный сайт</li></a>
+            <a className="portfolio__link"><li>Адаптивный сайт</li></a>
+            <a className="portfolio__link"><li>Одностраничное приложение</li></a>
           </ul>
         </section>
-
       </main>
 
       <footer className="footer">
