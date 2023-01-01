@@ -1,7 +1,10 @@
 @import url('./vendor/normalize.css');
 @import url('./vendor/fonts/fonts.css');
 @import url('./palette.css');
+@import url('./components/section/section.css');
 @import url('./components/Header/Header.css');
 @import url('./components/Button/Button.css');
 @import url('./components/Hero/Hero.css');
 @import url('./components/NavTab/NavTab.css');
+@import url('./components/Promo/Promo.css');
+@import url('./components/Tech/Tech.css');

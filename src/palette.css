@@ -11,4 +11,8 @@
 	--color-black: #000;
 	--color-green: #3ddc84;
 	--color-darkblue: #073042;
+	/*Темизация*/
+	--bg-color: var(--color-darkgrey);
+	--font-color: var(--color-white);
+	--elem-color: var(--color-lightgrey);
 }

@@ -36,7 +36,7 @@
 	}
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1000px) {
 	.hero {
 		height: 524px;
 		background-position: center top 82px;
