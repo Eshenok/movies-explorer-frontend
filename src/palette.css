@@ -1,10 +1,8 @@
 :root {
 	--color-white: #fff;
 	--color-matewhite: #dadada;
-	--color-bordergrey: #e6e6e6;
-	--color-fontgrey: #a0a0a0;
-	--color-fontfootergrey: #8b8b8b;
-	--color-borderfootergrey: #424242;
+	--color-mateGrey: #8b8b8b;
+	--color-dirtyGrey: #424242;
 	--color-lightgrey: #303030;
 	--color-grey: #272727;
 	--color-darkgrey: #202020;
@@ -12,7 +10,10 @@
 	--color-green: #3ddc84;
 	--color-darkblue: #073042;
 	/*Темизация*/
+	--border-colorWhite: var(--color-matewhite);
+	--border-colorGrey: var(--color-dirtyGrey);
 	--bg-color: var(--color-darkgrey);
 	--font-color: var(--color-white);
+	--font-colorGrey: var(--color-mateGrey);
 	--elem-color: var(--color-lightgrey);
 }

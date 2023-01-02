@@ -2,6 +2,7 @@
 	background-color: var(--color-grey);
 	display: flex;
 	justify-content: center;
+	width: 100%;
 }
 
 .navTab__links {

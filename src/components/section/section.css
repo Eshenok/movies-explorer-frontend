@@ -1,3 +1,11 @@
+.section {
+	box-sizing: border-box;
+	padding: 0 14px;
+	margin: 70px 0;
+	width: 100%;
+	max-width: 1280px;
+}
+
 .section__title {
 	margin: 0;
 	/*Шрифт*/
@@ -21,10 +29,15 @@
 
 .section__title_border_white {
 	padding-bottom: 28px;
-	border-bottom: 1px solid var(--color-white);
+	border-bottom: 1px solid var(--border-colorWhite);
 }
 
 @media screen and (min-width: 768px) {
+	.section {
+		padding: 0 50px;
+		margin: 90px 0;
+	}
+
 	.section__title {
 		font-size: 22px;
 		line-height: 27px;
@@ -44,5 +57,10 @@
 	.section__text {
 		font-size: 14px;
 		line-height: 20px;
+	}
+
+	.section {
+		padding: 0 70px;
+		margin: 100px 0;
 	}
 }
