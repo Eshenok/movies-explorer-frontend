@@ -19,7 +19,7 @@
 	--bgInput-color: var(--color-umbragrey);
 	--font-color: var(--color-white);
 	--font-colorGrey: var(--color-mateGrey);
-	--font-colorBlue: var(--color-blue);
+	--link-color: var(--color-blue);
 	--font-colorRed: var(--color-red);
 	--elem-color: var(--color-lightgrey);
 }
