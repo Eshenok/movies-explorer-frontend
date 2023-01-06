@@ -1,19 +1,27 @@
 .header {
+	box-sizing: border-box;
+	position: absolute;
+	width: 100%;
+	background-color: transparent;
 	padding: 18px 14px;
-	background-color: var(--color-darkblue);
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
 }
 
-.header__logo {
-	width: 38px;
+.header_place_sign {
+	background-color: #3ddc84;
 }
 
 .header__container {
 	display: flex;
-	gap: 14px;
 	align-items: center;
+	justify-content: space-between;
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
+.header__navigation {
+	display: flex;
+	align-items: center;
+	gap: 14px;
 }
 
 .header__link {
@@ -39,17 +47,13 @@
 }
 
 @media screen and (min-width: 768px) {
-	.header {
-		padding: 18px 30px;
-	}
-
-	.header__container {
-		gap: 30px
-	}
-
 	.header__link {
 		font-size: 12px;
 		line-height: 16px;
+	}
+
+	.header {
+		padding: 18px 30px;
 	}
 }
 

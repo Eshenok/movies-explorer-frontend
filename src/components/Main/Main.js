@@ -5,18 +5,17 @@ import Tech from "../Tech/Tech";
 import Student from "../Student/Student";
 import Portfolio from "../Portfolio/Portfolio";
 import { Input } from "../Input/Input";
-import Signup from "../Signup/Signup";
+import Sign from "../Sign/Sign";
 
 export default function Main() {
   return (
     <main className="main">
-      {/*<Hero />*/}
-      {/*<NavTab />*/}
-      {/*<Promo />*/}
-      {/*<Tech />*/}
-      {/*<Student />*/}
-      {/*<Portfolio />*/}
-      <Signup />
+      <Hero />
+      <NavTab />
+      <Promo />
+      <Tech />
+      <Student />
+      <Portfolio />
     </main>
   )
 }

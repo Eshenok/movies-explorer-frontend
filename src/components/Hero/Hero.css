@@ -1,15 +1,15 @@
 .hero {
-	background: var(--color-darkblue) url("../../images/landingLogo.svg") no-repeat center top 142px;
+	background: var(--color-darkblue) url("../../images/landingLogo.svg") no-repeat center center;
 	background-size: 248px;
-	height: 570px;
+	height: calc(100vh - 66px);
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	width: 100%;
 }
 
 .hero__title {
 	margin: 0;
-	padding-top: 207px;
 	max-width: 360px;
 	/*Шрифт*/
 	font-family: 'Inter', Arial, sans-serif;
@@ -24,26 +24,12 @@
 
 @media screen and (min-width: 768px) {
 	.hero {
-		height: 784px;
-		background-position: center top 224px;
 		background-size: 320px;
 	}
 
 	.hero__title {
-		padding-top: 326px;
 		max-width: 730px;
 		font-size: 50px;
 		line-height: 58px;
-	}
-}
-
-@media screen and (min-width: 1000px) {
-	.hero {
-		height: 524px;
-		background-position: center top 82px;
-	}
-
-	.hero__title {
-		padding-top: 184px;
 	}
 }
