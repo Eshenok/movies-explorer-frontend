@@ -42,6 +42,38 @@
 	border-radius: 3px;
 }
 
+.button_icon_close {
+	background: url("../../images/closeIcon.svg") no-repeat center center;
+	background-size: 22px;
+	width: 22px;
+	height: 22px;
+	transform: rotate(45deg);
+}
+
+.button_place_header-popup {
+	position: absolute;
+	top: 18px;
+	right: 18px;
+}
+
+.button_icon_burger {
+	width: 40px;
+	background: url("../../images/burger.svg") no-repeat center center;
+	background-size: 40px;
+	height: 43px;
+	/*Анимация*/
+	transition: opacity linear .2s;
+}
+
+.button_icon_burger:active {
+	box-shadow: none;
+	opacity: .8;
+}
+
+.button_display_none {
+	display: none;
+}
+
 @media screen and (min-width: 768px) {
 	.button_theme_green {
 		padding: 8px 20px;

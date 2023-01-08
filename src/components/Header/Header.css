@@ -46,6 +46,107 @@
 	opacity: .8;
 }
 
+.header__popup {
+	display: none;
+	visibility: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 144px 0 46px;
+	background-color: var(--bg-color);
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	/*Анимация*/
+	transition: display linear .2s, visibility linear .2s;
+}
+
+.header__popup_open {
+	display: flex;
+	visibility: visible;
+}
+
+.header__overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: var(--color-black);
+	opacity: .3;
+}
+
+.header__menu-links {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
+}
+
+.header__menu-link {
+	margin: 0;
+	padding: 7px;
+	border-bottom: 2px solid transparent;
+	/*Шрифт*/
+	font-family: 'Inter', Arial, sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 22px;
+	text-decoration: none;
+	color: var(--font-color);
+	/*Анимация*/
+	transition: filter linear .2s, opacity linear .2s;
+}
+
+.header__menu-link:hover {
+	cursor: pointer;
+	filter: drop-shadow(0 3px 3px var(--color-black));
+}
+
+.header__menu-link:active {
+	opacity: .8;
+}
+
+.header__account {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 7px;
+}
+
+.header__account_text {
+	margin: 0;
+	/*Шрифт*/
+	font-family: 'Inter', Arial, sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 12px;
+	color: var(--font-color);
+}
+
+.header__account_image {
+	background-color: var(--elem-color);
+	background-image: url("../../images/accountImage.svg");
+	background-repeat: no-repeat;
+	width: 26px;
+	height: 26px;
+	background-size: 12px;
+	background-position: center center;
+	border-radius: 50%;
+}
+
+.header__menu-link_display_none {
+	display: none;
+}
+
 @media screen and (min-width: 768px) {
 	.header__link {
 		font-size: 12px;
@@ -55,10 +156,43 @@
 	.header {
 		padding: 18px 30px;
 	}
+
+	.header__popup {
+		left: 248px;
+	}
 }
 
 @media screen and (min-width: 1000px) {
 	.header {
 		padding: 18px 70px;
+	}
+
+	.header__overlay {
+		display: none;
+	}
+
+	.header__menu {
+		position: relative;
+		left: 0;
+		margin: 0;
+		padding: 0;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 100%;
+		background-color: transparent;
+	}
+
+	.header__menu-links {
+		flex-direction: row;
+		margin-left: 44px;
+	}
+
+	.header__menu-link {
+		margin: 0;
+		padding: 0;
+		border: none;
+		font-weight: 400;
+		font-size: 13px;
+		line-height: 18px;
 	}
 }
