@@ -1,6 +1,6 @@
 .film {
 	background-color: var(--color-carbonic);
-	width: 100%;
+	max-width: 300px;
 	box-sizing: border-box;
 }
 
@@ -47,5 +47,6 @@
 	grid-row-end: 3;
 }
 .film__image {
-
+	height: 168px;
+	width: 100%;
 }

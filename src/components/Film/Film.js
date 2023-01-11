@@ -1,5 +1,5 @@
 import Button from "../Button/Button";
-import personalPhoto from "../../images/personalphoto.jpg"
+import filmPicture from "../../images/filmPicture.png"
 
 export default function Film() {
   return (
@@ -9,7 +9,7 @@ export default function Film() {
         <p className="film__time">1ч 47м</p>
         <button className="button film__like-button"></button>
       </div>
-      <div className="film__image" style={{backgroundImage: personalPhoto}}/>
+      <img src={filmPicture} className='film__image'/>
     </div>
   )
 }
