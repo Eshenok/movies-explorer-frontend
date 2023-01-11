@@ -1,0 +1,126 @@
+.search {
+	background-color: var(--bg-color);
+	margin: 0;
+}
+
+.search__form {
+	display: flex;
+	flex-direction: column;
+	gap: 45px;
+	margin: 0 10px;
+	align-items: center;
+	padding-top: 154px;
+	padding-bottom: 109px;
+	border-bottom: 1px solid var(--border-colorGrey);
+}
+
+.search__input-container {
+	display: flex;
+	padding: 25px 19px;
+	box-sizing: border-box;
+	align-items: center;
+	gap: 46px;
+	width: 100%;
+	background-color: var(--color-carbonic);
+	box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.08);
+	border-radius: 9px;
+}
+
+.search__input {
+	width: calc(100% - 34px - 46px);
+	/*Шрифт*/
+	font-family: 'Inter', Arial, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 22px; /*В макете ошибка*/
+	color: var(--font-color);
+}
+
+.search__input::placeholder {
+	/*Шрифт*/
+	font-family: 'Inter', Arial, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 22px;
+	color: var(--font-colorGrey);
+}
+
+.search__button {
+	background: var(--color-blue) url("../../images/searchIcon.svg") no-repeat center center;
+	border-radius: 50%;
+	width: 34px;
+	height: 34px;
+}
+
+.search__toggle {
+	width: 100%;
+	display: flex;
+	gap: 13px;
+	align-items: center;
+	justify-content: center;
+}
+
+.search__toggle_text {
+	/*Шрифт*/
+	font-family: 'Inter', Arial, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 11px;
+	line-height: 18px;
+	color: var(--font-color);
+}
+
+.search__toggle_checkbox {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+
+.search__fake-toggle {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	user-select: none;
+}
+
+.search__fake-toggle:hover {
+	cursor: pointer;
+}
+
+.search__fake-toggle::before {
+	content: '';
+	display: inline-block;
+	width: 36px;
+	height: 20px;
+	flex-shrink: 0;
+	flex-grow: 0;
+	border-radius: 20px;
+	background-color: var(--bgInput-color);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 50% 50%;
+	/*Анимация*/
+	transition: background-color linear .2s;
+}
+
+.search__fake-toggle::after {
+	content: '';
+	position: absolute;
+	background-color: var(--font-color);
+	width: 8px;
+	height: 8px;
+	left: 8px;
+	border-radius: 50%;
+	/*Анимация*/
+	transition: left linear .2s;
+}
+
+.search__toggle_checkbox:checked + .search__fake-toggle::before {
+	background-color: var(--color-green);
+}
+
+.search__toggle_checkbox:checked + .search__fake-toggle::after {
+	left: 22px;
+}

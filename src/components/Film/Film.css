@@ -1,0 +1,51 @@
+.film {
+	background-color: var(--color-carbonic);
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.film__header {
+	padding: 14px;
+	box-sizing: border-box;
+	display: grid;
+	grid-template-columns: 1fr 30px;
+	row-gap: 9px;
+	column-gap: 20px;
+	align-items: center;
+}
+
+.film__title {
+	margin: 0;
+	/*Шрифт*/
+	font-family: 'Inter', Arial, sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 18px;
+	color: var(--font-color);
+}
+
+.film__time {
+	margin: 0;
+	/*Шрифт*/
+	font-family: 'Inter', Arial, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 11px;
+	line-height: 13px;
+	color: var(--font-colorGrey);
+}
+
+.film__like-button {
+	border-radius: 50%;
+	background: var(--elem-color) url("../../images/saveIcon.svg") no-repeat center center;
+	width: 30px;
+	height: 30px;
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	grid-row-end: 3;
+}
+.film__image {
+
+}

@@ -28,7 +28,6 @@ export default function Sign() {
                    required={true}
                    placeholder="Введите Ваше имя"
                    labelText="Имя"
-                   containerClass="input__container"
             />
           </Route>
 
@@ -42,7 +41,6 @@ export default function Sign() {
             required={true}
             placeholder="Введите почту"
             labelText="E-mail"
-            containerClass="input__container"
           />
           <Input type="password"
                  id="input_type_userPass"
@@ -53,7 +51,6 @@ export default function Sign() {
                  required={true}
                  placeholder="Введите пароль"
                  labelText="Пароль"
-                 containerClass="input__container"
           />
         </div>
         <div className="sign__container">

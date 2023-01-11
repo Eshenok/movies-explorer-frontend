@@ -19,20 +19,7 @@ export default function Header(props) {
           </Route>
 
           <Route path="/main">
-            <Button className="button button_icon_burger button_display_none" />
-            <div className="header__overlay"></div>
-            <div className={'header__menu header__popup header__popup_open' }>
-              <ul className="header__menu-links">
-                <Link className="header__menu-link header__menu-link_display_none" to="/">Главная</Link>
-                <Link className="header__menu-link" to="/main">Фильмы</Link>
-                <Link className="header__menu-link" to="/saved">Сохранённые фильмы</Link>
-              </ul>
-              <div className="header__account">
-                <p className="header__account_text">Аккаунт</p>
-                <div className="header__account_image" />
-              </div>
-              <Button className="button button_icon_close button_place_header-popup button_display_none" />
-            </div>
+            <Button className="button button_icon_burger" />
           </Route>
         </div>
       </header>

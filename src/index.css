@@ -13,4 +13,7 @@
 @import url('./components/Portfolio/Portfolio.css');
 @import url('./components/Footer/Footer.css');
 @import url('./components/Input/Input.css');
-@import url('components/Sign/Sign.css');
+@import url('./components/Sign/Sign.css');
+@import url('./components/Search/Search.css');
+@import url('./components/Films/Films.css');
+@import url('./components/Film/Film.css');

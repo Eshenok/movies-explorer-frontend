@@ -5,6 +5,9 @@ import Header from './components/Header/Header'
 import Footer from "./components/Footer/Footer";
 import Main from "./components/Main/Main";
 import Sign from "./components/Sign/Sign";
+import Profile from "./components/Profile/Profile";
+import Search from "./components/Search/Search";
+import Films from "./components/Films/Films";
 
 function App() {
 
@@ -27,7 +30,14 @@ function App() {
 
         <Route path="/main">
           <Header />
+          <Search />
+          <Films />
           <Footer />
+        </Route>
+
+        <Route path="/profile">
+          <Header />
+          <Profile />
         </Route>
       </Switch>
     </>
