@@ -8,6 +8,7 @@ export default function Films() {
       <Film />
       <Film />
       <Film />
+      <button className="button films__more-button">Еще</button>
     </section>
   )
 }
