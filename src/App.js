@@ -8,6 +8,7 @@ import Sign from "./components/Sign/Sign";
 import Profile from "./components/Profile/Profile";
 import Search from "./components/Search/Search";
 import Films from "./components/Films/Films";
+import NotFound from "./components/NotFound/NotFound";
 
 function App() {
 
@@ -38,6 +39,10 @@ function App() {
         <Route path="/profile">
           <Header />
           <Profile />
+        </Route>
+
+        <Route path="*">
+          <NotFound />
         </Route>
       </Switch>
     </>
