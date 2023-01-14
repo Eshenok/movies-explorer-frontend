@@ -21,6 +21,9 @@ export default function Header(props) {
           <Route path="/main">
             <Button className="button button_icon_burger" />
           </Route>
+          <Route path="/profile">
+            <Button className="button button_icon_burger" />
+          </Route>
         </div>
       </header>
     </>

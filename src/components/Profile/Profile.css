@@ -1,0 +1,126 @@
+.profile {
+	padding: 144px 30px 40px;
+	background-color: var(--bg-color);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+	box-sizing: border-box;
+}
+
+.profile__form {
+	width: 100%;
+	max-width: 1280px;
+	margin: 80px auto 0;
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.profile__title {
+	margin: 0;
+	max-width: 1280px;
+	/*Шрифт*/
+	font-family: 'Inter', Arial, sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 29px;
+	color: var(--font-color);
+}
+
+.profile__input-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 17px;
+}
+
+.profile__fieldset {
+	margin: 0;
+	padding: 0 0 16px;
+	width: 100%;
+	box-sizing: border-box;
+	border: none;
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	justify-content: space-between;
+	border-bottom: 1px solid var(--border-colorGrey);
+}
+
+.profile__fieldset:last-of-type {
+	padding-bottom: 0;
+	border: none;
+}
+
+.profile__label {
+	max-width: 120px;
+	white-space: nowrap;
+	/*Шрифт*/
+	font-family: 'Inter', Arial, sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 11px;
+	line-height: 13px;
+	color: var(--font-color);
+}
+
+.profile__input {
+	/*Шрифт*/
+	font-family: 'Inter', Arial, sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 11px;
+	line-height: 13px;
+	color: var(--font-color);
+	text-align: right;
+}
+
+.profile__button-container {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.profile__button {
+	/*Шрифт*/
+	font-family: 'Inter', Arial, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 16px;
+	color: var(--font-color);
+	/*Анимация*/
+	transition: opacity linear .2s;
+}
+
+.profile__button:active {
+	box-shadow: none;
+	opacity: .8;
+}
+
+.profile__button_theme_red {
+	color: var(--font-colorRed);
+}
+
+@media screen and (min-width: 768px) {
+	.profile {
+		padding-top: 0;
+		justify-content: center;
+	}
+
+	.profile__form {
+		height: auto;
+		gap: 210px;
+		max-width: 410px;
+		margin-top: 96px;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	.profile__form {
+		margin-top: 123px;
+	}
+}

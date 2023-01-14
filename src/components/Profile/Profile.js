@@ -7,30 +7,35 @@ export default function Profile() {
       <h2 className="profile__title">Привет</h2>
       <form className="profile__form">
         <div className="profile__input-container">
-          <Input
-          type="text"
-          className="input"
-          id="input_type_editUserName"
-          name="input_type_editUserName"
-          minLength="2"
-          maxLength="30"
-          placeholder="Введите Ваше имя"
-          labelText="Имя"
-          />
-          <Input
-            type="email"
-            className="input"
-            id="input_type_editUserEmail"
-            name="input_type_editUserEmail"
-            minLength="2"
-            maxLength="30"
-            placeholder="Введите E-Mail"
-            labelText="Имя"
-          />
+          <fieldset className="profile__fieldset">
+            <label className="profile__label">Имя</label>
+            <input
+              type="text"
+              className="input profile__input"
+              id="input_type_editUserName"
+              name="input_type_editUserName"
+              minLength="2"
+              maxLength="30"
+              placeholder="Введите Ваше имя"
+            />
+          </fieldset>
+
+          <fieldset className="profile__fieldset">
+            <label className="profile__label">E-mail</label>
+            <input
+              type="email"
+              className="input profile__input"
+              id="input_type_editUserEmail"
+              name="input_type_editUserEmail"
+              minLength="2"
+              maxLength="30"
+              placeholder="Введите E-Mail"
+            />
+          </fieldset>
         </div>
         <div className="profile__button-container">
-          <Button className={'button'} name={'Редактировать'}/>
-          <Button className={'button'} name={'Выйти из аккаунта'}/>
+          <Button className={'button profile__button'} name={'Редактировать'}/>
+          <Button className={'button profile__button profile__button_theme_red'} name={'Выйти из аккаунта'}/>
         </div>
       </form>
     </section>
