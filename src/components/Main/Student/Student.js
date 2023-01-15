@@ -1,4 +1,4 @@
-import personalPhoto from "../../images/personalphoto.jpg";
+import personalPhoto from "../../../images/personalphoto.jpg";
 
 export default function Student() {
   return (
@@ -12,7 +12,7 @@ export default function Student() {
           Мое хобби: Гитара, 10+ лет, играю в стиле fingerstyle. Ранее работал в Интернет-провайдере и сети кинотеатров.
           В 2021 году решил сменить профессию и начал учиться на курсах Яндекс.Практикум.</p>
       </div>
-      <a className="student__ghlink">Github</a>
+      <a className="student__ghlink" href="https://github.com/Eshenok" target="_blank">Github</a>
     </section>
   )
 }

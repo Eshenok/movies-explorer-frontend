@@ -45,6 +45,7 @@
 	font-size: 14px;
 	line-height: 17px;
 	color: var(--font-color);
+	text-decoration: none;
 	/*Animation*/
 	transition: filter linear .2s, opacity linear .2s;
 }

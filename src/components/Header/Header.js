@@ -1,10 +1,8 @@
 import logo from "../../images/logo.svg";
-import Button from "../Button/Button";
-import { Link, Route, } from "react-router-dom";
-import { useState } from "react";
+import Button from "../common/Button/Button";
+import { Link, Route } from "react-router-dom";
 
-export default function Header(props) {
-
+export default function Header() {
 
   return (
     <>
@@ -13,14 +11,15 @@ export default function Header(props) {
           <img className="logo header__logo" alt="logo" src={logo}/>
           <Route exact path="/">
             <nav className="header__navigation">
-              <Link className="header__link" to="/sign-up">Регистрация</Link>
-              <Button className={"button button_theme_green"} name={"Войти"} />
+              <Link className="header__link" to="/signup">Регистрация</Link>
+              <Link className="header__link header__link_theme_green" to="/signin">Войти</Link>
             </nav>
           </Route>
 
-          <Route path="/main">
+          <Route path="/movies">
             <Button className="button button_icon_burger" />
           </Route>
+
           <Route path="/profile">
             <Button className="button button_icon_burger" />
           </Route>

@@ -1,5 +1,5 @@
-import Button from "../Button/Button";
-import filmPicture from "../../images/filmPicture.png"
+import Button from "../../common/Button/Button";
+import filmPicture from "../../../images/filmPicture.png"
 
 export default function Film() {
   return (

@@ -37,6 +37,15 @@
 	transition: filter linear .2s, opacity linear .2s;
 }
 
+.header__link_theme_green {
+	width: 54px;
+	padding: 8px 0;
+	background-color: var(--color-green);
+	border-radius: 3px;
+	text-align: center;
+	color: var(--color-black);
+}
+
 .header__link:hover {
 	cursor: pointer;
 	filter: drop-shadow(0 3px 3px var(--color-black));
@@ -58,6 +67,10 @@
 
 	.header__popup {
 		left: 248px;
+	}
+
+	.header__link_theme_green {
+		width: 76px;
 	}
 }
 

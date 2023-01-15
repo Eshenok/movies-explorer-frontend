@@ -1,5 +1,6 @@
 :root {
 	--color-white: #fff;
+	--color-mateWhite: #dadada;
 	--color-mateGrey: #8b8b8b;
 	--color-dirtyGrey: #424242;
 	--color-lightgrey: #303030;
@@ -13,6 +14,7 @@
 	--color-darkblue: #073042;
 	--color-red: #EE3465;
 	/*Темизация*/
+	--border-colorWhite: var(--color-mateWhite);
 	--border-colorGrey: var(--color-dirtyGrey);
 	--bg-color: var(--color-darkgrey);
 	--bgInput-color: var(--color-umbragrey);

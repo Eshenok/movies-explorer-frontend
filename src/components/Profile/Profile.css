@@ -1,4 +1,5 @@
 .profile {
+	align-self: normal;
 	padding: 144px 30px 40px;
 	background-color: var(--bg-color);
 	display: flex;

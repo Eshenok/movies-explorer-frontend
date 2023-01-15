@@ -1,4 +1,5 @@
 .search {
+	align-self: normal;
 	background-color: var(--bg-color);
 	margin: 0;
 	padding: 154px 10px 0;
@@ -60,7 +61,7 @@
 }
 
 .search__button {
-	background: var(--color-blue) url("../../images/searchIcon.svg") no-repeat center center;
+	background: var(--color-blue) url("../../../images/searchIcon.svg") no-repeat center center;
 	border-radius: 50%;
 	width: 34px;
 	height: 34px;
@@ -156,7 +157,7 @@
 		content: '';
 		width: 34px;
 		height: 34px;
-		background: url("../../images/searchIconG.svg") no-repeat center center;
+		background: url("../../../images/searchIconG.svg") no-repeat center center;
 		flex-shrink: 0;
 		margin-right: 10px;
 	}

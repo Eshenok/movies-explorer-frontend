@@ -1,5 +1,5 @@
 .hero {
-	background: var(--color-darkblue) url("../../images/landingLogo.svg") no-repeat center center;
+	background: var(--color-darkblue) url("../../../images/landingLogo.svg") no-repeat center center;
 	background-size: 248px;
 	height: calc(100vh - 66px);
 	display: flex;

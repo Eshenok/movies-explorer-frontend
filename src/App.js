@@ -1,43 +1,52 @@
 import './App.css';
 import React, {useState, useEffect} from 'react';
-import {Route, Switch} from "react-router-dom";
+import { Route, Switch, useHistory } from "react-router-dom";
 import Header from './components/Header/Header'
 import Footer from "./components/Footer/Footer";
 import Main from "./components/Main/Main";
 import Sign from "./components/Sign/Sign";
 import Profile from "./components/Profile/Profile";
-import Search from "./components/Search/Search";
-import Films from "./components/Films/Films";
 import NotFound from "./components/NotFound/NotFound";
+import Movies from "./components/Movies/Movies";
 
 function App() {
 
+  const [header, setHeader] = useState(true);
+  const history = useHistory();
+
+  function handleLogIn() {
+    history.push('./movies')
+  }
+
+  useEffect(() => {
+    history.listen(() => {
+      history.location.pathname === '/signin' || history.location.pathname === '/signup'
+        ? setHeader(false)
+        : setHeader(true)
+    })
+  })
+
   return (
     <>
+      {header ? <Header /> : <></>}
       <Switch>
         <Route exact path="/">
-          <Header />
           <Main />
-          <Footer />
         </Route>
 
-        <Route path="/sign-up">
-          <Sign />
+        <Route path="/signup">
+          <Sign history={history} />
         </Route>
 
-        <Route exact path="/sign-in">
-          <Sign />
+        <Route exact path="/signin">
+          <Sign history={history} onSubmit={handleLogIn} />
         </Route>
 
-        <Route path="/main">
-          <Header />
-          <Search />
-          <Films />
-          <Footer />
+        <Route path="/movies">
+          <Movies />
         </Route>
 
         <Route path="/profile">
-          <Header />
           <Profile />
         </Route>
 
@@ -45,6 +54,7 @@ function App() {
           <NotFound />
         </Route>
       </Switch>
+      <Footer />
     </>
   );
 }

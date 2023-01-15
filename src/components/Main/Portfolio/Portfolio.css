@@ -34,6 +34,8 @@
 	font-size: 18px;
 	line-height: 28px;
 	letter-spacing: -0.04em;
+	color: var(--font-color);
+	text-decoration: none;
 }
 
 .portfolio__link:last-of-type {
@@ -41,7 +43,7 @@
 	padding: 0;
 }
 .portfolio__link_arrow {
-	background: url("../../images/linkArrow.svg") no-repeat center right;
+	background: url("../../../images/linkArrow.svg") no-repeat center right;
 	/*Анимация*/
 	transition: filter linear .2s, opacity linear .2s;
 }
