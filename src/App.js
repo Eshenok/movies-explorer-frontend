@@ -8,27 +8,44 @@ import Sign from "./components/Sign/Sign";
 import Profile from "./components/Profile/Profile";
 import NotFound from "./components/NotFound/NotFound";
 import Movies from "./components/Movies/Movies";
+import MenuPopup from "./components/Popups/MenuPopup/MenuPopup";
 
 function App() {
 
   const [header, setHeader] = useState(true);
+  const [footer, setFooter] = useState(true);
+  const [isOpenMenuPopup, setIsOpenMenuPopup] = useState(false);
   const history = useHistory();
+
+  useEffect(() => {
+    history.listen(() => {
+      closeAllPopups();
+      if (history.location.pathname === '/signin' || history.location.pathname === '/signup') {
+        setHeader(false);
+        setFooter(false);
+      } else if (history.location.pathname === '/profile') {
+        setHeader(true);
+        setFooter(false);
+      } else {
+        setHeader(true);
+        setFooter(true);
+      }
+    })
+  })
 
   function handleLogIn() {
     history.push('./movies')
   }
 
-  useEffect(() => {
-    history.listen(() => {
-      history.location.pathname === '/signin' || history.location.pathname === '/signup'
-        ? setHeader(false)
-        : setHeader(true)
-    })
-  })
+  function handleOpenMenuPopup () {setIsOpenMenuPopup(true)};
+
+  function closeAllPopups() {
+    setIsOpenMenuPopup(false);
+  }
 
   return (
     <>
-      {header ? <Header /> : <></>}
+      {header ? <Header onMenuPopup={handleOpenMenuPopup} /> : <></>}
       <Switch>
         <Route exact path="/">
           <Main />
@@ -54,7 +71,8 @@ function App() {
           <NotFound />
         </Route>
       </Switch>
-      <Footer />
+      {footer ? <Footer/> : <></>}
+      <MenuPopup isOpen={isOpenMenuPopup} onClose={closeAllPopups} />
     </>
   );
 }

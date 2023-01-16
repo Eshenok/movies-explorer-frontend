@@ -2,7 +2,7 @@ import logo from "../../images/logo.svg";
 import Button from "../common/Button/Button";
 import { Link, Route } from "react-router-dom";
 
-export default function Header() {
+export default function Header({ onMenuPopup }) {
 
   return (
     <>
@@ -17,11 +17,11 @@ export default function Header() {
           </Route>
 
           <Route path="/movies">
-            <Button className="button button_icon_burger" />
+            <Button className="button button_icon_burger" onClick={onMenuPopup} />
           </Route>
 
           <Route path="/profile">
-            <Button className="button button_icon_burger" />
+            <Button className="button button_icon_burger" onClick={onMenuPopup} />
           </Route>
         </div>
       </header>
