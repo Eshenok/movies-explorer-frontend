@@ -3,7 +3,7 @@ import personalPhoto from "../../../images/personalphoto.jpg";
 export default function Student() {
   return (
     <section className="section student">
-      <h2 className="section__title section__title_border_white student__title">Студент</h2>
+      <h2 className="section__title section__title_border_white student__title"><a name="student"></a>Студент</h2>
       <img className="student__image" src={personalPhoto} alt="Портрет. Александр Волошин"/>
       <div className="student__container">
         <h3 className="student__name">Александр</h3>
