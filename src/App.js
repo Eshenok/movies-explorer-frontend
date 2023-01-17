@@ -18,8 +18,9 @@ function App() {
   const history = useHistory();
 
   useEffect(() => {
+    /*Слушай историю и при ее изменении проверяем необходимость footer и header*/
     history.listen(() => {
-      closeAllPopups();
+      closeAllPopups(); /*При переходе по ссылке будет закрывать все попапы*/
       if (history.location.pathname === '/signin' || history.location.pathname === '/signup') {
         setHeader(false);
         setFooter(false);
@@ -33,13 +34,30 @@ function App() {
     })
   })
 
-  function handleLogIn() {
-    history.push('./movies')
+  function blockScrollY () { /*При открытии модального окна блокируем прокрутку*/
+    document.body.style.overflow = 'hidden';
+    document.body.style.top = `-${window.scrollY}px`;
   }
 
-  function handleOpenMenuPopup () {setIsOpenMenuPopup(true)};
+  function unblockScrollY () {
+    const scrollY = document.body.style.top;
+    document.body.style.overflow = '';
+    document.body.style.top = '';
+    window.scrollTo(0, parseInt(scrollY || '0') * -1);
+  }
+
+  function handleLogIn() {
+    /*Временный костыль*/
+    history.push('./movies');
+  }
+
+  function handleOpenMenuPopup () {
+    blockScrollY();
+    setIsOpenMenuPopup(true)
+  };
 
   function closeAllPopups() {
+    unblockScrollY();
     setIsOpenMenuPopup(false);
   }
 
