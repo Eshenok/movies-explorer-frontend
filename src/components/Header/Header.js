@@ -8,7 +8,7 @@ export default function Header({ onMenuPopup }) {
     <>
       <header className="header">
         <div className="header__container">
-          <img className="logo header__logo" alt="logo" src={logo}/>
+          <Link to="/"><img className="logo header__logo" alt="logo" src={logo}/></Link>
           <Route exact path="/">
             <nav className="header__navigation">
               <Link className="header__link" to="/signup">Регистрация</Link>
