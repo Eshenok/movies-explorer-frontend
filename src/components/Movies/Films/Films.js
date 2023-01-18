@@ -1,6 +1,6 @@
 import Film from "../Film/Film";
 
-export default function Films() {
+export default function Films({ history }) {
   return (
     <section className="films">
       <div className="films__container">

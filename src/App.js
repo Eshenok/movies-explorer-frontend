@@ -70,14 +70,18 @@ function App() {
         </Route>
 
         <Route path="/signup">
-          <Sign history={history} />
+          <Sign  />
         </Route>
 
         <Route exact path="/signin">
-          <Sign history={history} onSubmit={handleLogIn} />
+          <Sign onSubmit={handleLogIn} />
         </Route>
 
         <Route path="/movies">
+          <Movies />
+        </Route>
+
+        <Route path="/saved-movies">
           <Movies />
         </Route>
 
@@ -89,8 +93,8 @@ function App() {
           <NotFound />
         </Route>
       </Switch>
-      {footer ? <Footer/> : <></>}
-      <MenuPopup isOpen={isOpenMenuPopup} onClose={closeAllPopups} />
+      {footer ? <Footer /> : <></>}
+      <MenuPopup isOpen={isOpenMenuPopup} onClose={closeAllPopups} history={history} />
     </>
   );
 }

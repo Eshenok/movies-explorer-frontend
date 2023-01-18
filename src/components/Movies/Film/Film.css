@@ -51,7 +51,26 @@
 	grid-column-end: 3;
 	grid-row-start: 1;
 	grid-row-end: 3;
+	/*Анимация*/
+	transition: background-color ease-out .2s, background-image ease-out .2s;
 }
+
+.film__like-button_active {
+	background-color: var(--color-green);
+	background-image: url("../../../images/saveIcon-active.svg");
+}
+
+.film__remove-button {
+	border-radius: 50%;
+	background: var(--elem-color) url("../../../images/removeIcon.svg") no-repeat center center;
+	width: 30px;
+	height: 30px;
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	grid-row-end: 3;
+}
+
 .film__image {
 	max-height: 250px;
 	width: 100%;

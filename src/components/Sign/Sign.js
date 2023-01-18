@@ -4,7 +4,7 @@ import logo from "../../images/logo.svg";
 import React from "react";
 import Button from "../common/Button/Button";
 
-export default function Sign(props) {
+export default function Sign({ onSubmit }) {
   return (
     <section className="sign">
       <div className="sign__header">
@@ -16,7 +16,7 @@ export default function Sign(props) {
           <h2 className="sign__title">Рады видеть!</h2>
         </Route>
       </div>
-      <form className="sign__form" noValidate onSubmit={props.onSubmit}>
+      <form className="sign__form" noValidate onSubmit={onSubmit}>
         <div className="sign__container">
           <Route path="/signup">
             <Input type="text"

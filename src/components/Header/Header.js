@@ -20,6 +20,10 @@ export default function Header({ onMenuPopup }) {
             <Button className="button button_icon_burger" onClick={onMenuPopup} />
           </Route>
 
+          <Route path="/saved-movies">
+            <Button className="button button_icon_burger" onClick={onMenuPopup} />
+          </Route>
+
           <Route path="/profile">
             <Button className="button button_icon_burger" onClick={onMenuPopup} />
           </Route>

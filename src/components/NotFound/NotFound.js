@@ -1,13 +1,13 @@
-import { Link } from "react-router-dom";
+import Button from "../common/Button/Button";
 
-export default function NotFound() {
+export default function NotFound({ history }) {
   return (
     <section className="notFound">
       <div className="notFound__container">
         <h2 className="notFound__title">404</h2>
         <p className="notFound__text">Страница не найдена</p>
       </div>
-      <Link className="notFound__link">Назад</Link>
+      <Button name={"Назад"} className="button notFound__button-backward" onClick={history.goBack} />
     </section>
   )
 }

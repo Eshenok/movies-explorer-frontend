@@ -11,7 +11,7 @@ export default function Search() {
 
         <div className="search__toggle">
           <input type="checkbox" className="search__toggle_checkbox" id="search__toggle_checkbox" />
-          <label for="search__toggle_checkbox" className="search__fake-toggle"></label>
+          <label htmlFor="search__toggle_checkbox" className="search__fake-toggle"></label>
           <span className="search__toggle_text">Короткометражки</span>
         </div>
       </form>
