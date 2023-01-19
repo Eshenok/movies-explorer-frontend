@@ -17,37 +17,11 @@
 	max-width: 1280px;
 }
 
-.search__input {
-	/*Шрифт*/
-	font-family: 'Inter', Arial, sans-serif;
-	font-style: normal;
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 22px; /*В макете ошибка*/
-	color: var(--font-color);
-}
-
-.search__input::placeholder {
-	/*Шрифт*/
-	font-family: 'Inter', Arial, sans-serif;
-	font-style: normal;
-	font-weight: 400;
-	font-size: 1em;
-	line-height: 22px;
-	color: var(--font-colorGrey);
-}
-
 .search__button {
 	background: var(--color-blue) url("../../../../images/searchIcon.svg") no-repeat center center;
 	border-radius: 50%;
 	width: 34px;
 	height: 34px;
-}
-
-.search__toggle_checkbox {
-	position: absolute;
-	z-index: -1;
-	opacity: 0;
 }
 
 .search__toggle_checkbox:checked + .search__fake-toggle::before {
@@ -62,10 +36,6 @@
 	.search {
 		padding-left: 30px;
 		padding-right: 30px;
-	}
-
-	.search__input {
-		font-size: 18px;
 	}
 }
 

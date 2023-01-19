@@ -1,17 +1,25 @@
 import Button from "../../Button/Button";
+import { Input } from "../../Input/Input";
 
 export default function Search() {
   return (
     <section className="search">
       <form className="search__form">
         <div className="search__input-container">
-          <input className="input search__input" placeholder="Фильм"/>
+          <Input
+            className="input input_type_search"
+            placeholder="Фильм"
+          />
           <Button className={"button search__button"} />
         </div>
 
         <div className="search__toggle">
-          <input type="checkbox" className="search__toggle_checkbox" id="search__toggle_checkbox" />
-          <label htmlFor="search__toggle_checkbox" className="search__fake-toggle"></label>
+          <Input
+            type="checkbox"
+            className="input input_type_shorts input_view_hidden search__toggle_checkbox"
+            id="input_type_shorts"
+          />
+          <label htmlFor="input_type_shorts" className="search__fake-toggle"></label>
           <span className="search__toggle_text">Короткометражки</span>
         </div>
       </form>

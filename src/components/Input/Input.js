@@ -1,11 +1,10 @@
 import React from "react";
 
-export const Input = ({labelText, ...rest }) => {
+export const Input = ({labelText, isSpan, ...rest }) => {
   return (
     <>
-      <label className="input__label">{labelText}</label>
       <input {...rest} />
-      <span className="input__span-error"> </span>
+      {isSpan ? <span className="input__span-error"> </span> : <></>}
     </>
   )
 }

@@ -1,6 +1,17 @@
 @import url('./vendor/normalize.css');
 @import url('./vendor/fonts/fonts.css');
 @import url('./palette.css');
+/* buttons */
+@import url('components/Button/Button.css');
+/* inputs */
+@import url('./components/Input/styles/Input.css');
+@import url('./components/Input/styles/__span-error/input__span-error.css');
+@import url('./components/Input/styles/__span-error/_visible/input__span-error_visible.css');
+@import url('./components/Input/styles/_error/input_error.css');
+@import url('./components/Input/styles/_place/input_place_sign.css');
+@import url('./components/Input/styles/_type/input_type_search.css');
+@import url('./components/Input/styles/_view/input_view_hidden.css');
+/* logo */
 @import url('./commonStyles/logo/logo.css');
 @import url('commonStyles/section/section.css');
 @import url('components/Main/styles/Main.css');
@@ -59,7 +70,6 @@
 @import url('./components/Main/Portfolio/styles/__link/_arrow/portfolio__link_arrow.css');
 /* movies */
 @import url('components/Movies/styles/Movies.css');
-@import url('components/Input/Input.css');
 /* signin signout */
 @import url('components/Sign/styles/Sign.css');
 @import url('./components/Sign/styles/__title/sign__title.css');
@@ -69,6 +79,7 @@
 @import url('./components/Sign/styles/__form/sign__form.css');
 @import url('./components/Sign/styles/__link/sign__link.css');
 @import url('./components/Sign/styles/__text/sign__text.css');
+@import url('./components/Sign/styles/__label/sign__label.css');
 /* search */
 @import url('components/Movies/Search/styles/Search.css');
 @import url('./components/Movies/Search/styles/__form/search__form.css');
@@ -106,5 +117,3 @@
 @import url('./components/Popups/MenuPopup/styles/__links/menu-popup__links.css');
 @import url('./components/Popups/MenuPopup/styles/__link/menu-popup__link.css');
 @import url('./components/Popups/MenuPopup/styles/__link/_current-page/menu-popup__link_current-page.css');
-/* buttons */
-@import url('components/Button/Button.css');
