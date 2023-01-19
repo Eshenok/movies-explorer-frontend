@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import AccountLink from "../../AccountLink/AccountLink";
-import Button from "../../common/Button/Button";
+import Button from "../../Button/Button";
 
 export default function MenuPopup({ isOpen, onClose, history }) {
 

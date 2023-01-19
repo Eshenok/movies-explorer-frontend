@@ -1,4 +1,4 @@
-import Button from "../../common/Button/Button";
+import Button from "../../Button/Button";
 import filmPicture from "../../../images/filmPicture.png"
 import { useState } from "react";
 import { Route } from "react-router-dom";

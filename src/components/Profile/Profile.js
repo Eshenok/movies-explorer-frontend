@@ -1,4 +1,4 @@
-import Button from "../common/Button/Button";
+import Button from "../Button/Button";
 
 export default function Profile() {
   return (

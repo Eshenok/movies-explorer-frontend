@@ -1,5 +1,5 @@
 import logo from "../../images/logo.svg";
-import Button from "../common/Button/Button";
+import Button from "../Button/Button";
 import { Link, Route } from "react-router-dom";
 
 export default function Header({ onMenuPopup }) {

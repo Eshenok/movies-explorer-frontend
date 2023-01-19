@@ -1,8 +1,8 @@
-import { Input } from "../common/Input/Input";
+import { Input } from "../Input/Input";
 import { Link, Route } from "react-router-dom";
 import logo from "../../images/logo.svg";
 import React from "react";
-import Button from "../common/Button/Button";
+import Button from "../Button/Button";
 
 export default function Sign({ onSubmit }) {
   return (
