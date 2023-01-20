@@ -19,7 +19,7 @@ export default function Sign({ onSubmit }) {
       <form className="sign__form" noValidate onSubmit={onSubmit}>
         <div className="sign__container">
           <Route path="/signup">
-            <label htmlFor="input_type_userName" className="input__label">Имя</label>
+            <label htmlFor="input_type_userName" className="sign__label">Имя</label>
             <Input type="text"
                    id="input_type_userName"
                    className="input input_place_sign input_type_userName"
@@ -44,7 +44,7 @@ export default function Sign({ onSubmit }) {
             isSpan={true}
           />
 
-          <label htmlFor="input_type_userPass" className="input__label">Пароль</label>
+          <label htmlFor="input_type_userPass" className="sign__label">Пароль</label>
           <Input type="password"
                  id="input_type_userPass"
                  className="input input_place_sign input_type_userPass"
