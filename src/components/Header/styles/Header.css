@@ -6,6 +6,10 @@
 	padding: 18px 14px;
 }
 
+.header__some {
+	display: none;
+}
+
 @media screen and (min-width: 768px) {
 	.header {
 		padding: 18px 30px;
@@ -17,4 +21,10 @@
 		padding: 18px 70px;
 	}
 
+	.header__some {
+		margin-left: 44px;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+	}
 }

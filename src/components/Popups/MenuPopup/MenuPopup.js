@@ -27,7 +27,7 @@ export default function MenuPopup({ isOpen, onClose, history }) {
         }  to="/saved-movies"><li>Сохранённые фильмы</li></Link>
       </ul>
       <AccountLink />
-      <Button className="button button_icon_close menu-popup__close-button" onClick={onClose}/>
+      <Button className="button button_icon_close button_place_menu-popup" onClick={onClose}/>
     </div>
   )
 }

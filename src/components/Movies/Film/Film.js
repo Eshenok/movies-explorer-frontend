@@ -6,12 +6,12 @@ import { Route } from "react-router-dom";
 export default function Film() {
 
   const [isLiked, setIsLiked] = useState(false);
-  const likeClasses = ['button film__like-button'];
+  const likeClasses = ['button button_icon_like button_place_film'];
 
   function handleLike() {setIsLiked(!isLiked)};
 
   if (isLiked) {
-    likeClasses.push('film__like-button_active');
+    likeClasses.push('button_icon_like-active');
   }
 
   return (
@@ -24,7 +24,7 @@ export default function Film() {
         </Route>
 
         <Route path="/saved-movies">
-          <Button className="button film__remove-button" />
+          <Button className="button button_icon_remove button_place_film" />
         </Route>
       </div>
       <img src={filmPicture} className='film__image'/>

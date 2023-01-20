@@ -1,6 +1,7 @@
 import logo from "../../images/logo.svg";
 import Button from "../Button/Button";
 import { Link, Route } from "react-router-dom";
+import AccountLink from "../AccountLink/AccountLink";
 
 export default function Header({ onMenuPopup }) {
 
@@ -8,7 +9,7 @@ export default function Header({ onMenuPopup }) {
     <>
       <header className="header">
         <div className="header__container">
-          <Link to="/"><img className="logo header__logo" alt="logo" src={logo}/></Link>
+          <Link to="/"><img className="logo header__logo" alt="logo" src={logo} /></Link>
           <Route exact path="/">
             <nav className="header__navigation">
               <Link className="header__link" to="/signup">Регистрация</Link>
@@ -17,14 +18,35 @@ export default function Header({ onMenuPopup }) {
           </Route>
 
           <Route path="/movies">
+            <div className="header__some">
+              <div className="header__menu">
+                <Link className="header__menu_link" to="/movies">Фильмы</Link>
+                <Link className="header__menu_link" to="/saved-movies">Сохранённые фильмы</Link>
+              </div>
+              <AccountLink />
+            </div>
             <Button className="button button_icon_burger" onClick={onMenuPopup} />
           </Route>
 
           <Route path="/saved-movies">
+            <div className="header__some">
+              <div className="header__menu">
+                <Link className="header__menu_link" to="/movies">Фильмы</Link>
+                <Link className="header__menu_link" to="/saved-movies">Сохранённые фильмы</Link>
+              </div>
+              <AccountLink />
+            </div>
             <Button className="button button_icon_burger" onClick={onMenuPopup} />
           </Route>
 
           <Route path="/profile">
+            <div className="header__some">
+              <div className="header__menu">
+                <Link className="header__menu_link" to="/movies">Фильмы</Link>
+                <Link className="header__menu_link" to="/saved-movies">Сохранённые фильмы</Link>
+              </div>
+              <AccountLink />
+            </div>
             <Button className="button button_icon_burger" onClick={onMenuPopup} />
           </Route>
         </div>

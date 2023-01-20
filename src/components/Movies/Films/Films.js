@@ -1,4 +1,5 @@
 import Film from "../Film/Film";
+import Button from "../../Button/Button";
 
 export default function Films({ history }) {
   return (
@@ -10,7 +11,7 @@ export default function Films({ history }) {
         <Film />
         <Film />
       </div>
-      <button className="button films__more-button">Ещё</button>
+      <Button className="button button_place_films button_theme_grey" name={'Ещё'} />
     </section>
   )
 }

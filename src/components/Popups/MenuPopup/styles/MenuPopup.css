@@ -17,12 +17,6 @@
 	transition: visibility .2s ease-in, opacity .2s ease-in;
 }
 
-.menu-popup__close-button {
-	position: absolute;
-	top: 18px;
-	right: 18px;
-}
-
 @media screen and (min-width: 768px) {
 	.menu-popup {
 		left: 248px;
@@ -40,10 +34,5 @@
 		z-index: -1;
 		background-color: rgba(0, 0, 0, .3);
 		width: 248px;
-	}
-
-	.menu-popup__close-button {
-		top: 27px;
-		right: 27px;
 	}
 }

@@ -7,10 +7,10 @@ export default function Profile() {
       <form className="profile__form">
         <div className="profile__input-container">
           <fieldset className="profile__fieldset">
-            <label className="profile__label">Имя</label>
+            <label htmlFor={"input_type_editUserName"} className="profile__label">Имя</label>
             <input
               type="text"
-              className="input profile__input"
+              className="input input_type_profile"
               id="input_type_editUserName"
               name="input_type_editUserName"
               minLength="2"
@@ -20,10 +20,10 @@ export default function Profile() {
           </fieldset>
 
           <fieldset className="profile__fieldset">
-            <label className="profile__label">E-mail</label>
+            <label htmlFor={"input_type_editUserEmail"} className="profile__label">E-mail</label>
             <input
               type="email"
-              className="input profile__input"
+              className="input input_type_profile"
               id="input_type_editUserEmail"
               name="input_type_editUserEmail"
               minLength="2"
@@ -33,8 +33,8 @@ export default function Profile() {
           </fieldset>
         </div>
         <div className="profile__button-container">
-          <Button className={'button profile__button'} name={'Редактировать'}/>
-          <Button className={'button profile__button profile__button_theme_red'} name={'Выйти из аккаунта'}/>
+          <Button className={'button button_place_profile button_theme_transparent-white'} name={'Редактировать'}/>
+          <Button className={'button button_place_profile button_theme_transparent-red'} name={'Выйти из аккаунта'}/>
         </div>
       </form>
     </section>

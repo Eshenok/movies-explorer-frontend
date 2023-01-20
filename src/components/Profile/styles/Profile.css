@@ -9,38 +9,6 @@
 	box-sizing: border-box;
 }
 
-.profile__input {
-	/*Шрифт*/
-	font-family: 'Inter', Arial, sans-serif;
-	font-style: normal;
-	font-weight: 500;
-	font-size: 11px;
-	line-height: 13px;
-	color: var(--font-color);
-	text-align: right;
-}
-
-.profile__button {
-	/*Шрифт*/
-	font-family: 'Inter', Arial, sans-serif;
-	font-style: normal;
-	font-weight: 400;
-	font-size: 12px;
-	line-height: 16px;
-	color: var(--font-color);
-	/*Анимация*/
-	transition: opacity linear .2s;
-}
-
-.profile__button:active {
-	box-shadow: none;
-	opacity: .8;
-}
-
-.profile__button_theme_red {
-	color: var(--font-colorRed);
-}
-
 @media screen and (min-width: 768px) {
 	.profile {
 		padding-top: 0;

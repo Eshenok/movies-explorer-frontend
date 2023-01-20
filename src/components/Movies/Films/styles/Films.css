@@ -6,26 +6,3 @@
 	align-items: center;
 	padding-bottom: 79px;
 }
-
-.films__more-button {
-	margin: 50px 0 80px;
-	display: block;
-	width: 240px;
-	box-sizing: border-box;
-	border-radius: 6px;
-	background-color: var(--bgInput-color);
-	padding: 10px 0;
-	/*Шрифт*/
-	font-family: 'Inter', Arial, sans-serif;
-	font-style: normal;
-	font-weight: 500;
-	font-size: 12px;
-	line-height: 15px;
-	color: var(--font-color);
-}
-
-@media screen and (min-width: 768px) {
-	.films__more-button {
-		width: 320px;
-	}
-}

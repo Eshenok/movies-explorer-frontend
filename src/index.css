@@ -2,7 +2,22 @@
 @import url('./vendor/fonts/fonts.css');
 @import url('./palette.css');
 /* buttons */
-@import url('components/Button/Button.css');
+@import url('./components/Button/styles/Button.css');
+@import url('./components/Button/styles/_theme/button_theme_blue.css');
+@import url('./components/Button/styles/_theme/button_theme_green.css');
+@import url('./components/Button/styles/_theme/button_theme_grey.css');
+@import url('./components/Button/styles/_theme/button_theme_transparent-white.css');
+@import url('./components/Button/styles/_theme/button_theme_transparent-red.css');
+@import url('./components/Button/styles/_icon/button_icon_burger.css');
+@import url('./components/Button/styles/_icon/button_icon_close.css');
+@import url('./components/Button/styles/_icon/button_icon_remove.css');
+@import url('./components/Button/styles/_icon/button_icon_like.css');
+@import url('./components/Button/styles/_icon/button_icon_like-active.css');
+@import url('./components/Button/styles/_place/button_place_film.css');
+@import url('./components/Button/styles/_place/button_place_films.css');
+@import url('./components/Button/styles/_place/button_place_profile.css');
+@import url('./components/Button/styles/_place/button_place_menu-popup.css');
+@import url('./components/Button/styles/_display/button_display_none.css');
 /* inputs */
 @import url('./components/Input/styles/Input.css');
 @import url('./components/Input/styles/__span-error/input__span-error.css');
@@ -10,6 +25,8 @@
 @import url('./components/Input/styles/_error/input_error.css');
 @import url('./components/Input/styles/_place/input_place_sign.css');
 @import url('./components/Input/styles/_type/input_type_search.css');
+@import url('./components/Input/styles/_type/input_type_profile.css');
+@import url('./components/Input/styles/_type/input_type_shorts.css');
 @import url('./components/Input/styles/_view/input_view_hidden.css');
 /* logo */
 @import url('./commonStyles/logo/logo.css');
@@ -21,7 +38,8 @@
 @import url('./components/Header/styles/__link/header__link.css');
 @import url('./components/Header/styles/__link/_theme/header__link_theme_green.css');
 @import url('./components/Header/styles/__navigation/header__navigation.css');
-@import url('./components/Header/styles/_place/header_place_sign.css');
+@import url('./components/Header/styles/__menu/header__menu.css');
+@import url('./components/Header/styles/__menu/_link/header__menu_link.css');
 /* footer */
 @import url('components/Footer/styles/Footer.css');
 @import url('./components/Footer/styles/__container/footer__container.css');
