@@ -18,8 +18,8 @@ export default function Header({ onMenuPopup }) {
           </Route>
 
           <Route path="/movies">
-            <div className="header__some">
-              <div className="header__menu">
+            <div className="header__menu">
+              <div className="header__menu_links">
                 <Link className="header__menu_link" to="/movies">Фильмы</Link>
                 <Link className="header__menu_link" to="/saved-movies">Сохранённые фильмы</Link>
               </div>
@@ -29,8 +29,8 @@ export default function Header({ onMenuPopup }) {
           </Route>
 
           <Route path="/saved-movies">
-            <div className="header__some">
-              <div className="header__menu">
+            <div className="header__menu">
+              <div className="header__menu_links">
                 <Link className="header__menu_link" to="/movies">Фильмы</Link>
                 <Link className="header__menu_link" to="/saved-movies">Сохранённые фильмы</Link>
               </div>
@@ -40,8 +40,8 @@ export default function Header({ onMenuPopup }) {
           </Route>
 
           <Route path="/profile">
-            <div className="header__some">
-              <div className="header__menu">
+            <div className="header__menu">
+              <div className="header__menu_links">
                 <Link className="header__menu_link" to="/movies">Фильмы</Link>
                 <Link className="header__menu_link" to="/saved-movies">Сохранённые фильмы</Link>
               </div>
