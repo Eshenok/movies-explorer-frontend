@@ -1,6 +1,6 @@
 import logo from "../../images/logo.svg";
 import Button from "../Button/Button";
-import { Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import AccountLink from "../AccountLink/AccountLink";
 
 export default function Header({ onMenuPopup, loggedIn }) {
