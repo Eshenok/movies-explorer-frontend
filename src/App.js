@@ -15,6 +15,7 @@ function App() {
   const [header, setHeader] = useState(true);
   const [footer, setFooter] = useState(true);
   const [isOpenMenuPopup, setIsOpenMenuPopup] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
   const history = useHistory();
 
   useEffect(() => {
@@ -48,7 +49,13 @@ function App() {
 
   function handleLogIn() {
     /*Временный костыль*/
+    setLoggedIn(true);
     history.push('./movies');
+  }
+
+  function handleLogOut() {
+    setLoggedIn(false);
+    history.push('/');
   }
 
   function handleOpenMenuPopup () {
@@ -63,7 +70,7 @@ function App() {
 
   return (
     <>
-      {header ? <Header onMenuPopup={handleOpenMenuPopup} /> : <></>}
+      {header ? <Header onMenuPopup={handleOpenMenuPopup} loggedIn={loggedIn} /> : <></>}
       <Switch>
         <Route exact path="/">
           <Main />
@@ -86,7 +93,7 @@ function App() {
         </Route>
 
         <Route path="/profile">
-          <Profile />
+          <Profile onExit={handleLogOut} />
         </Route>
 
         <Route path="*">
