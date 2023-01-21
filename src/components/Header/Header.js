@@ -23,8 +23,8 @@ export default function Header({ onMenuPopup, loggedIn }) {
               <Button className="button button_icon_burger" onClick={onMenuPopup} /> </>
               :
               <nav className="header__navigation">
-            <Link className="header__link" to="/signup">Регистрация</Link>
-            <Link className="header__link header__link_theme_green" to="/signin">Войти</Link>
+                <Link className="header__link" to="/signup">Регистрация</Link>
+                <Link className="header__link header__link_theme_green" to="/signin">Войти</Link>
             </nav>
           }
         </div>

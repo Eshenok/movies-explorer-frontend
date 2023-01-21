@@ -6,6 +6,8 @@
 	font-weight: 400;
 	font-size: 12px;
 	line-height: 15px;
+	color: var(--font-color);
+	text-decoration: none;
 	/*Анимация*/
 	transition: filter linear .2s, opacity linear .2s;
 }
@@ -23,7 +25,5 @@
 	.footer__link {
 		font-size: 13px;
 		line-height: 16px;
-		color: var(--font-color);
-		text-decoration: none;
 	}
 }

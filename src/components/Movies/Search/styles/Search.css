@@ -17,13 +17,6 @@
 	max-width: 1280px;
 }
 
-.search__button {
-	background: var(--color-blue) url("../../../../images/searchIcon.svg") no-repeat center center;
-	border-radius: 50%;
-	width: 34px;
-	height: 34px;
-}
-
 .search__toggle_checkbox:checked + .search__fake-toggle::before {
 	background-color: var(--color-green);
 }

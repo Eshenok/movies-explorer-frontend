@@ -9,8 +9,6 @@
 	font-size: 18px;
 	line-height: 28px;
 	letter-spacing: -0.04em;
-	color: var(--font-color);
-	text-decoration: none;
 }
 
 .portfolio__link:last-of-type {

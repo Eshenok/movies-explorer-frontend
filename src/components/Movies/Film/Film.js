@@ -17,7 +17,7 @@ export default function Film() {
   return (
     <div className="film">
       <div className="film__header">
-        <h2 className="film__title">Что-то о чем-то))))</h2>
+        <h2 className="film__title">Карточка фильма</h2>
         <p className="film__time">1ч 47м</p>
         <Route path="/movies">
           <Button className={likeClasses.join(' ')} onClick={handleLike} />
@@ -27,7 +27,7 @@ export default function Film() {
           <Button className="button button_icon_remove button_place_film" />
         </Route>
       </div>
-      <img src={filmPicture} className='film__image'/>
+      <img src={filmPicture} alt="Карточка фильма" className='film__image'/>
     </div>
   )
 }

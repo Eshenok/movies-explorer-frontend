@@ -9,8 +9,9 @@ export default function Search() {
           <Input
             className="input input_type_search"
             placeholder="Фильм"
+            required={true}
           />
-          <Button className={"button search__button"} />
+          <Button className={"button button_icon_search"} />
         </div>
 
         <div className="search__toggle">

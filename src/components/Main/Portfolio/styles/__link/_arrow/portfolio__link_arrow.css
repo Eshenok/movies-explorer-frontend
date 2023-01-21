@@ -1,5 +1,9 @@
 .portfolio__link_arrow {
+	display: block;
 	background: url("../../../../../../images/linkArrow.svg") no-repeat center right;
+	/*Шрифт*/
+	color: var(--font-color);
+	text-decoration: none;
 	/*Анимация*/
 	transition: filter linear .2s, opacity linear .2s;
 }

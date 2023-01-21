@@ -18,6 +18,10 @@
 	color: var(--font-colorGrey);
 }
 
+.input_type_search:focus {
+	border-bottom: 1px solid var(--border-colorGrey);
+}
+
 @media screen and (min-width: 768px) {
 	.input_type_search {
 		font-size: 18px;
