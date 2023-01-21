@@ -29,9 +29,12 @@
 @import url('./components/Input/styles/_type/input_type_shorts.css');
 @import url('./components/Input/styles/_view/input_view_hidden.css');
 /* logo */
-@import url('./commonStyles/logo/logo.css');
+@import url('components/containers/logo/logo.css');
 /* section */
-@import url('commonStyles/section/section.css');
+@import url('./components/containers/section/section.css');
+@import url('./components/containers/section/__title/section__title.css');
+@import url('./components/containers/section/__text/section__text.css');
+@import url('./components/containers/section/__title/_border/section__title_border_white.css');
 /* Main */
 @import url('components/Main/styles/Main.css');
 /* header */
