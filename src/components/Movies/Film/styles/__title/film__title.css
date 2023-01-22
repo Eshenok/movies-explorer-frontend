@@ -1,0 +1,11 @@
+.film__title {
+	margin: 0;
+	word-wrap: anywhere;
+	/*Шрифт*/
+	font-family: 'Inter', Arial, sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 18px;
+	color: var(--font-color);
+}
