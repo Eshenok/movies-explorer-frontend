@@ -1,0 +1,7 @@
+.film__image {
+	max-height: 250px;
+	width: 100%;
+	object-fit: contain;
+	object-position: center;
+	background-color: var(--elem-color);
+}
