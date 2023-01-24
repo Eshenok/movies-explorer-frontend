@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="lang" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="level-2" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2JMBygS7ZxElvDKrnJwG7NwxEbv" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Eshenok/Documents/dev/movies-explorer-frontend/src/components/Movies&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Eshenok\Documents\dev\movies-explorer-frontend\public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Eshenok\Documents\dev\movies-explorer-frontend\src\components\containers\section\__title" />
+      <recent name="C:\Users\Eshenok\Documents\dev\movies-explorer-frontend\src\components\containers" />
+      <recent name="C:\Users\Eshenok\Documents\dev\movies-explorer-frontend\src\components" />
+      <recent name="C:\Users\Eshenok\Documents\dev\movies-explorer-frontend\src\components\Button\styles" />
+      <recent name="C:\Users\Eshenok\Documents\dev\movies-explorer-frontend\src\components\Input\styles" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="" />
+      <created>1671878327733</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1671878327733</updated>
+      <workItem from="1671878329137" duration="22505000" />
+      <workItem from="1671963144468" duration="10168000" />
+      <workItem from="1671993470041" duration="1846000" />
+      <workItem from="1672147040176" duration="19034000" />
+      <workItem from="1672309219026" duration="14125000" />
+      <workItem from="1672386529727" duration="13207000" />
+      <workItem from="1672575218334" duration="6053000" />
+      <workItem from="1672660195065" duration="243000" />
+      <workItem from="1672665911257" duration="8807000" />
+      <workItem from="1672754824042" duration="4466000" />
+      <workItem from="1672769441786" duration="3377000" />
+      <workItem from="1672837801222" duration="9973000" />
+      <workItem from="1672908203968" duration="19158000" />
+      <workItem from="1673008880368" duration="9813000" />
+      <workItem from="1673092874884" duration="8423000" />
+      <workItem from="1673179915104" duration="9397000" />
+      <workItem from="1673438594913" duration="17743000" />
+      <workItem from="1673468003663" duration="3168000" />
+      <workItem from="1673521877148" duration="12274000" />
+      <workItem from="1673612492019" duration="6536000" />
+      <workItem from="1673697635677" duration="13573000" />
+      <workItem from="1673782721297" duration="14904000" />
+      <workItem from="1673891392483" duration="5660000" />
+      <workItem from="1673948058384" duration="2696000" />
+      <workItem from="1674043247515" duration="11668000" />
+      <workItem from="1674132805406" duration="16992000" />
+      <workItem from="1674216871518" duration="17437000" />
+      <workItem from="1674302028995" duration="3908000" />
+      <workItem from="1674308609159" duration="1427000" />
+      <workItem from="1674310966200" duration="799000" />
+      <workItem from="1674320360462" duration="4860000" />
+      <workItem from="1674392130082" duration="104000" />
+      <workItem from="1674476671333" duration="1149000" />
+      <workItem from="1674572061095" duration="37000" />
+      <workItem from="1674572124638" duration="233000" />
+    </task>
+    <task id="LOCAL-00001" summary="make react app">
+      <created>1671878434229</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1671878434229</updated>
+    </task>
+    <task id="LOCAL-00002" summary="html main page">
+      <created>1671891613032</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1671891613032</updated>
+    </task>
+    <task id="LOCAL-00003" summary="make hero + navTab">
+      <created>1671911585422</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1671911585422</updated>
+    </task>
+    <task id="LOCAL-00004" summary="make tech">
+      <created>1671978861780</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1671978861780</updated>
+    </task>
+    <task id="LOCAL-00005" summary="done mobile, start 425px + 768px">
+      <created>1672256256541</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1672256256541</updated>
+    </task>
+    <task id="LOCAL-00006" summary="drop all css">
+      <created>1672332050114</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1672332050114</updated>
+    </task>
+    <task id="LOCAL-00007" summary="make header for all display">
+      <created>1672341330456</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1672341330456</updated>
+    </task>
+    <task id="LOCAL-00008" summary="make navTab Hero for all display">
+      <created>1672418876064</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1672418876064</updated>
+    </task>
+    <task id="LOCAL-00009" summary="make tech for all display">
+      <created>1672604829352</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1672604829352</updated>
+    </task>
+    <task id="LOCAL-00010" summary="make Student for all display">
+      <created>1672674728592</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1672674728592</updated>
+    </task>
+    <task id="LOCAL-00011" summary="make Main page for all display">
+      <created>1672680457674</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1672680457674</updated>
+    </task>
+    <task id="LOCAL-00012" summary="make html signup page">
+      <created>1672761473345</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1672761473346</updated>
+    </task>
+    <task id="LOCAL-00013" summary="make signup page 50%">
+      <created>1672859186596</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1672859186596</updated>
+    </task>
+    <task id="LOCAL-00014" summary="make sign page for all displays">
+      <created>1673019895477</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1673019895477</updated>
+    </task>
+    <task id="LOCAL-00015" summary="make header for all displays all pages">
+      <created>1673192532821</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1673192532821</updated>
+    </task>
+    <task id="LOCAL-00016" summary="make films 320px 50%">
+      <created>1673467233514</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1673467233514</updated>
+    </task>
+    <task id="LOCAL-00017" summary="make films 320px 50%">
+      <created>1673468472513</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1673468472513</updated>
+    </task>
+    <task id="LOCAL-00018" summary="make search">
+      <created>1673532704750</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1673532704750</updated>
+    </task>
+    <task id="LOCAL-00019" summary="make films all disp">
+      <created>1673551025467</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1673551025467</updated>
+    </task>
+    <task id="LOCAL-00020" summary="make films all disp">
+      <created>1673632520154</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1673632520154</updated>
+    </task>
+    <task id="LOCAL-00021" summary="make profile all disp">
+      <created>1673712897029</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1673712897029</updated>
+    </task>
+    <task id="LOCAL-00022" summary="make NotFound all disp">
+      <created>1673721126349</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1673721126349</updated>
+    </task>
+    <task id="LOCAL-00023" summary="refactor v1.0 make links(Routes)">
+      <created>1673807347642</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1673807347642</updated>
+    </task>
+    <task id="LOCAL-00024" summary="make popup + open all disp;">
+      <created>1673897290908</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1673897290908</updated>
+    </task>
+    <task id="LOCAL-00025" summary="make anchor">
+      <created>1673948610626</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1673948610626</updated>
+    </task>
+    <task id="LOCAL-00026" summary="make scrollBlock">
+      <created>1673949546957</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1673949546957</updated>
+    </task>
+    <task id="LOCAL-00027" summary="make saved-movies + currentlink popup">
+      <created>1674064682864</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1674064682864</updated>
+    </task>
+    <task id="LOCAL-00028" summary="make logo link">
+      <created>1674064813710</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1674064813710</updated>
+    </task>
+    <task id="LOCAL-00029" summary="refactor 1.1">
+      <created>1674145220278</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1674145220278</updated>
+    </task>
+    <task id="LOCAL-00030" summary="refactor 1.2">
+      <created>1674155071155</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1674155071155</updated>
+    </task>
+    <task id="LOCAL-00031" summary="refactor 2.0">
+      <created>1674236890898</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1674236890898</updated>
+    </task>
+    <task id="LOCAL-00032" summary="refactor 2.1">
+      <created>1674240474790</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1674240474790</updated>
+    </task>
+    <task id="LOCAL-00033" summary="refactor 2.2">
+      <created>1674247169407</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1674247169407</updated>
+    </task>
+    <task id="LOCAL-00034" summary="refactor 2.3">
+      <created>1674248040933</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1674248040933</updated>
+    </task>
+    <task id="LOCAL-00035" summary="refactor 2.4">
+      <created>1674249625924</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1674249625924</updated>
+    </task>
+    <task id="LOCAL-00036" summary="refactor 2.5">
+      <created>1674306683560</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1674306683560</updated>
+    </task>
+    <task id="LOCAL-00037" summary="readme">
+      <created>1674308905929</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1674308905929</updated>
+    </task>
+    <task id="LOCAL-00038" summary="figma">
+      <created>1674309444607</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1674309444608</updated>
+    </task>
+    <task id="LOCAL-00039" summary="refactor after review">
+      <created>1674324662798</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1674324662798</updated>
+    </task>
+    <task id="LOCAL-00040" summary="lang">
+      <created>1674392152931</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1674392152931</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="make sign page for all displays" />
+    <MESSAGE value="make header for all displays all pages" />
+    <MESSAGE value="make films 320px 50%" />
+    <MESSAGE value="make search" />
+    <MESSAGE value="make films all disp" />
+    <MESSAGE value="make profile all disp" />
+    <MESSAGE value="make NotFound all disp" />
+    <MESSAGE value="refactor v1.0 make links(Routes)" />
+    <MESSAGE value="make popup + open all disp;" />
+    <MESSAGE value="make anchor" />
+    <MESSAGE value="make scrollBlock" />
+    <MESSAGE value="make saved-movies + currentlink popup" />
+    <MESSAGE value="make logo link" />
+    <MESSAGE value="refactor 1.1" />
+    <MESSAGE value="refactor 1.2" />
+    <MESSAGE value="refactor 2.0" />
+    <MESSAGE value="refactor 2.1" />
+    <MESSAGE value="refactor 2.2" />
+    <MESSAGE value="refactor 2.3" />
+    <MESSAGE value="refactor 2.4" />
+    <MESSAGE value="refactor 2.5" />
+    <MESSAGE value="readme" />
+    <MESSAGE value="figma" />
+    <MESSAGE value="refactor after review" />
+    <MESSAGE value="lang" />
+    <option name="LAST_COMMIT_MESSAGE" value="lang" />
+  </component>
+</project>

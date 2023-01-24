@@ -1,0 +1,13 @@
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.gitignore b/.gitignore
+--- a/.gitignore	(revision 83a4d6fc2cd9b20ee7e460ccda3d14f97b60864c)
++++ b/.gitignore	(date 1674572445104)
+@@ -1,1 +1,2 @@
+ 
++/node_modules/
