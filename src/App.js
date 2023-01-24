@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useState, useEffect} from 'react';
-import { Route, Switch, useHistory } from "react-router-dom";
+import { Redirect, Route, Switch, useHistory } from "react-router-dom";
 import Header from './components/Header/Header'
 import Footer from "./components/Footer/Footer";
 import Main from "./components/Main/Main";
@@ -9,9 +9,14 @@ import Profile from "./components/Profile/Profile";
 import NotFound from "./components/NotFound/NotFound";
 import Movies from "./components/Movies/Movies";
 import MenuPopup from "./components/Popups/MenuPopup/MenuPopup";
+import MainApi from "./utils/MainApi";
+import MoviesApi from "./utils/MoviesApi";
+import { CurrentUserContext } from "./contexts/CurrentUserContext";
 
 function App() {
 
+  const [currentUser, setCurrentUser] = useState({});
+  const [movies, setMovies] = useState([]);
   const [header, setHeader] = useState(true);
   const [footer, setFooter] = useState(true);
   const [isOpenMenuPopup, setIsOpenMenuPopup] = useState(false);
@@ -19,7 +24,13 @@ function App() {
   const history = useHistory();
 
   useEffect(() => {
-    /*Слушай историю и при ее изменении проверяем необходимость footer и header*/
+    MoviesApi.getMovies().then((res) => {
+      setMovies(res);
+    }).catch((err) => {console.log(err)})
+  },[])
+
+  useEffect(() => {
+    /*Прослушка истории и при ее изменении проверяем необходимость footer и header*/
     history.listen(() => {
       closeAllPopups(); /*При переходе по ссылке будет закрывать все попапы*/
       if (history.location.pathname === '/signin' || history.location.pathname === '/signup') {
@@ -35,6 +46,24 @@ function App() {
     })
   })
 
+  /*
+   * Автологон.
+   * Если нет корректной куки выкинет на главную страницу.
+   * Повторное срабатывание только при перезагрузке страницы.
+   */
+  // useEffect(() => {
+  //   MainApi.getCurrentUser().then((res) => {
+  //     setCurrentUser(res);
+  //     setLoggedIn(true);
+  //   }).catch((err) => {
+  //     history.push('/')
+  //   })
+  // }, [])
+
+  /*
+   * Функции не отвечающие за работу Api
+   */
+
   function blockScrollY () { /*При открытии модального окна блокируем прокрутку*/
     document.body.style.overflow = 'hidden';
     document.body.style.top = `-${window.scrollY}px`;
@@ -47,17 +76,6 @@ function App() {
     window.scrollTo(0, parseInt(scrollY || '0') * -1);
   }
 
-  function handleLogIn() {
-    /*Временный костыль*/
-    setLoggedIn(true);
-    history.push('./movies');
-  }
-
-  function handleLogOut() {
-    setLoggedIn(false);
-    history.push('/');
-  }
-
   function handleOpenMenuPopup () {
     blockScrollY();
     setIsOpenMenuPopup(true)
@@ -68,8 +86,40 @@ function App() {
     setIsOpenMenuPopup(false);
   }
 
+  /*
+   * Функции работы с MainApi
+   */
+  function handleSignup(name, email, pass) {
+    MainApi.createUser(name, email, pass).then((res) => {
+      history.push('/signin');
+    }).catch((err) => {console.log(err)});
+  }
+
+  function handleSignIn(email, pass) {
+    MainApi.signIn(email, pass).then((res) => {
+      setCurrentUser(res);
+      setLoggedIn(true);
+      history.push('/movies');
+    }).catch((err) => {console.log(err)});
+  }
+
+  function handleUpdateUser(name, email) {
+    MainApi.updateUser(name, email).then((res) => {
+      setCurrentUser(res);
+      history.push('/movies');
+    }).catch((err) => {console.log(err)})
+  }
+
+  function handleSignOut() {
+    MainApi.signOut().then((res) => {
+      setCurrentUser({});
+      setLoggedIn(false);
+      history.push('/signin');
+    })
+  }
+
   return (
-    <>
+    <CurrentUserContext.Provider value={currentUser}>
       {header ? <Header onMenuPopup={handleOpenMenuPopup} loggedIn={loggedIn} /> : <></>}
       <Switch>
         <Route exact path="/">
@@ -77,15 +127,15 @@ function App() {
         </Route>
 
         <Route path="/signup">
-          <Sign />
+          <Sign onSubmit={handleSignup} history={history}/>
         </Route>
 
         <Route exact path="/signin">
-          <Sign onSubmit={handleLogIn} />
+          <Sign onSubmit={handleSignIn} history={history}/>
         </Route>
 
         <Route path="/movies">
-          <Movies />
+          <Movies movies={movies} />
         </Route>
 
         <Route path="/saved-movies">
@@ -93,7 +143,7 @@ function App() {
         </Route>
 
         <Route path="/profile">
-          <Profile onExit={handleLogOut} />
+          <Profile onSubmit={handleUpdateUser} onExit={handleSignOut}/>
         </Route>
 
         <Route path="*">
@@ -102,7 +152,7 @@ function App() {
       </Switch>
       {footer ? <Footer /> : <></>}
       <MenuPopup isOpen={isOpenMenuPopup} onClose={closeAllPopups} history={history} />
-    </>
+    </CurrentUserContext.Provider>
   );
 }
 

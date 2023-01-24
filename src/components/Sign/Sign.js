@@ -1,10 +1,26 @@
 import { Input } from "../Input/Input";
 import { Link, Route } from "react-router-dom";
 import logo from "../../images/logo.svg";
-import React from "react";
+import React, { useState } from "react";
 import Button from "../Button/Button";
 
-export default function Sign({ onSubmit }) {
+
+export default function Sign({ onSubmit, history }) {
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [pass, setPass] = useState('');
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (history.location.pathname === '/signup') {
+      onSubmit(name, email, pass);
+      setPass('');
+    } else {
+      onSubmit(email, pass);
+    }
+  }
+
   return (
     <section className="sign">
       <div className="sign__header">
@@ -16,7 +32,7 @@ export default function Sign({ onSubmit }) {
           <h2 className="sign__title">Рады видеть!</h2>
         </Route>
       </div>
-      <form className="sign__form" noValidate onSubmit={onSubmit}>
+      <form className="sign__form" noValidate onSubmit={handleSubmit}>
         <div className="sign__container">
           <Route path="/signup">
             <label htmlFor="input_type_userName" className="sign__label">Имя</label>
@@ -28,6 +44,9 @@ export default function Sign({ onSubmit }) {
                    maxLength="30"
                    required={true}
                    placeholder="Введите Ваше имя"
+                   value={name}
+                   isSpan={true}
+                   onChange={(e) => setName(e.target.value)}
             />
           </Route>
 
@@ -42,6 +61,8 @@ export default function Sign({ onSubmit }) {
             required={true}
             placeholder="Введите почту"
             isSpan={true}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
 
           <label htmlFor="input_type_userPass" className="sign__label">Пароль</label>
@@ -54,11 +75,13 @@ export default function Sign({ onSubmit }) {
                  required={true}
                  placeholder="Введите пароль"
                  isSpan={true}
+                 value={pass}
+                 onChange={(e) => setPass(e.target.value)}
           />
         </div>
         <div className="sign__container">
           <Route path="/signup">
-            <Button className="button button_theme_blue button_place_sign" name={"Зарегистрироваться"} />
+            <Button type="submit" className="button button_theme_blue button_place_sign" name={"Зарегистрироваться"} />
             <div className="sign__caption">
               <p className="sign__text">Уже зарегистрированы?</p>
               <Link className="sign__link" to="/signin">Войти</Link>
@@ -66,7 +89,7 @@ export default function Sign({ onSubmit }) {
           </Route>
 
           <Route path="/signin">
-            <Button className="button button_theme_blue button_place_sign" name={"Войти"} />
+            <Button type="submit" className="button button_theme_blue button_place_sign" name={"Войти"} />
             <div className="sign__caption">
               <p className="sign__text">Еще не зарегистрированы?</p>
               <Link className="sign__link" to="/signup">Регистрация</Link>
