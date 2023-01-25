@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import Button from "../Button/Button";
 
 
-export default function Sign({ onSubmit, history }) {
+export default function Sign({ onSubmit, history, title, buttonTitle }) {
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -25,12 +25,7 @@ export default function Sign({ onSubmit, history }) {
     <section className="sign">
       <div className="sign__header">
         <img className="logo" alt="logo" src={logo}/>
-        <Route path="/signup">
-          <h2 className="sign__title">Добро пожаловать!</h2>
-        </Route>
-        <Route path="/signin">
-          <h2 className="sign__title">Рады видеть!</h2>
-        </Route>
+        <h2 className="sign__title">{title}</h2>
       </div>
       <form className="sign__form" noValidate onSubmit={handleSubmit}>
         <div className="sign__container">
@@ -38,7 +33,7 @@ export default function Sign({ onSubmit, history }) {
             <label htmlFor="input_type_userName" className="sign__label">Имя</label>
             <Input type="text"
                    id="input_type_userName"
-                   className="input input_place_sign input_type_userName"
+                   className="input input_place_sign"
                    name="input_type_userName"
                    minLength="2"
                    maxLength="30"
@@ -54,7 +49,7 @@ export default function Sign({ onSubmit, history }) {
           <Input
             type="email"
             id="input_type_userEmail"
-            className="input input_place_sign input_type_userEmail"
+            className="input input_place_sign"
             name="input_type_userEmail"
             minLength="2"
             maxLength="30"
@@ -68,7 +63,7 @@ export default function Sign({ onSubmit, history }) {
           <label htmlFor="input_type_userPass" className="sign__label">Пароль</label>
           <Input type="password"
                  id="input_type_userPass"
-                 className="input input_place_sign input_type_userPass"
+                 className="input input_place_sign"
                  name="input_type_userPass"
                  minLength="2"
                  maxLength="30"
@@ -80,21 +75,17 @@ export default function Sign({ onSubmit, history }) {
           />
         </div>
         <div className="sign__container">
-          <Route path="/signup">
-            <Button type="submit" className="button button_theme_blue button_place_sign" name={"Зарегистрироваться"} />
+            <Button type="submit" className="button button_theme_blue button_place_sign" name={buttonTitle} />
             <div className="sign__caption">
-              <p className="sign__text">Уже зарегистрированы?</p>
-              <Link className="sign__link" to="/signin">Войти</Link>
+              <Route path="/signup">
+                <p className="sign__text">Уже зарегистрированы?</p>
+                <Link className="sign__link" to="/signin">Войти</Link>
+              </Route>
+              <Route path="/signin">
+                <p className="sign__text">Еще не зарегистрированы?</p>
+                <Link className="sign__link" to="/signup">Регистрация</Link>
+              </Route>
             </div>
-          </Route>
-
-          <Route path="/signin">
-            <Button type="submit" className="button button_theme_blue button_place_sign" name={"Войти"} />
-            <div className="sign__caption">
-              <p className="sign__text">Еще не зарегистрированы?</p>
-              <Link className="sign__link" to="/signup">Регистрация</Link>
-            </div>
-          </Route>
         </div>
       </form>
     </section>

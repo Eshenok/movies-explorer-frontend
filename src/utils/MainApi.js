@@ -71,8 +71,39 @@ class MainApi {
 
   /*Работа с фильмами*/
 
-  putLike() {
-
+  putLike({
+            country,
+            director,
+            duration,
+            year,
+            description,
+            image,
+            trailerLink,
+            nameRU,
+            nameEN,
+            thumbnail,
+            movieId,
+          }) {
+    return fetch(`${this._baseUrl}/movies`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include',
+      body: JSON.stringify({
+        country,
+        director,
+        duration,
+        year,
+        description,
+        image,
+        trailerLink,
+        nameRU,
+        nameEN,
+        thumbnail,
+        movieId,
+      })
+    })
   }
 }
 

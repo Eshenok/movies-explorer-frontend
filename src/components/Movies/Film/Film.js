@@ -1,5 +1,4 @@
 import Button from "../../Button/Button";
-import filmPicture from "../../../images/filmPicture.png"
 import { useState } from "react";
 import { Route } from "react-router-dom";
 
@@ -8,7 +7,12 @@ export default function Film(props) {
   const [isLiked, setIsLiked] = useState(false);
   const likeClasses = ['button button_icon_like button_place_film'];
 
-  function handleLike() {setIsLiked(!isLiked)};
+  function handleLike() {
+    if (!isLiked) {
+      props.onPutLike(props.info);
+      setIsLiked(!isLiked);
+    }
+  };
 
   if (isLiked) {
     likeClasses.push('button_icon_like-active');

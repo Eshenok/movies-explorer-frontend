@@ -15,6 +15,7 @@ import { CurrentUserContext } from "./contexts/CurrentUserContext";
 
 function App() {
 
+  const [filmsQuantity, setFilmsQuantity] = useState(0);
   const [currentUser, setCurrentUser] = useState({});
   const [movies, setMovies] = useState([]);
   const [header, setHeader] = useState(true);
@@ -22,6 +23,18 @@ function App() {
   const [isOpenMenuPopup, setIsOpenMenuPopup] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
   const history = useHistory();
+
+  const screenWidth = window.screen.width;
+
+  useEffect(() => {
+    if (screenWidth < 576) {
+      setFilmsQuantity(5);
+    } else if (screenWidth < 930) {
+      setFilmsQuantity(8);
+    } else {
+      setFilmsQuantity(12);
+    }
+  }, [])
 
   useEffect(() => {
     MoviesApi.getMovies().then((res) => {
@@ -86,6 +99,14 @@ function App() {
     setIsOpenMenuPopup(false);
   }
 
+  function handleMoreButton() {
+    if (screenWidth > 930) {
+      setFilmsQuantity(filmsQuantity + 3);
+    } else {
+      setFilmsQuantity(filmsQuantity + 2);
+    }
+  }
+
   /*
    * Функции работы с MainApi
    */
@@ -118,6 +139,10 @@ function App() {
     })
   }
 
+  function handlePutLike(movie) {
+    MainApi.putLike(movie).then().catch((err) => {console.log(err)});
+  }
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       {header ? <Header onMenuPopup={handleOpenMenuPopup} loggedIn={loggedIn} /> : <></>}
@@ -127,15 +152,15 @@ function App() {
         </Route>
 
         <Route path="/signup">
-          <Sign onSubmit={handleSignup} history={history}/>
+          <Sign onSubmit={handleSignup} history={history} title={'Добро пожаловать!'} buttonTitle={'Зарегистрироваться'}/>
         </Route>
 
         <Route exact path="/signin">
-          <Sign onSubmit={handleSignIn} history={history}/>
+          <Sign onSubmit={handleSignIn} history={history} title={'Рады видеть!'} buttonTitle={'Войти'}/>
         </Route>
 
         <Route path="/movies">
-          <Movies movies={movies} />
+          <Movies movies={movies} filmsQuantity={filmsQuantity} onMoreButton={handleMoreButton} onPutLike={handlePutLike} />
         </Route>
 
         <Route path="/saved-movies">
