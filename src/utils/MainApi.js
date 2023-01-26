@@ -7,7 +7,7 @@ class MainApi {
     if (res.ok) {
       return res.json();
     }
-    return Promise.reject(`Ошибка: ${res.status} - ${res.statusText}`);
+    return Promise.reject(res.json());
   }
 
   getCurrentUser() {
@@ -37,13 +37,16 @@ class MainApi {
     return fetch(`${this._baseUrl}/signin`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json"
       },
+      credentials: 'include',
       body: JSON.stringify({
-        email,
-        password
+        "email": email,
+        "password": password
       })
-    }).then(res => this._getResponseData(res));
+    })
+      .then(res => this._getResponseData(res))
+      .then(res => res);
   }
 
   updateUser(name, email) {
@@ -54,8 +57,8 @@ class MainApi {
       },
       credentials: 'include',
       body: JSON.stringify({
-        name,
-        email
+        name: name,
+        email: email,
       })
     }).then(res => this._getResponseData(res))
   }
@@ -77,13 +80,11 @@ class MainApi {
             duration,
             year,
             description,
-            image,
             trailerLink,
             nameRU,
             nameEN,
-            thumbnail,
-            movieId,
-          }) {
+            id,
+          }, thumbnail, image) {
     return fetch(`${this._baseUrl}/movies`, {
       method: 'POST',
       headers: {
@@ -101,12 +102,12 @@ class MainApi {
         nameRU,
         nameEN,
         thumbnail,
-        movieId,
+        movieId: id,
       })
     }).then(res => this._getResponseData(res));
   }
 }
 
 export default new MainApi({
-  baseUrl: 'http://localhost:2020',
+  baseUrl: 'https://api.movies-explorer.eshen.nomoredomains.club',
 });

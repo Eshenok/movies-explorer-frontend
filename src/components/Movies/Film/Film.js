@@ -7,9 +7,10 @@ export default function Film(props) {
   const [isLiked, setIsLiked] = useState(false);
   const likeClasses = ['button button_icon_like button_place_film'];
 
+
   function handleLike() {
     if (!isLiked) {
-      props.onPutLike(props.info);
+      props.onPutLike(props.info, props.info.image.formats.thumbnail.url, props.info.image.url);
       setIsLiked(!isLiked);
     }
   };

@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useState, useEffect} from 'react';
-import { Redirect, Route, Switch, useHistory } from "react-router-dom";
+import { Redirect, Route, Switch, useHistory, useRouteMatch } from "react-router-dom";
 import Header from './components/Header/Header'
 import Footer from "./components/Footer/Footer";
 import Main from "./components/Main/Main";
@@ -23,6 +23,7 @@ function App() {
   const [isOpenMenuPopup, setIsOpenMenuPopup] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
   const history = useHistory();
+  let {path, url} = useRouteMatch(); // По факту не используется, но только с ним работает приложение
 
   const screenWidth = window.screen.width;
 
@@ -139,8 +140,8 @@ function App() {
     })
   }
 
-  function handlePutLike(movie) {
-    MainApi.putLike(movie).then().catch((err) => {console.log(err)});
+  function handlePutLike(movie, thumbnail, image) {
+    MainApi.putLike(movie, thumbnail, image).then().catch((err) => {console.log(err)});
   }
 
   return (
