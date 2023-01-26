@@ -87,7 +87,7 @@ class MainApi {
     return fetch(`${this._baseUrl}/movies`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
       credentials: 'include',
       body: JSON.stringify({
@@ -103,7 +103,7 @@ class MainApi {
         thumbnail,
         movieId,
       })
-    })
+    }).then(res => this._getResponseData(res));
   }
 }
 
