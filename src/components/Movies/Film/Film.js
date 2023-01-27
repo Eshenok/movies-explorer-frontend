@@ -15,10 +15,12 @@ export default function Film(props) {
         setIslIked(true);
       }
     })
-  })
+  }, [props.savedMovies])
 
   if (isLiked) {
     likeClasses.push('button_icon_like-active');
+  } else {
+    likeClasses.push('');
   }
 
   function handleLike() {
