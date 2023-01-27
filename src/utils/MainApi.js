@@ -106,6 +106,26 @@ class MainApi {
       })
     }).then(res => this._getResponseData(res));
   }
+
+  getSavedMovies() {
+    return fetch(`${this._baseUrl}/movies`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include'
+    }).then(res => this._getResponseData(res));
+  }
+
+  removeSavedMovie(id) {
+    return fetch(`${this._baseUrl}/movies/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include'
+    }).then(res => this._getResponseData(res))
+  }
 }
 
 export default new MainApi({

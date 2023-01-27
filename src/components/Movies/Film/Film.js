@@ -1,23 +1,35 @@
 import Button from "../../Button/Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Route } from "react-router-dom";
 
 export default function Film(props) {
 
-  const [isLiked, setIsLiked] = useState(false);
+  const [isLiked, setIslIked] = useState(false);
+  const [movieId, setMovieId] = useState('');
   const likeClasses = ['button button_icon_like button_place_film'];
 
-
-  function handleLike() {
-    if (!isLiked) {
-      props.onPutLike(props.info, props.info.image.formats.thumbnail.url, props.info.image.url);
-      setIsLiked(!isLiked);
-    }
-  };
+  useEffect(() => {
+    props.savedMovies.forEach((elem) => {
+      if (props.currentMovie.id === elem.movieId) {
+        setMovieId(elem._id);
+        setIslIked(true);
+      }
+    })
+  })
 
   if (isLiked) {
     likeClasses.push('button_icon_like-active');
   }
+
+  function handleLike() {
+    if (!isLiked) {
+      props.onPutLike(props.currentMovie, props.currentMovie.image.formats.thumbnail.url, props.currentMovie.image.url);
+      setIslIked(true);
+    } else {
+      props.onRemoveLike(movieId);
+      setIslIked(false);
+    }
+  };
 
   function mathTime(duration) {
     return `${duration/60 > 0 ? `${Math.floor(duration/60)} ч ${duration%60 === 0 ? '' : `${duration - Math.floor(duration/60)*60} м`}` : `${duration} м`}`

@@ -5,14 +5,14 @@ export default function Search() {
   return (
     <section className="search">
       <form className="search__form">
-        <div className="search__input-container">
+        <fieldset className="search__input-container">
           <Input
             className="input input_type_search"
             placeholder="Фильм"
             required={true}
           />
           <Button className={"button button_icon_search"} />
-        </div>
+        </fieldset>
 
         <div className="search__toggle">
           <Input

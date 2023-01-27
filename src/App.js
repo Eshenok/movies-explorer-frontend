@@ -18,6 +18,8 @@ function App() {
   const [filmsQuantity, setFilmsQuantity] = useState(0);
   const [currentUser, setCurrentUser] = useState({});
   const [movies, setMovies] = useState([]);
+  const [savedMovies, setSavedMovies] = useState([]);
+  const [savedMovie, setSavedMovie] = useState('');
   const [header, setHeader] = useState(true);
   const [footer, setFooter] = useState(true);
   const [isOpenMenuPopup, setIsOpenMenuPopup] = useState(false);
@@ -41,6 +43,9 @@ function App() {
     MoviesApi.getMovies().then((res) => {
       setMovies(res);
     }).catch((err) => {console.log(err)})
+    MainApi.getSavedMovies().then((res) => {
+      setSavedMovies(res);
+    }).catch((err) => {console.log(err)})
   },[])
 
   useEffect(() => {
@@ -59,20 +64,6 @@ function App() {
       }
     })
   })
-
-  /*
-   * Автологон.
-   * Если нет корректной куки выкинет на главную страницу.
-   * Повторное срабатывание только при перезагрузке страницы.
-   */
-  // useEffect(() => {
-  //   MainApi.getCurrentUser().then((res) => {
-  //     setCurrentUser(res);
-  //     setLoggedIn(true);
-  //   }).catch((err) => {
-  //     history.push('/')
-  //   })
-  // }, [])
 
   /*
    * Функции не отвечающие за работу Api
@@ -141,7 +132,17 @@ function App() {
   }
 
   function handlePutLike(movie, thumbnail, image) {
-    MainApi.putLike(movie, thumbnail, image).then().catch((err) => {console.log(err)});
+    MainApi.putLike(movie, thumbnail, image).then((res) => {
+      setSavedMovies([...savedMovies, res]);
+    }).catch((err) => {console.log(err)});
+  }
+
+  function handleRemoveLike(id) {
+    MainApi.removeSavedMovie(id).then((res) => {
+      setSavedMovies(savedMovies.map((elem) => {
+        return elem.id !== res.movieId
+      }))
+    })
   }
 
   return (
@@ -161,7 +162,14 @@ function App() {
         </Route>
 
         <Route path="/movies">
-          <Movies movies={movies} filmsQuantity={filmsQuantity} onMoreButton={handleMoreButton} onPutLike={handlePutLike} />
+          <Movies
+            movies={movies}
+            savedMovies={savedMovies}
+            filmsQuantity={filmsQuantity}
+            onMoreButton={handleMoreButton}
+            onPutLike={handlePutLike}
+            onRemoveLike={handleRemoveLike}
+          />
         </Route>
 
         <Route path="/saved-movies">

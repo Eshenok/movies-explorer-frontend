@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="make views movies + putLike">
+    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="CORS - dislike + make putLike!!!!!!!!!!!!!!!!!!!!!!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Movies/Film/Film.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Film/Film.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Movies/Films/Films.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Films/Films.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Movies/Search/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Search/Search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Movies/Search/styles/__input-container/search__input-container.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Search/styles/__input-container/search__input-container.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/MainApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/MainApi.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +44,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Eshenok/Documents/dev/express-mesto-gha",
+    "last_opened_file_path": "C:/Users/Eshenok/Documents/dev/movies-explorer-frontend",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -125,7 +128,11 @@
       <workItem from="1674572388683" duration="15184000" />
       <workItem from="1674669783369" duration="5507000" />
       <workItem from="1674727566741" duration="67000" />
-      <workItem from="1674737967924" duration="13076000" />
+      <workItem from="1674737967924" duration="13450000" />
+      <workItem from="1674756942296" duration="583000" />
+      <workItem from="1674812560593" duration="597000" />
+      <workItem from="1674819982277" duration="123000" />
+      <workItem from="1674830967319" duration="13771000" />
     </task>
     <task id="LOCAL-00001" summary="make react app">
       <created>1671878434229</created>
@@ -435,7 +442,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674743279517</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="CORS - dislike + make putLike!!!!!!!!!!!!!!!!!!!!!!">
+      <created>1674755869235</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1674755869235</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -453,7 +467,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="make films 320px 50%" />
     <MESSAGE value="make search" />
     <MESSAGE value="make films all disp" />
     <MESSAGE value="make profile all disp" />
@@ -478,6 +491,7 @@
     <MESSAGE value="lang" />
     <MESSAGE value="make signin/up/out + autologon + preload movies" />
     <MESSAGE value="make views movies + putLike" />
-    <option name="LAST_COMMIT_MESSAGE" value="make views movies + putLike" />
+    <MESSAGE value="CORS - dislike + make putLike!!!!!!!!!!!!!!!!!!!!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="CORS - dislike + make putLike!!!!!!!!!!!!!!!!!!!!!!" />
   </component>
 </project>
