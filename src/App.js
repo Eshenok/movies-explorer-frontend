@@ -19,7 +19,6 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [movies, setMovies] = useState([]);
   const [savedMovies, setSavedMovies] = useState([]);
-  const [savedMovie, setSavedMovie] = useState('');
   const [header, setHeader] = useState(true);
   const [footer, setFooter] = useState(true);
   const [isOpenMenuPopup, setIsOpenMenuPopup] = useState(false);
@@ -139,10 +138,17 @@ function App() {
 
   function handleRemoveLike(id) {
     MainApi.removeSavedMovie(id).then((res) => {
-      setSavedMovies(savedMovies.map((elem) => {
-        return elem.id !== res.movieId
-      }))
+      setSavedMovies(savedMovies.filter((elem) => elem.movieId !== res.movieId ? elem : false))
     })
+  }
+
+  function handleSearchMovie(moviesArr, query, isShorts) {
+    setMovies(moviesArr.filter((movie) => {
+      return movie.nameRU.includes(query) && isShorts ? movie
+        : movie.nameRU.includes(query) && !isShorts && movie.duration > 40
+          ? movie : false
+    })
+    )
   }
 
   return (
@@ -163,6 +169,8 @@ function App() {
 
         <Route path="/movies">
           <Movies
+            history={history}
+            onSearch={handleSearchMovie}
             movies={movies}
             savedMovies={savedMovies}
             filmsQuantity={filmsQuantity}
@@ -173,7 +181,15 @@ function App() {
         </Route>
 
         <Route path="/saved-movies">
-          <Movies />
+          <Movies
+            history={history}
+            onSearch={handleSearchMovie}
+            movies={movies}
+            savedMovies={savedMovies}
+            filmsQuantity={filmsQuantity}
+            onMoreButton={handleMoreButton}
+            onRemoveLike={handleRemoveLike}
+          />
         </Route>
 
         <Route path="/profile">

@@ -11,16 +11,19 @@ export default function Film(props) {
   useEffect(() => {
     props.savedMovies.forEach((elem) => {
       if (props.currentMovie.id === elem.movieId) {
-        setMovieId(elem._id);
         setIslIked(true);
       }
+      setMovieId(elem._id);
     })
   }, [props.savedMovies])
 
   if (isLiked) {
     likeClasses.push('button_icon_like-active');
-  } else {
-    likeClasses.push('');
+  }
+
+  function handleRemoveLike() {
+    props.onRemoveLike(movieId);
+    setIslIked(false);
   }
 
   function handleLike() {
@@ -28,8 +31,7 @@ export default function Film(props) {
       props.onPutLike(props.currentMovie, props.currentMovie.image.formats.thumbnail.url, props.currentMovie.image.url);
       setIslIked(true);
     } else {
-      props.onRemoveLike(movieId);
-      setIslIked(false);
+      handleRemoveLike();
     }
   };
 
@@ -47,7 +49,7 @@ export default function Film(props) {
         </Route>
 
         <Route path="/saved-movies">
-          <Button className="button button_icon_remove button_place_film" />
+          <Button className="button button_icon_remove button_place_film" onClick={handleRemoveLike}/>
         </Route>
       </div>
       <img src={`https://api.nomoreparties.co${props.url}`} alt="Карточка фильма" className='film__image'/>

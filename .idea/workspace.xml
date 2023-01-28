@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="CORS - dislike + make putLike!!!!!!!!!!!!!!!!!!!!!!">
+    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="make putLike + remove like, no lags">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Movies/Film/Film.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Film/Film.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Movies/Film/styles/__image/film__image.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Film/styles/__image/film__image.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Movies/Films/Films.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Films/Films.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Movies/Films/styles/__container/films__container.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Films/styles/__container/films__container.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Movies/Movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Movies.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Movies/Search/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Search/Search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Movies/Search/styles/__input-container/search__input-container.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Search/styles/__input-container/search__input-container.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/MainApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/MainApi.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,20 +40,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Eshenok/Documents/dev/movies-explorer-frontend",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Eshenok/Documents/dev/movies-explorer-frontend&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Eshenok\Documents\dev\movies-explorer-frontend\public" />
@@ -132,7 +133,8 @@
       <workItem from="1674756942296" duration="583000" />
       <workItem from="1674812560593" duration="597000" />
       <workItem from="1674819982277" duration="123000" />
-      <workItem from="1674830967319" duration="13771000" />
+      <workItem from="1674830967319" duration="13985000" />
+      <workItem from="1674904790499" duration="10819000" />
     </task>
     <task id="LOCAL-00001" summary="make react app">
       <created>1671878434229</created>
@@ -449,7 +451,21 @@
       <option name="project" value="LOCAL" />
       <updated>1674755869235</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="make putLike + remove like, but lags">
+      <created>1674849468401</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1674849468401</updated>
+    </task>
+    <task id="LOCAL-00047" summary="make putLike + remove like, no lags">
+      <created>1674849657514</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1674849657514</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,8 +483,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="make search" />
-    <MESSAGE value="make films all disp" />
     <MESSAGE value="make profile all disp" />
     <MESSAGE value="make NotFound all disp" />
     <MESSAGE value="refactor v1.0 make links(Routes)" />
@@ -492,6 +506,8 @@
     <MESSAGE value="make signin/up/out + autologon + preload movies" />
     <MESSAGE value="make views movies + putLike" />
     <MESSAGE value="CORS - dislike + make putLike!!!!!!!!!!!!!!!!!!!!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="CORS - dislike + make putLike!!!!!!!!!!!!!!!!!!!!!!" />
+    <MESSAGE value="make putLike + remove like, but lags" />
+    <MESSAGE value="make putLike + remove like, no lags" />
+    <option name="LAST_COMMIT_MESSAGE" value="make putLike + remove like, no lags" />
   </component>
 </project>
