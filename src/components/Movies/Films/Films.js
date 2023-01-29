@@ -2,12 +2,12 @@ import Film from "../Film/Film";
 import Button from "../../Button/Button";
 import { Route } from "react-router-dom";
 
-export default function Films({ movies, savedMovies, filmsQuantity, onMoreButton, onPutLike, onRemoveLike }) {
+export default function Films({ moviesArr, filmsQuantity, onMoreButton, onPutLike, onRemoveLike, savedMovies }) {
   return (
     <section className="films">
       <div className="films__container">
         <Route path="/movies">
-          {movies.map((movie, index) =>
+          {moviesArr.map((movie, index) =>
             index < filmsQuantity && (
               <Film
                 key={movie.id}
@@ -22,7 +22,7 @@ export default function Films({ movies, savedMovies, filmsQuantity, onMoreButton
             ))}
         </Route>
         <Route path="/saved-movies">
-          {savedMovies.map((movie, index) =>
+          {moviesArr.map((movie, index) =>
             index < filmsQuantity && (
               <Film
                 key={movie.id}

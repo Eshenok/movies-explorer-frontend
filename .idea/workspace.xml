@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="make putLike + remove like, no lags">
+    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="make saved-movies + search v1.0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Movies/Film/Film.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Film/Film.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Movies/Film/styles/__image/film__image.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Film/styles/__image/film__image.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Movies/Films/Films.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Films/Films.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Movies/Films/styles/__container/films__container.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Films/styles/__container/films__container.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Movies/Movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Movies.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Movies/Search/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Search/Search.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +130,8 @@
       <workItem from="1674812560593" duration="597000" />
       <workItem from="1674819982277" duration="123000" />
       <workItem from="1674830967319" duration="13985000" />
-      <workItem from="1674904790499" duration="10819000" />
+      <workItem from="1674904790499" duration="10881000" />
+      <workItem from="1674973073215" duration="7595000" />
     </task>
     <task id="LOCAL-00001" summary="make react app">
       <created>1671878434229</created>
@@ -465,7 +462,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674849657514</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="make saved-movies + search v1.0">
+      <created>1674933878763</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1674933878763</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -483,7 +487,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="make profile all disp" />
     <MESSAGE value="make NotFound all disp" />
     <MESSAGE value="refactor v1.0 make links(Routes)" />
     <MESSAGE value="make popup + open all disp;" />
@@ -508,6 +511,7 @@
     <MESSAGE value="CORS - dislike + make putLike!!!!!!!!!!!!!!!!!!!!!!" />
     <MESSAGE value="make putLike + remove like, but lags" />
     <MESSAGE value="make putLike + remove like, no lags" />
-    <option name="LAST_COMMIT_MESSAGE" value="make putLike + remove like, no lags" />
+    <MESSAGE value="make saved-movies + search v1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="make saved-movies + search v1.0" />
   </component>
 </project>

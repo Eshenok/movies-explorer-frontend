@@ -19,6 +19,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [movies, setMovies] = useState([]);
   const [savedMovies, setSavedMovies] = useState([]);
+  const [foundMovies, setFoundMovies] = useState([]);
   const [header, setHeader] = useState(true);
   const [footer, setFooter] = useState(true);
   const [isOpenMenuPopup, setIsOpenMenuPopup] = useState(false);
@@ -143,9 +144,9 @@ function App() {
   }
 
   function handleSearchMovie(moviesArr, query, isShorts) {
-    setMovies(moviesArr.filter((movie) => {
-      return movie.nameRU.includes(query) && isShorts ? movie
-        : movie.nameRU.includes(query) && !isShorts && movie.duration > 40
+    setFoundMovies(moviesArr.filter((movie) => {
+      return movie.nameRU.toUpperCase().includes(query.toUpperCase()) && isShorts ? movie
+        : movie.nameRU.toUpperCase().includes(query.toUpperCase()) && !isShorts && movie.duration > 40
           ? movie : false
     })
     )
@@ -173,6 +174,7 @@ function App() {
             onSearch={handleSearchMovie}
             movies={movies}
             savedMovies={savedMovies}
+            foundMovies={foundMovies}
             filmsQuantity={filmsQuantity}
             onMoreButton={handleMoreButton}
             onPutLike={handlePutLike}
@@ -186,6 +188,7 @@ function App() {
             onSearch={handleSearchMovie}
             movies={movies}
             savedMovies={savedMovies}
+            foundMovies={foundMovies}
             filmsQuantity={filmsQuantity}
             onMoreButton={handleMoreButton}
             onRemoveLike={handleRemoveLike}
@@ -197,7 +200,7 @@ function App() {
         </Route>
 
         <Route path="*">
-          <NotFound />
+          <NotFound history={history}/>
         </Route>
       </Switch>
       {footer ? <Footer /> : <></>}
