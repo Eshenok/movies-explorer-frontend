@@ -7,11 +7,6 @@ export default function Movies({ history, onSearch, movies, savedMovies, foundMo
   const [isSearch, setIsSearch] = useState(false);
   const [moviesArr, setMoviesArr] = useState([]);
 
-  function showFoundMovies(moviesArr, query, isShorts) {
-    setIsSearch(true);
-    onSearch(moviesArr, query, isShorts);
-  }
-
   useEffect(() => {
     if (!isSearch && history.location.pathname === '/movies') {
       setMoviesArr(movies);
@@ -22,10 +17,18 @@ export default function Movies({ history, onSearch, movies, savedMovies, foundMo
     }
   })
 
+  function showFoundMovies(moviesArr, query, isShorts) {
+    setIsSearch(true);
+    onSearch(moviesArr, query, isShorts);
+  }
+
+  function clearSearch() {
+    setIsSearch(false);
+  }
 
   return (
     <main className="movies">
-      <Search onSearch={showFoundMovies} movies={movies} savedMovies={savedMovies} history={history}/>
+      <Search onSearch={showFoundMovies} onClear={clearSearch} movies={movies} savedMovies={savedMovies} history={history}/>
       <Films
         savedMovies={savedMovies}
         moviesArr={moviesArr}
@@ -33,6 +36,7 @@ export default function Movies({ history, onSearch, movies, savedMovies, foundMo
         onMoreButton={onMoreButton}
         onPutLike={onPutLike}
         onRemoveLike={onRemoveLike}
+        history={history}
       />
     </main>
   )

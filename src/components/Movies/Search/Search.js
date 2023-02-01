@@ -1,20 +1,27 @@
 import Button from "../../Button/Button";
 import { Input } from "../../Input/Input";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function Search({ onSearch, movies, savedMovies, history }) {
+export default function Search({ onSearch, onClear, movies, savedMovies, history }) {
 
   const [searchQuery, setSearchQuery] = useState('');
   const [isShorts, setIsShorts] = useState(false);
 
   function handleSearch(e) {
     e.preventDefault();
-    if (history.location.pathname === '/movies') {
+    if (searchQuery === '') {
+      onClear();
+    } else if (history.location.pathname === '/movies') {
       onSearch(movies, searchQuery, isShorts)
     } else {
       onSearch(savedMovies, searchQuery, isShorts)
     }
   }
+
+  useEffect(() => {
+    setSearchQuery('');
+    onClear();
+  }, [history.location.pathname]);
 
   return (
     <section className="search">
@@ -23,7 +30,6 @@ export default function Search({ onSearch, movies, savedMovies, history }) {
           <Input
             className="input input_type_search"
             placeholder="Фильм"
-            required={true}
             value={searchQuery}
             onChange={(e) => {setSearchQuery(e.target.value)}}
           />

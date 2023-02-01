@@ -4,32 +4,35 @@ import { Route } from "react-router-dom";
 
 export default function Film(props) {
 
-  const [isLiked, setIslIked] = useState(false);
-  const [movieId, setMovieId] = useState('');
+  const [isLiked, setIslIked] = useState('');
+
+  let movieId;
   const likeClasses = ['button button_icon_like button_place_film'];
 
   useEffect(() => {
     props.savedMovies.forEach((elem) => {
-      if (props.currentMovie.id === elem.movieId) {
-        setIslIked(true);
+      if (props.history.location.pathname === '/saved-movies') {
+        setIslIked(props.currentMovie._id);
+      } else {
+        if (props.currentMovie.id === elem.movieId) {
+          setIslIked(elem._id)
+        }
       }
-      setMovieId(elem._id);
     })
   }, [props.savedMovies])
 
-  if (isLiked) {
+  if (isLiked !== "") {
     likeClasses.push('button_icon_like-active');
   }
 
   function handleRemoveLike() {
     props.onRemoveLike(movieId);
-    setIslIked(false);
+    setIslIked("");
   }
 
   function handleLike() {
     if (!isLiked) {
       props.onPutLike(props.currentMovie, props.currentMovie.image.formats.thumbnail.url, props.currentMovie.image.url);
-      setIslIked(true);
     } else {
       handleRemoveLike();
     }

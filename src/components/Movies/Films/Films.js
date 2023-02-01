@@ -2,7 +2,7 @@ import Film from "../Film/Film";
 import Button from "../../Button/Button";
 import { Route } from "react-router-dom";
 
-export default function Films({ moviesArr, filmsQuantity, onMoreButton, onPutLike, onRemoveLike, savedMovies }) {
+export default function Films({ moviesArr, filmsQuantity, onMoreButton, onPutLike, onRemoveLike, savedMovies, history }) {
   return (
     <section className="films">
       <div className="films__container">
@@ -18,6 +18,7 @@ export default function Films({ moviesArr, filmsQuantity, onMoreButton, onPutLik
                 onPutLike={onPutLike}
                 savedMovies={savedMovies}
                 onRemoveLike={onRemoveLike}
+                history={history}
               />
             ))}
         </Route>
@@ -32,6 +33,7 @@ export default function Films({ moviesArr, filmsQuantity, onMoreButton, onPutLik
                 currentMovie={movie}
                 savedMovies={savedMovies}
                 onRemoveLike={onRemoveLike}
+                history={history}
               />
             ))}
         </Route>
