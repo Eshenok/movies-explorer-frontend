@@ -153,10 +153,9 @@ function App() {
   }
 
   function handleRemoveLike(id) {
-    setPreload(true);
     MainApi.removeSavedMovie(id).then((res) => {
       setSavedMovies(savedMovies.filter((elem) => elem.movieId !== res.movieId ? elem : false))
-    }).catch((err) => {console.log(err)}).finally(() => {setPreload(false)});
+    }).catch((err) => {console.log(err)})
   }
 
   function handleSearchMovie(moviesArr, query, isShorts) {

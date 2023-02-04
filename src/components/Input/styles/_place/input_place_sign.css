@@ -22,7 +22,3 @@
 	line-height: 16px;
 	color: var(--font-colorGrey);
 }
-
-.input_place_sign:focus {
-	outline: 1px solid var(--border-colorGrey);
-}

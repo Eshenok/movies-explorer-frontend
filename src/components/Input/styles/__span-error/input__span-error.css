@@ -1,8 +1,8 @@
 .input__span-error {
 	display: block;
-	visibility: hidden;
 	margin-top: 10px;
 	word-wrap: break-word;
+	height: 24px;
 	/*Шрифт*/
 	font-family: 'Inter', Arial, sans-serif;
 	font-style: normal;
