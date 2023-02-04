@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="not worked build)">
-      <change afterPath="$PROJECT_DIR$/src/components/ProtectedRoute/ProtectedRoute.js" afterDir="false" />
+    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="Work build v1.0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Movies/Film/Film.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Film/Film.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Movies/Films/Films.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Films/Films.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/MainApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/MainApi.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,14 +147,7 @@
       <workItem from="1675247688480" duration="14184000" />
       <workItem from="1675349476971" duration="3194000" />
       <workItem from="1675409251191" duration="3834000" />
-      <workItem from="1675508064017" duration="9487000" />
-    </task>
-    <task id="LOCAL-00002" summary="html main page">
-      <created>1671891613032</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1671891613032</updated>
+      <workItem from="1675508064017" duration="13924000" />
     </task>
     <task id="LOCAL-00003" summary="make hero + navTab">
       <created>1671911585422</created>
@@ -496,7 +485,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675273462723</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Work build v1.0">
+      <created>1675519662255</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1675519662256</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -514,7 +510,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="make popup + open all disp;" />
     <MESSAGE value="make anchor" />
     <MESSAGE value="make scrollBlock" />
     <MESSAGE value="make saved-movies + currentlink popup" />
@@ -539,6 +534,7 @@
     <MESSAGE value="make saved-movies + search v1.0" />
     <MESSAGE value="make search v1.0" />
     <MESSAGE value="not worked build)" />
-    <option name="LAST_COMMIT_MESSAGE" value="not worked build)" />
+    <MESSAGE value="Work build v1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Work build v1.0" />
   </component>
 </project>

@@ -13,6 +13,7 @@ import MainApi from "./utils/MainApi";
 import MoviesApi from "./utils/MoviesApi";
 import { CurrentUserContext } from "./contexts/CurrentUserContext";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+import Preloader from "./components/Preloader/Preloader";
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
   const [footer, setFooter] = useState(true);
   const [isOpenMenuPopup, setIsOpenMenuPopup] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
+  const [preload, setPreload] = useState(false);
   const history = useHistory();
   let {path, url} = useRouteMatch(); // По факту не используется, но только с ним работает приложение
 
@@ -41,20 +43,23 @@ function App() {
   }, [history.location.pathname])
 
   useEffect(() => {
-    MoviesApi.getMovies().then((res) => {
-      setMovies(res);
-    }).catch((err) => {console.log(err)})
-    MainApi.getSavedMovies().then((res) => {
-      setSavedMovies(res);
-    }).catch((err) => {console.log(err)})
-  },[])
+    if (loggedIn) {
+      setPreload(true);
+      Promise.all([MainApi.getSavedMovies(), MoviesApi.getMovies()])
+        .then((values) => {
+          setSavedMovies(values[0]);
+          setMovies(values[1]);
+        }).catch((err) => {console.log(err)}).finally(() => {setPreload(false)})
+    }
+  },[loggedIn])
 
   useEffect(() => {
+    setPreload(true);
     MainApi.getCurrentUser().then((res) => {
       setCurrentUser(res);
       setLoggedIn(true);
       history.push("/movies");
-    }).catch((err) => {console.log(err)})
+    }).catch((err) => {console.log(err)}).finally(() => {setPreload(false)})
   }, [])
 
   useEffect(() => {
@@ -126,10 +131,11 @@ function App() {
   }
 
   function handleUpdateUser(name, email) {
+    setPreload(true);
     MainApi.updateUser(name, email).then((res) => {
       setCurrentUser(res);
       history.push('/movies');
-    }).catch((err) => {console.log(err)})
+    }).catch((err) => {console.log(err)}).finally(() => {setPreload(false)});
   }
 
   function handleSignOut() {
@@ -147,18 +153,21 @@ function App() {
   }
 
   function handleRemoveLike(id) {
+    setPreload(true);
     MainApi.removeSavedMovie(id).then((res) => {
       setSavedMovies(savedMovies.filter((elem) => elem.movieId !== res.movieId ? elem : false))
-    })
+    }).catch((err) => {console.log(err)}).finally(() => {setPreload(false)});
   }
 
   function handleSearchMovie(moviesArr, query, isShorts) {
+    setPreload(true);
     setFoundMovies(moviesArr.filter((movie) => {
       return movie.nameRU.toUpperCase().includes(query.toUpperCase()) && isShorts ? movie
         : movie.nameRU.toUpperCase().includes(query.toUpperCase()) && !isShorts && movie.duration > 40
           ? movie : false
     })
     )
+    setPreload(false);
   }
 
   return (
@@ -179,6 +188,7 @@ function App() {
           onRemoveLike={handleRemoveLike}
           loggedIn={loggedIn}
         />
+
         <ProtectedRoute
           path="/saved-movies"
           component={Movies}
@@ -192,6 +202,7 @@ function App() {
           onRemoveLike={handleRemoveLike}
           loggedIn={loggedIn}
         />
+
         <ProtectedRoute
           path="/profile"
           component={Profile}
@@ -211,28 +222,13 @@ function App() {
           <Sign onSubmit={handleSignIn} history={history} title={'Рады видеть!'} buttonTitle={'Войти'}/>
         </Route>
 
-        {/*<Route path="/movies">*/}
-        {/*  <Movies*/}
-
-        {/*  />*/}
-        {/*</Route>*/}
-
-        {/*<Route path="/saved-movies">*/}
-        {/*  <Movies*/}
-        {/*    */}
-        {/*  />*/}
-        {/*</Route>*/}
-
-        {/*<Route path="/profile">*/}
-        {/*  <Profile onSubmit={handleUpdateUser} onExit={handleSignOut}/>*/}
-        {/*</Route>*/}
-
         <Route path="*">
           <NotFound history={history}/>
         </Route>
       </Switch>
       {footer ? <Footer /> : <></>}
       <MenuPopup isOpen={isOpenMenuPopup} onClose={closeAllPopups} history={history} />
+      {preload ? <Preloader /> : <></>}
     </CurrentUserContext.Provider>
   );
 }
