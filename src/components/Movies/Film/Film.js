@@ -2,37 +2,37 @@ import Button from "../../Button/Button";
 import { useEffect, useState } from "react";
 import { Route } from "react-router-dom";
 
-export default function Film(props) {
+export default function Film({ name, url, duration, currentMovie, onPutLike, savedMovies, onRemoveLike }) {
 
-  const [isLiked, setIslIked] = useState('');
-
-  let movieId;
+  const [isLiked, setIslIked] = useState(false);
   const likeClasses = ['button button_icon_like button_place_film'];
 
   useEffect(() => {
-    props.savedMovies.forEach((elem) => {
-      if (props.history.location.pathname === '/saved-movies') {
-        setIslIked(props.currentMovie._id);
-      } else {
-        if (props.currentMovie.id === elem.movieId) {
-          setIslIked(elem._id)
-        }
+    savedMovies.forEach((movie) => {
+      if (movie.movieId == currentMovie.id || movie.movieId == currentMovie.movieId) {
+        setIslIked(true);
       }
     })
-  }, [props.savedMovies])
+  }, [savedMovies]);
 
-  if (isLiked !== "") {
+  if (isLiked) {
     likeClasses.push('button_icon_like-active');
   }
 
   function handleRemoveLike() {
-    props.onRemoveLike(movieId);
-    setIslIked("");
+    let mongoId;
+    savedMovies.forEach((movie) => {
+      if (movie.movieId == currentMovie.id || movie.movieId == currentMovie.movieId) {
+        mongoId = movie._id;
+      }
+    })
+    onRemoveLike(mongoId);
+    setIslIked(false);
   }
 
   function handleLike() {
     if (!isLiked) {
-      props.onPutLike(props.currentMovie, props.currentMovie.image.formats.thumbnail.url, props.currentMovie.image.url);
+      onPutLike(currentMovie, currentMovie.image.formats.thumbnail.url, currentMovie.image.url);
     } else {
       handleRemoveLike();
     }
@@ -45,8 +45,8 @@ export default function Film(props) {
   return (
     <div className="film">
       <div className="film__header">
-        <h2 className="film__title">{props.name}</h2>
-        <p className="film__time">{mathTime(props.duration)}</p>
+        <h2 className="film__title">{name}</h2>
+        <p className="film__time">{mathTime(duration)}</p>
         <Route path="/movies">
           <Button className={likeClasses.join(' ')} onClick={handleLike} />
         </Route>
@@ -55,7 +55,7 @@ export default function Film(props) {
           <Button className="button button_icon_remove button_place_film" onClick={handleRemoveLike}/>
         </Route>
       </div>
-      <img src={`https://api.nomoreparties.co${props.url}`} alt="Карточка фильма" className='film__image'/>
+      <img src={`https://api.nomoreparties.co${url}`} alt="Карточка фильма" className='film__image'/>
     </div>
   )
 }

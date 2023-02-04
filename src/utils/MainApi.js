@@ -68,7 +68,8 @@ class MainApi {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
-      }
+      },
+      credentials: 'include'
     }).then(res => this._getResponseData(res))
   }
 

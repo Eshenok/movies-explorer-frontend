@@ -12,6 +12,7 @@ import MenuPopup from "./components/Popups/MenuPopup/MenuPopup";
 import MainApi from "./utils/MainApi";
 import MoviesApi from "./utils/MoviesApi";
 import { CurrentUserContext } from "./contexts/CurrentUserContext";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 
 function App() {
 
@@ -37,7 +38,7 @@ function App() {
     } else {
       setFilmsQuantity(12);
     }
-  }, [])
+  }, [history.location.pathname])
 
   useEffect(() => {
     MoviesApi.getMovies().then((res) => {
@@ -47,6 +48,14 @@ function App() {
       setSavedMovies(res);
     }).catch((err) => {console.log(err)})
   },[])
+
+  useEffect(() => {
+    MainApi.getCurrentUser().then((res) => {
+      setCurrentUser(res);
+      setLoggedIn(true);
+      history.push("/movies");
+    }).catch((err) => {console.log(err)})
+  }, [])
 
   useEffect(() => {
     /*Прослушка истории и при ее изменении проверяем необходимость footer и header*/
@@ -156,6 +165,40 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
       {header ? <Header onMenuPopup={handleOpenMenuPopup} loggedIn={loggedIn} /> : <></>}
       <Switch>
+        <ProtectedRoute
+          path="/movies"
+          component={Movies}
+          history={history}
+          onSearch={handleSearchMovie}
+          movies={movies}
+          savedMovies={savedMovies}
+          foundMovies={foundMovies}
+          filmsQuantity={filmsQuantity}
+          onMoreButton={handleMoreButton}
+          onPutLike={handlePutLike}
+          onRemoveLike={handleRemoveLike}
+          loggedIn={loggedIn}
+        />
+        <ProtectedRoute
+          path="/saved-movies"
+          component={Movies}
+          history={history}
+          onSearch={handleSearchMovie}
+          movies={movies}
+          savedMovies={savedMovies}
+          foundMovies={foundMovies}
+          filmsQuantity={filmsQuantity}
+          onMoreButton={handleMoreButton}
+          onRemoveLike={handleRemoveLike}
+          loggedIn={loggedIn}
+        />
+        <ProtectedRoute
+          path="/profile"
+          component={Profile}
+          onSubmit={handleUpdateUser}
+          onExit={handleSignOut}
+          loggedIn={loggedIn}
+        />
         <Route exact path="/">
           <Main />
         </Route>
@@ -168,36 +211,21 @@ function App() {
           <Sign onSubmit={handleSignIn} history={history} title={'Рады видеть!'} buttonTitle={'Войти'}/>
         </Route>
 
-        <Route path="/movies">
-          <Movies
-            history={history}
-            onSearch={handleSearchMovie}
-            movies={movies}
-            savedMovies={savedMovies}
-            foundMovies={foundMovies}
-            filmsQuantity={filmsQuantity}
-            onMoreButton={handleMoreButton}
-            onPutLike={handlePutLike}
-            onRemoveLike={handleRemoveLike}
-          />
-        </Route>
+        {/*<Route path="/movies">*/}
+        {/*  <Movies*/}
 
-        <Route path="/saved-movies">
-          <Movies
-            history={history}
-            onSearch={handleSearchMovie}
-            movies={movies}
-            savedMovies={savedMovies}
-            foundMovies={foundMovies}
-            filmsQuantity={filmsQuantity}
-            onMoreButton={handleMoreButton}
-            onRemoveLike={handleRemoveLike}
-          />
-        </Route>
+        {/*  />*/}
+        {/*</Route>*/}
 
-        <Route path="/profile">
-          <Profile onSubmit={handleUpdateUser} onExit={handleSignOut}/>
-        </Route>
+        {/*<Route path="/saved-movies">*/}
+        {/*  <Movies*/}
+        {/*    */}
+        {/*  />*/}
+        {/*</Route>*/}
+
+        {/*<Route path="/profile">*/}
+        {/*  <Profile onSubmit={handleUpdateUser} onExit={handleSignOut}/>*/}
+        {/*</Route>*/}
 
         <Route path="*">
           <NotFound history={history}/>

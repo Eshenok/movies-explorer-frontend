@@ -38,7 +38,10 @@ export default function Films({ moviesArr, filmsQuantity, onMoreButton, onPutLik
             ))}
         </Route>
       </div>
-      <Button className="button button_place_films button_theme_grey" name={'Ещё'} onClick={onMoreButton} />
+      {
+        moviesArr.length <= filmsQuantity ?
+          <></> : <Button className="button button_place_films button_theme_grey" name={'Ещё'} onClick={onMoreButton} />
+      }
     </section>
   )
 }
