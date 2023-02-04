@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="make clear page">
+      <change afterPath="$PROJECT_DIR$/src/components/Button/styles/_theme/button_theme_disable.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/useFormWithValidation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Input/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/Input.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Input/styles/__span-error/input__span-error.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/styles/__span-error/input__span-error.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Input/styles/_place/input_place_sign.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/styles/_place/input_place_sign.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Movies/Film/Film.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Film/Film.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sign/Sign.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sign/Sign.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -150,14 +153,7 @@
       <workItem from="1675247688480" duration="14184000" />
       <workItem from="1675349476971" duration="3194000" />
       <workItem from="1675409251191" duration="3834000" />
-      <workItem from="1675508064017" duration="20466000" />
-    </task>
-    <task id="LOCAL-00005" summary="done mobile, start 425px + 768px">
-      <created>1672256256541</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1672256256541</updated>
+      <workItem from="1675508064017" duration="24659000" />
     </task>
     <task id="LOCAL-00006" summary="drop all css">
       <created>1672332050114</created>
@@ -495,7 +491,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675532275639</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="make clear page">
+      <created>1675537222117</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1675537222118</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

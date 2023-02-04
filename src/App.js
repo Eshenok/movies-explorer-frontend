@@ -1,7 +1,7 @@
 import './App.css';
 import React, {useState, useEffect} from 'react';
-import { Redirect, Route, Switch, useHistory, useRouteMatch } from "react-router-dom";
-import Header from './components/Header/Header'
+import { Route, Switch, useHistory, useRouteMatch } from "react-router-dom";
+import Header from './components/Header/Header';
 import Footer from "./components/Footer/Footer";
 import Main from "./components/Main/Main";
 import Sign from "./components/Sign/Sign";
@@ -14,6 +14,7 @@ import MoviesApi from "./utils/MoviesApi";
 import { CurrentUserContext } from "./contexts/CurrentUserContext";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import Preloader from "./components/Preloader/Preloader";
+import { useFormWithValidation } from "./hooks/useFormWithValidation";
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
   let {path, url} = useRouteMatch(); // По факту не используется, но только с ним работает приложение
 
   const screenWidth = window.screen.width;
+  const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
 
   useEffect(() => {
     if (screenWidth < 576) {
@@ -214,11 +216,31 @@ function App() {
         </Route>
 
         <Route path="/signup">
-          <Sign onSubmit={handleSignup} history={history} title={'Добро пожаловать!'} buttonTitle={'Зарегистрироваться'}/>
+          <Sign
+            onSubmit={handleSignup}
+            history={history}
+            title={'Добро пожаловать!'}
+            buttonTitle={'Зарегистрироваться'}
+            handleChange={handleChange}
+            errors={errors}
+            isValid={isValid}
+            resetForm={resetForm}
+            values={values}
+          />
         </Route>
 
         <Route exact path="/signin">
-          <Sign onSubmit={handleSignIn} history={history} title={'Рады видеть!'} buttonTitle={'Войти'}/>
+          <Sign
+            onSubmit={handleSignIn}
+            history={history}
+            title={'Рады видеть!'}
+            buttonTitle={'Войти'}
+            handleChange={handleChange}
+            errors={errors}
+            isValid={isValid}
+            resetForm={resetForm}
+            values={values}
+          />
         </Route>
 
         <Route path="*">

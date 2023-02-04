@@ -5,20 +5,16 @@ import React, { useState } from "react";
 import Button from "../Button/Button";
 
 
-export default function Sign({ onSubmit, history, title, buttonTitle }) {
-
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [pass, setPass] = useState('');
+export default function Sign({ onSubmit, history, title, buttonTitle, handleChange, errors, isValid, resetForm, values }) {
 
   function handleSubmit(e) {
     e.preventDefault();
     if (history.location.pathname === '/signup') {
-      onSubmit(name, email, pass);
-      setPass('');
+      onSubmit(values.input_type_userName, values.input_type_userEmail, values.input_type_userPass);
     } else {
-      onSubmit(email, pass);
+      onSubmit(values.input_type_userEmail, values.input_type_userPass);
     }
+    resetForm();
   }
 
   return (
@@ -39,9 +35,9 @@ export default function Sign({ onSubmit, history, title, buttonTitle }) {
                    maxLength="30"
                    required={true}
                    placeholder="Введите Ваше имя"
-                   value={name}
                    isSpan={true}
-                   onChange={(e) => setName(e.target.value)}
+                   onChange={handleChange}
+                   error={errors.input_type_userName}
             />
           </Route>
 
@@ -56,8 +52,8 @@ export default function Sign({ onSubmit, history, title, buttonTitle }) {
             required={true}
             placeholder="Введите почту"
             isSpan={true}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={handleChange}
+            error={errors.input_type_userEmail}
           />
 
           <label htmlFor="input_type_userPass" className="sign__label">Пароль</label>
@@ -70,12 +66,12 @@ export default function Sign({ onSubmit, history, title, buttonTitle }) {
                  required={true}
                  placeholder="Введите пароль"
                  isSpan={true}
-                 value={pass}
-                 onChange={(e) => setPass(e.target.value)}
+                 onChange={handleChange}
+                 error={errors.input_type_userPass}
           />
         </div>
         <div className="sign__container">
-            <Button type="submit" className="button button_theme_blue button_place_sign" name={buttonTitle} />
+            <Button type="submit" className={`button button_theme_blue button_place_sign ${!isValid ? "button_theme_disable" : ""}`} disabled={isValid ? false : true } name={buttonTitle} />
             <div className="sign__caption">
               <Route path="/signup">
                 <p className="sign__text">Уже зарегистрированы?</p>

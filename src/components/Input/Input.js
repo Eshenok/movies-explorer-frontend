@@ -1,23 +1,11 @@
 import React, { useState } from "react";
 
-export const Input = ({labelText, isSpan, onChange, classes, ...rest }) => {
-
-  const spanClasses = ["input__span-error"];
-  const [error, setError] = useState("");
-
-  function onChanges(e) {
-    onChange(e);
-    if (e.target.validationMessage) {
-      setError(e.target.validationMessage);
-    } else {
-      setError("");
-    }
-  }
+export const Input = ({isSpan, error, ...rest }) => {
 
   return (
     <>
-      <input {...rest} onChange={onChanges}/>
-      {isSpan ? <span className={spanClasses.join(' ')}>{error}</span> : <></>}
+      <input {...rest} />
+      {isSpan ? <span className="input__span-error">{error}</span> : <></>}
     </>
   )
 }

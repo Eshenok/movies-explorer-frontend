@@ -9,7 +9,7 @@ export default function Film({ name, url, duration, currentMovie, onPutLike, sav
 
   useEffect(() => {
     savedMovies.forEach((movie) => {
-      if (movie.movieId == currentMovie.id || movie.movieId == currentMovie.movieId) {
+      if (movie.movieId === currentMovie.id || movie.movieId === currentMovie.movieId) {
         setIslIked(true);
       }
     })
@@ -22,7 +22,7 @@ export default function Film({ name, url, duration, currentMovie, onPutLike, sav
   function handleRemoveLike() {
     let mongoId;
     savedMovies.forEach((movie) => {
-      if (movie.movieId == currentMovie.id || movie.movieId == currentMovie.movieId) {
+      if (movie.movieId === currentMovie.id || movie.movieId === currentMovie.movieId) {
         mongoId = movie._id;
       }
     })
