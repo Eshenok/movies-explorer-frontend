@@ -125,7 +125,6 @@
 @import url('./components/Movies/Film/styles/__time/film__time.css');
 @import url('./components/Movies/Film/styles/__image/film__image.css');
 @import url('./components/Movies/Film/styles/__YTlink/film__YTlink.css');
-@import url('./components/Movies/Film/styles/__span/film__span.css');
 @import url('./components/Movies/Film/styles/__runline/film__runline.css');
 /* profile */
 @import url('components/Profile/styles/Profile.css');

@@ -55,7 +55,7 @@ export default function Film({ name, url, duration, currentMovie, onPutLike, sav
           <Button className="button button_icon_remove button_place_film" onClick={handleRemoveLike}/>
         </Route>
       </div>
-      <a className="film__YTlink" target={"_blank"} href={currentMovie.trailerLink}>
+      <a className="film__YTlink" rel="noreferrer" target={"_blank"} href={currentMovie.trailerLink}>
         <img src={`https://api.nomoreparties.co${url}`} alt={name} className='film__image'/>
       </a>
     </div>

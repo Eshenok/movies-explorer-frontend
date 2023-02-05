@@ -9,39 +9,40 @@ export default function Films({ moviesArr, filmsQuantity, onMoreButton, onPutLik
         {
           moviesArr.length === 0
             ? <h2 className="films__notFound">Ничего не найдено...</h2>
-            : <></>
+            : <>
+              <Route path="/movies">
+                {moviesArr.map((movie, index) =>
+                  index < filmsQuantity && (
+                    <Film
+                      key={movie.id}
+                      name={movie.nameRU}
+                      url={movie.image.url}
+                      duration={movie.duration}
+                      currentMovie={movie}
+                      onPutLike={onPutLike}
+                      savedMovies={savedMovies}
+                      onRemoveLike={onRemoveLike}
+                      history={history}
+                    />
+                  ))}
+              </Route>
+              <Route path="/saved-movies">
+                {moviesArr.map((movie, index) =>
+                  index < filmsQuantity && (
+                    <Film
+                      key={movie.id}
+                      name={movie.nameRU}
+                      url={movie.image}
+                      duration={movie.duration}
+                      currentMovie={movie}
+                      savedMovies={savedMovies}
+                      onRemoveLike={onRemoveLike}
+                      history={history}
+                    />
+                  ))}
+              </Route>
+            </>
         }
-        <Route path="/movies">
-          {moviesArr.map((movie, index) =>
-            index < filmsQuantity && (
-              <Film
-                key={movie.id}
-                name={movie.nameRU}
-                url={movie.image.url}
-                duration={movie.duration}
-                currentMovie={movie}
-                onPutLike={onPutLike}
-                savedMovies={savedMovies}
-                onRemoveLike={onRemoveLike}
-                history={history}
-              />
-            ))}
-        </Route>
-        <Route path="/saved-movies">
-          {moviesArr.map((movie, index) =>
-            index < filmsQuantity && (
-              <Film
-                key={movie.id}
-                name={movie.nameRU}
-                url={movie.image}
-                duration={movie.duration}
-                currentMovie={movie}
-                savedMovies={savedMovies}
-                onRemoveLike={onRemoveLike}
-                history={history}
-              />
-            ))}
-        </Route>
       </div>
       {
         moviesArr.length <= filmsQuantity

@@ -1,5 +1,4 @@
-import React, { useState, useCallback, useContext, useEffect } from 'react';
-import { CurrentUserContext } from "../contexts/CurrentUserContext";
+import { useState, useCallback } from 'react';
 
 export function useFormWithValidation() {
   const [values, setValues] = useState({});

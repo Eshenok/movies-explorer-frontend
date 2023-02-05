@@ -42,7 +42,7 @@ function App() {
     } else {
       setFilmsQuantity(12);
     }
-  }, [history.location.pathname])
+  }, [history.location.pathname, screenWidth])
 
   useEffect(() => {
     if (loggedIn) {

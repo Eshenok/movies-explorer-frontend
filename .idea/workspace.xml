@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="work build v2.0">
-      <change afterPath="$PROJECT_DIR$/src/components/Movies/Film/styles/__runline/film__runline.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Movies/Film/styles/__span/film__span.css" afterDir="false" />
+    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="work build v2.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main/Portfolio/Portfolio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/Portfolio/Portfolio.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Movies/Film/Film.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Film/Film.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Movies/Film/styles/__YTlink/film__YTlink.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Film/styles/__YTlink/film__YTlink.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Movies/Film/styles/__title/film__title.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Film/styles/__title/film__title.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Movies/Films/Films.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Films/Films.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useFormWithValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useFormWithValidation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -153,14 +155,7 @@
       <workItem from="1675349476971" duration="3194000" />
       <workItem from="1675409251191" duration="3834000" />
       <workItem from="1675508064017" duration="26285000" />
-      <workItem from="1675597532171" duration="11021000" />
-    </task>
-    <task id="LOCAL-00008" summary="make navTab Hero for all display">
-      <created>1672418876064</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1672418876064</updated>
+      <workItem from="1675597532171" duration="11740000" />
     </task>
     <task id="LOCAL-00009" summary="make tech for all display">
       <created>1672604829352</created>
@@ -498,7 +493,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675619619583</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="work build v2.1">
+      <created>1675621326487</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1675621326487</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,7 +518,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor 1.1" />
     <MESSAGE value="refactor 1.2" />
     <MESSAGE value="refactor 2.0" />
     <MESSAGE value="refactor 2.1" />
@@ -541,6 +542,7 @@
     <MESSAGE value="make clear page" />
     <MESSAGE value="make validation" />
     <MESSAGE value="work build v2.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="work build v2.0" />
+    <MESSAGE value="work build v2.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="work build v2.1" />
   </component>
 </project>
