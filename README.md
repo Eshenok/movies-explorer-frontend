@@ -1,3 +1,5 @@
 # Фронтенд проекта Movies-explorer
-## Ссылка на Яндекс.Диск
-https://disk.yandex.ru/d/vVzcmiXgY8-7XQ
+## Ссылка на Pull
+[Pull request](https://github.com/Eshenok/movies-explorer-frontend/pull/2)
+## Ссылка на сайт
+[movies-explorer](movies-explorer.eshenok.nomoredomains.club/)
