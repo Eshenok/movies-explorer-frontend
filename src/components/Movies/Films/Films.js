@@ -6,6 +6,11 @@ export default function Films({ moviesArr, filmsQuantity, onMoreButton, onPutLik
   return (
     <section className="films">
       <div className="films__container">
+        {
+          moviesArr.length === 0
+            ? <h2 className="films__notFound">Ничего не найдено...</h2>
+            : <></>
+        }
         <Route path="/movies">
           {moviesArr.map((movie, index) =>
             index < filmsQuantity && (
@@ -39,8 +44,9 @@ export default function Films({ moviesArr, filmsQuantity, onMoreButton, onPutLik
         </Route>
       </div>
       {
-        moviesArr.length <= filmsQuantity ?
-          <></> : <Button className="button button_place_films button_theme_grey" name={'Ещё'} onClick={onMoreButton} />
+        moviesArr.length <= filmsQuantity
+          ? <></>
+          : <Button className="button button_place_films button_theme_grey" name={'Ещё'} onClick={onMoreButton} />
       }
     </section>
   )

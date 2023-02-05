@@ -15,10 +15,6 @@ export default function Film({ name, url, duration, currentMovie, onPutLike, sav
     })
   }, [savedMovies]);
 
-  if (isLiked) {
-    likeClasses.push('button_icon_like-active');
-  }
-
   function handleRemoveLike() {
     let mongoId;
     savedMovies.forEach((movie) => {
@@ -42,6 +38,10 @@ export default function Film({ name, url, duration, currentMovie, onPutLike, sav
     return `${duration/60 > 0 ? `${Math.floor(duration/60)} ч ${duration%60 === 0 ? '' : `${duration - Math.floor(duration/60)*60} м`}` : `${duration} м`}`
   }
 
+  if (isLiked) {
+    likeClasses.push('button_icon_like-active');
+  }
+
   return (
     <div className="film">
       <div className="film__header">
@@ -55,7 +55,9 @@ export default function Film({ name, url, duration, currentMovie, onPutLike, sav
           <Button className="button button_icon_remove button_place_film" onClick={handleRemoveLike}/>
         </Route>
       </div>
-      <img src={`https://api.nomoreparties.co${url}`} alt="Карточка фильма" className='film__image'/>
+      <a className="film__YTlink" target={"_blank"} href={currentMovie.trailerLink}>
+        <img src={`https://api.nomoreparties.co${url}`} alt={name} className='film__image'/>
+      </a>
     </div>
   )
 }

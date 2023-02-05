@@ -1,10 +1,8 @@
-import React, { useState } from "react";
-
-export const Input = ({isSpan, error, ...rest }) => {
+export const Input = ({isSpan, error, className, ...rest }) => {
 
   return (
     <>
-      <input {...rest} />
+      <input {...rest} className={`${className} ${error ? "input_error" : ""}`} />
       {isSpan ? <span className="input__span-error">{error}</span> : <></>}
     </>
   )

@@ -15,7 +15,7 @@ export default function Movies({ history, onSearch, movies, savedMovies, foundMo
     } else {
       setMoviesArr(savedMovies)
     }
-  })
+  }, [isSearch, movies, foundMovies, savedMovies, history.location.pathname])
 
   function showFoundMovies(moviesArr, query, isShorts) {
     setIsSearch(true);

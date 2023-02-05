@@ -56,12 +56,14 @@ function App() {
   },[loggedIn])
 
   useEffect(() => {
-    setPreload(true);
-    MainApi.getCurrentUser().then((res) => {
-      setCurrentUser(res);
-      setLoggedIn(true);
-      history.push("/movies");
-    }).catch((err) => {console.log(err)}).finally(() => {setPreload(false)})
+    if (!loggedIn) {
+      setPreload(true);
+      MainApi.getCurrentUser().then((res) => {
+        setCurrentUser(res);
+        setLoggedIn(true);
+        history.push('/movies');
+      }).catch((err) => {console.log(err)}).finally(() => {setPreload(false)})
+    }
   }, [])
 
   useEffect(() => {
@@ -118,6 +120,7 @@ function App() {
   /*
    * Функции работы с MainApi
    */
+
   function handleSignup(name, email, pass) {
     MainApi.createUser(name, email, pass).then((res) => {
       history.push('/signin');
@@ -210,6 +213,10 @@ function App() {
           onSubmit={handleUpdateUser}
           onExit={handleSignOut}
           loggedIn={loggedIn}
+          handleChange={handleChange}
+          errors={errors}
+          isValid={isValid}
+          values={values}
         />
         <Route exact path="/">
           <Main />
@@ -224,8 +231,8 @@ function App() {
             handleChange={handleChange}
             errors={errors}
             isValid={isValid}
-            resetForm={resetForm}
             values={values}
+            resetForm={resetForm}
           />
         </Route>
 

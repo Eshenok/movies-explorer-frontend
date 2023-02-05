@@ -1,7 +1,6 @@
 import { Input } from "../Input/Input";
 import { Link, Route } from "react-router-dom";
 import logo from "../../images/logo.svg";
-import React, { useState } from "react";
 import Button from "../Button/Button";
 
 

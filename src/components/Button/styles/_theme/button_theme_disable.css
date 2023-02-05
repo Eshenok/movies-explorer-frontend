@@ -4,12 +4,12 @@
 	color: var(--font-color);
 }
 
-.button:hover {
+.button_theme_disable:hover {
 	cursor: default;
 	filter: none;
 }
 
-.button:active {
+.button_theme_disable:active {
 	filter: none;
 	box-shadow: none;
 }
