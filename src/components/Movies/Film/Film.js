@@ -45,7 +45,7 @@ export default function Film({ name, url, duration, currentMovie, onPutLike, sav
   return (
     <div className="film">
       <div className="film__header">
-        <h2 className="film__title">{name}</h2>
+        <h2 className={`film__title ${name.length > 31 ? "film__runline" : ""}`}><span>{name}</span></h2>
         <p className="film__time">{mathTime(duration)}</p>
         <Route path="/movies">
           <Button className={likeClasses.join(' ')} onClick={handleLike} />
