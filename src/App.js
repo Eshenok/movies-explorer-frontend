@@ -81,7 +81,7 @@ function App() {
         setFooter(true);
       }
     })
-  })
+  }, [history.location.pathname])
 
   /*
    * Функции не отвечающие за работу Api

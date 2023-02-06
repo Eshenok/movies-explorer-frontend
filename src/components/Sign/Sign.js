@@ -2,9 +2,11 @@ import { Input } from "../Input/Input";
 import { Link, Route } from "react-router-dom";
 import logo from "../../images/logo.svg";
 import Button from "../Button/Button";
-
+import { useRef } from "react";
 
 export default function Sign({ onSubmit, history, title, buttonTitle, handleChange, errors, isValid, resetForm, values }) {
+
+  const form = useRef();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -14,7 +16,10 @@ export default function Sign({ onSubmit, history, title, buttonTitle, handleChan
       onSubmit(values.input_type_userEmail, values.input_type_userPass);
     }
     resetForm();
+    form.current.reset();
   }
+
+
 
   return (
     <section className="sign">
@@ -22,7 +27,7 @@ export default function Sign({ onSubmit, history, title, buttonTitle, handleChan
         <img className="logo" alt="logo" src={logo}/>
         <h2 className="sign__title">{title}</h2>
       </div>
-      <form className="sign__form" noValidate onSubmit={handleSubmit}>
+      <form ref={form} className="sign__form" noValidate onSubmit={handleSubmit}>
         <div className="sign__container">
           <Route path="/signup">
             <label htmlFor="input_type_userName" className="sign__label">Имя</label>
@@ -36,6 +41,7 @@ export default function Sign({ onSubmit, history, title, buttonTitle, handleChan
                    placeholder="Введите Ваше имя"
                    isSpan={true}
                    onChange={handleChange}
+                   value={values.input_type_userName}
                    error={errors.input_type_userName}
             />
           </Route>
@@ -52,6 +58,7 @@ export default function Sign({ onSubmit, history, title, buttonTitle, handleChan
             placeholder="Введите почту"
             isSpan={true}
             onChange={handleChange}
+            value={values.input_type_userEmail}
             error={errors.input_type_userEmail}
           />
 
@@ -66,6 +73,7 @@ export default function Sign({ onSubmit, history, title, buttonTitle, handleChan
                  placeholder="Введите пароль"
                  isSpan={true}
                  onChange={handleChange}
+                 value={values.input_type_userPass}
                  error={errors.input_type_userPass}
           />
         </div>

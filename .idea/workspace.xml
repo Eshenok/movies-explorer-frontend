@@ -4,13 +4,7 @@
     <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="work build v2.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main/Portfolio/Portfolio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/Portfolio/Portfolio.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Movies/Film/Film.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Film/Film.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Movies/Films/Films.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Films/Films.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useFormWithValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useFormWithValidation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sign/Sign.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sign/Sign.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,6 +150,8 @@
       <workItem from="1675409251191" duration="3834000" />
       <workItem from="1675508064017" duration="26285000" />
       <workItem from="1675597532171" duration="11740000" />
+      <workItem from="1675672008335" duration="3730000" />
+      <workItem from="1675696924141" duration="852000" />
     </task>
     <task id="LOCAL-00009" summary="make tech for all display">
       <created>1672604829352</created>
