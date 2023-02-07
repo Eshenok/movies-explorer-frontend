@@ -19,8 +19,6 @@ export default function Sign({ onSubmit, history, title, buttonTitle, handleChan
     form.current.reset();
   }
 
-
-
   return (
     <section className="sign">
       <div className="sign__header">
@@ -41,7 +39,6 @@ export default function Sign({ onSubmit, history, title, buttonTitle, handleChan
                    placeholder="Введите Ваше имя"
                    isSpan={true}
                    onChange={handleChange}
-                   value={values.input_type_userName}
                    error={errors.input_type_userName}
             />
           </Route>
@@ -58,7 +55,6 @@ export default function Sign({ onSubmit, history, title, buttonTitle, handleChan
             placeholder="Введите почту"
             isSpan={true}
             onChange={handleChange}
-            value={values.input_type_userEmail}
             error={errors.input_type_userEmail}
           />
 
@@ -73,7 +69,6 @@ export default function Sign({ onSubmit, history, title, buttonTitle, handleChan
                  placeholder="Введите пароль"
                  isSpan={true}
                  onChange={handleChange}
-                 value={values.input_type_userPass}
                  error={errors.input_type_userPass}
           />
         </div>

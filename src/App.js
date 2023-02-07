@@ -123,7 +123,7 @@ function App() {
 
   function handleSignup(name, email, pass) {
     MainApi.createUser(name, email, pass).then((res) => {
-      history.push('/signin');
+      handleSignIn(email, pass);
     }).catch((err) => {console.log(err)});
   }
 

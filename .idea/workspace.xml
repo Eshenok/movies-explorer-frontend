@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="work build v2.1">
+    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="work build v2.2 (fix signup/signin resetForm());">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Sign/Sign.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sign/Sign.js" afterDir="false" />
@@ -151,14 +151,9 @@
       <workItem from="1675508064017" duration="26285000" />
       <workItem from="1675597532171" duration="11740000" />
       <workItem from="1675672008335" duration="3730000" />
-      <workItem from="1675696924141" duration="852000" />
-    </task>
-    <task id="LOCAL-00009" summary="make tech for all display">
-      <created>1672604829352</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1672604829352</updated>
+      <workItem from="1675696924141" duration="3423000" />
+      <workItem from="1675778790979" duration="35000" />
+      <workItem from="1675780011137" duration="3586000" />
     </task>
     <task id="LOCAL-00010" summary="make Student for all display">
       <created>1672674728592</created>
@@ -496,7 +491,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675621326487</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="work build v2.2 (fix signup/signin resetForm());">
+      <created>1675697967840</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1675697967841</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -514,7 +516,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor 1.2" />
     <MESSAGE value="refactor 2.0" />
     <MESSAGE value="refactor 2.1" />
     <MESSAGE value="refactor 2.2" />
@@ -539,6 +540,7 @@
     <MESSAGE value="make validation" />
     <MESSAGE value="work build v2.0" />
     <MESSAGE value="work build v2.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="work build v2.1" />
+    <MESSAGE value="work build v2.2 (fix signup/signin resetForm());" />
+    <option name="LAST_COMMIT_MESSAGE" value="work build v2.2 (fix signup/signin resetForm());" />
   </component>
 </project>
