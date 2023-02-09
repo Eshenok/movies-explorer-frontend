@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="work build v2.2 (fix signup/signin resetForm());">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Input/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/Input.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/styles/__error/profile__error.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Sign/Sign.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sign/Sign.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +42,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Eshenok/Documents/dev/pdf_generator_2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Eshenok/Documents/dev/movies-explorer-api&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -61,7 +63,7 @@
       <recent name="C:\Users\Eshenok\Documents\dev\movies-explorer-frontend\src\components\Input\styles" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.start">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -84,8 +86,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>
@@ -154,6 +156,8 @@
       <workItem from="1675696924141" duration="3423000" />
       <workItem from="1675778790979" duration="35000" />
       <workItem from="1675780011137" duration="3586000" />
+      <workItem from="1675881531964" duration="607000" />
+      <workItem from="1675936347143" duration="2131000" />
     </task>
     <task id="LOCAL-00010" summary="make Student for all display">
       <created>1672674728592</created>

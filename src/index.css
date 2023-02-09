@@ -134,7 +134,6 @@
 @import url('./components/Profile/styles/__fieldset/profile__fieldseet.css');
 @import url('./components/Profile/styles/__label/profile__label.css');
 @import url('./components/Profile/styles/__input-container/profile__input-container.css');
-@import url('./components/Profile/styles/__error/profile__error.css');
 /* notFound */
 @import url('components/NotFound/styles/NotFound.css');
 @import url('./components/NotFound/styles/__container/notFound__container.css');

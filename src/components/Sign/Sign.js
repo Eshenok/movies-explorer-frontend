@@ -2,22 +2,41 @@ import { Input } from "../Input/Input";
 import { Link, Route } from "react-router-dom";
 import logo from "../../images/logo.svg";
 import Button from "../Button/Button";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
-export default function Sign({ onSubmit, history, title, buttonTitle, handleChange, errors, isValid, resetForm, values }) {
+export default function Sign({ onSubmit, history, title, buttonTitle }) {
 
   const form = useRef();
+
+  const [email, setEmail] = useState('');
+  const [pass, setPass] = useState('');
+  const [name, setName] = useState('');
+  const [isValid, setIsValid] = useState(false);
+
+  function clearForm() {
+    setEmail('');
+    setPass('');
+    setName('');
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
     if (history.location.pathname === '/signup') {
-      onSubmit(values.input_type_userName, values.input_type_userEmail, values.input_type_userPass);
+      onSubmit(name, email, pass);
     } else {
-      onSubmit(values.input_type_userEmail, values.input_type_userPass);
+      onSubmit(email, pass);
     }
-    resetForm();
+    clearForm();
     form.current.reset();
   }
+
+  useEffect(() => {
+    if (form.current.checkValidity()) {
+      setIsValid(true);
+    } else {
+      setIsValid(false);
+    }
+  }, [email, pass, name, history.location.pathname])
 
   return (
     <section className="sign">
@@ -38,8 +57,8 @@ export default function Sign({ onSubmit, history, title, buttonTitle, handleChan
                    required={true}
                    placeholder="Введите Ваше имя"
                    isSpan={true}
-                   onChange={handleChange}
-                   error={errors.input_type_userName}
+                   value={name}
+                   onChange={(e) => {setName(e.target.value)}}
             />
           </Route>
 
@@ -54,8 +73,8 @@ export default function Sign({ onSubmit, history, title, buttonTitle, handleChan
             required={true}
             placeholder="Введите почту"
             isSpan={true}
-            onChange={handleChange}
-            error={errors.input_type_userEmail}
+            value={email}
+            onChange={(e) => {setEmail(e.target.value)}}
           />
 
           <label htmlFor="input_type_userPass" className="sign__label">Пароль</label>
@@ -68,12 +87,12 @@ export default function Sign({ onSubmit, history, title, buttonTitle, handleChan
                  required={true}
                  placeholder="Введите пароль"
                  isSpan={true}
-                 onChange={handleChange}
-                 error={errors.input_type_userPass}
+                 value={pass}
+                 onChange={(e) => {setPass(e.target.value)}}
           />
         </div>
         <div className="sign__container">
-            <Button type="submit" className={`button button_theme_blue button_place_sign ${!isValid ? "button_theme_disable" : ""}`} disabled={isValid ? false : true } name={buttonTitle} />
+            <Button type="submit" className={`button button_theme_blue button_place_sign ${!isValid ? "button_theme_disable" : ""}`} disabled={!isValid} name={buttonTitle} />
             <div className="sign__caption">
               <Route path="/signup">
                 <p className="sign__text">Уже зарегистрированы?</p>
