@@ -20,7 +20,7 @@ export default function Profile({ onSubmit, onExit }) {
   }
 
   useEffect(() => {
-    if (form.current.checkValidity() && name !== currentUser.name) {
+    if (form.current.checkValidity() && (name !== currentUser.name || email !== currentUser.email)) {
       setIsValid(true);
     } else {
       setIsValid(false);
@@ -43,7 +43,6 @@ export default function Profile({ onSubmit, onExit }) {
               maxLength="30"
               required={true}
               placeholder="Введите Ваше имя"
-              isSpan={true}
               value={name}
               onChange={(e) => {setName(e.target.value)}}
             />
@@ -60,14 +59,13 @@ export default function Profile({ onSubmit, onExit }) {
               minLength="2"
               maxLength="30"
               placeholder="Введите E-Mail"
-              isSpan={true}
               value={email}
               onChange={(e) => {setEmail(e.target.value)}}
             />
           </fieldset>
         </div>
         <div className="profile__button-container">
-          <Button type="submit" className={`button button_place_profile button_theme_transparent-white ${!isValid ? "button_theme_text-disable" : ""}`} disabled={isValid ? false : true } name={'Редактировать'}/>
+          <Button type="submit" className={`button button_place_profile button_theme_transparent-white ${!isValid ? "button_theme_text-disable" : ""}`} disabled={!isValid} name={'Редактировать'}/>
           <Button type="button" className={'button button_place_profile button_theme_transparent-red'} name={'Выйти из аккаунта'} onClick={onExit}/>
         </div>
       </form>

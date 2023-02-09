@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="work build v2.2 (fix signup/signin resetForm());">
+    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="drop Yandex validation + make Validation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Input/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/Input.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/styles/__error/profile__error.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sign/Sign.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sign/Sign.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,14 +154,7 @@
       <workItem from="1675778790979" duration="35000" />
       <workItem from="1675780011137" duration="3586000" />
       <workItem from="1675881531964" duration="607000" />
-      <workItem from="1675936347143" duration="2131000" />
-    </task>
-    <task id="LOCAL-00010" summary="make Student for all display">
-      <created>1672674728592</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1672674728592</updated>
+      <workItem from="1675936347143" duration="4484000" />
     </task>
     <task id="LOCAL-00011" summary="make Main page for all display">
       <created>1672680457674</created>
@@ -502,7 +492,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675697967841</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="drop Yandex validation + make Validation">
+      <created>1675938544341</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1675938544342</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -520,7 +517,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor 2.0" />
     <MESSAGE value="refactor 2.1" />
     <MESSAGE value="refactor 2.2" />
     <MESSAGE value="refactor 2.3" />
@@ -545,6 +541,7 @@
     <MESSAGE value="work build v2.0" />
     <MESSAGE value="work build v2.1" />
     <MESSAGE value="work build v2.2 (fix signup/signin resetForm());" />
-    <option name="LAST_COMMIT_MESSAGE" value="work build v2.2 (fix signup/signin resetForm());" />
+    <MESSAGE value="drop Yandex validation + make Validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="drop Yandex validation + make Validation" />
   </component>
 </project>
