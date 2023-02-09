@@ -14,7 +14,6 @@ import MoviesApi from "./utils/MoviesApi";
 import { CurrentUserContext } from "./contexts/CurrentUserContext";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import Preloader from "./components/Preloader/Preloader";
-import { useFormWithValidation } from "./hooks/useFormWithValidation";
 
 function App() {
 
@@ -32,7 +31,6 @@ function App() {
   let {path, url} = useRouteMatch(); // По факту не используется, но только с ним работает приложение
 
   const screenWidth = window.screen.width;
-  const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
 
   useEffect(() => {
     if (screenWidth < 576) {
@@ -148,6 +146,7 @@ function App() {
       setCurrentUser({});
       setLoggedIn(false);
       history.push('/signin');
+      localStorage.removeItem('movies');
     })
   }
 
@@ -163,14 +162,25 @@ function App() {
     }).catch((err) => {console.log(err)})
   }
 
-  function handleSearchMovie(moviesArr, query, isShorts) {
-    setPreload(true);
-    setFoundMovies(moviesArr.filter((movie) => {
+  function handleFoundMovies(moviesArr, query, isShorts) {
+    return moviesArr.filter((movie) => {
       return movie.nameRU.toUpperCase().includes(query.toUpperCase()) && isShorts ? movie
         : movie.nameRU.toUpperCase().includes(query.toUpperCase()) && !isShorts && movie.duration > 40
           ? movie : false
     })
-    )
+  }
+
+  function handleSearchMovie(moviesArr, query, isShorts, isSave) {
+    setPreload(true);
+    const foundMovies = handleFoundMovies(moviesArr, query, isShorts);
+    setFoundMovies(foundMovies);
+    if (isSave) {
+      localStorage.setItem('movies', JSON.stringify({
+        query: query,
+        isShorts: isShorts,
+        moviesArr: foundMovies,
+      }))
+    }
     setPreload(false);
   }
 
@@ -213,10 +223,6 @@ function App() {
           onSubmit={handleUpdateUser}
           onExit={handleSignOut}
           loggedIn={loggedIn}
-          handleChange={handleChange}
-          errors={errors}
-          isValid={isValid}
-          values={values}
         />
         <Route exact path="/">
           <Main />
@@ -228,11 +234,6 @@ function App() {
             history={history}
             title={'Добро пожаловать!'}
             buttonTitle={'Зарегистрироваться'}
-            handleChange={handleChange}
-            errors={errors}
-            isValid={isValid}
-            values={values}
-            resetForm={resetForm}
           />
         </Route>
 
@@ -242,11 +243,6 @@ function App() {
             history={history}
             title={'Рады видеть!'}
             buttonTitle={'Войти'}
-            handleChange={handleChange}
-            errors={errors}
-            isValid={isValid}
-            resetForm={resetForm}
-            values={values}
           />
         </Route>
 

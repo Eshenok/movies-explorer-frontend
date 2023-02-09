@@ -2,7 +2,7 @@ import Button from "../../Button/Button";
 import { Input } from "../../Input/Input";
 import { useEffect, useState } from "react";
 
-export default function Search({ onSearch, onClear, movies, savedMovies, history }) {
+export default function Search({ onSearch, onClear, movies, savedMovies, history, localFilms }) {
 
   const [searchQuery, setSearchQuery] = useState('');
   const [isShorts, setIsShorts] = useState(false);
@@ -12,15 +12,21 @@ export default function Search({ onSearch, onClear, movies, savedMovies, history
     if (searchQuery === '') {
       onClear();
     } else if (history.location.pathname === '/movies') {
-      onSearch(movies, searchQuery, isShorts)
+      onSearch(movies, searchQuery, isShorts, true)
     } else {
-      onSearch(savedMovies, searchQuery, isShorts)
+      onSearch(savedMovies, searchQuery, isShorts, false)
     }
   }
 
   useEffect(() => {
-    setSearchQuery('');
-    onClear();
+    if (history.location.pathname === '/saved-movies') {
+      setSearchQuery('');
+      setIsShorts(false);
+      onClear();
+    } else if (localFilms) {
+      setIsShorts(localFilms.isShorts);
+      setSearchQuery(localFilms.query);
+    }
   }, [history.location.pathname]);
 
   return (
@@ -41,6 +47,7 @@ export default function Search({ onSearch, onClear, movies, savedMovies, history
             type="checkbox"
             className="input input_type_shorts input_view_hidden search__toggle_checkbox"
             id="input_type_shorts"
+            checked={isShorts}
             value={isShorts}
             onChange={() => {setIsShorts(!isShorts)}}
           />

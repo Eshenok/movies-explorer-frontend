@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="drop Yandex validation + make Validation">
+    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="make Validation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Movies/Movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Movies.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Movies/Search/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Search/Search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useFormWithValidation.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,14 +157,7 @@
       <workItem from="1675778790979" duration="35000" />
       <workItem from="1675780011137" duration="3586000" />
       <workItem from="1675881531964" duration="607000" />
-      <workItem from="1675936347143" duration="4484000" />
-    </task>
-    <task id="LOCAL-00011" summary="make Main page for all display">
-      <created>1672680457674</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1672680457674</updated>
+      <workItem from="1675936347143" duration="13309000" />
     </task>
     <task id="LOCAL-00012" summary="make html signup page">
       <created>1672761473345</created>
@@ -499,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675938544342</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="make Validation">
+      <created>1675959315078</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1675959315078</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -517,7 +520,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor 2.1" />
     <MESSAGE value="refactor 2.2" />
     <MESSAGE value="refactor 2.3" />
     <MESSAGE value="refactor 2.4" />
@@ -542,6 +544,7 @@
     <MESSAGE value="work build v2.1" />
     <MESSAGE value="work build v2.2 (fix signup/signin resetForm());" />
     <MESSAGE value="drop Yandex validation + make Validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="drop Yandex validation + make Validation" />
+    <MESSAGE value="make Validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="make Validation" />
   </component>
 </project>
