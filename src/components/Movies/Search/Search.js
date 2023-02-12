@@ -16,7 +16,7 @@ export default function Search({ onSearch, onClear, movies, savedMovies, history
     // } else {
     //   onSearch(savedMovies, searchQuery, isShorts, false)
     // }
-    if (searchQuery === "") {
+    if (searchQuery === "" && !isShorts) {
       onClear();
     } else {
       onSearch(movies, searchQuery, isShorts, true);
@@ -55,13 +55,13 @@ export default function Search({ onSearch, onClear, movies, savedMovies, history
         </fieldset>
 
         <div className="search__toggle">
-          <Input
+          <input
             type="checkbox"
             className="input input_type_shorts input_view_hidden search__toggle_checkbox"
             id="input_type_shorts"
             checked={isShorts}
             value={isShorts}
-            onChange={() => {setIsShorts(!isShorts)}}
+            onChange={(e) => {setIsShorts(!isShorts)}}
           />
           <label htmlFor="input_type_shorts" className="search__fake-toggle"></label>
           <span className="search__toggle_text">Короткометражки</span>

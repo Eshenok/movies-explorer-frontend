@@ -14,13 +14,16 @@ import MoviesApi from "./utils/MoviesApi";
 import { CurrentUserContext } from "./contexts/CurrentUserContext";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import Preloader from "./components/Preloader/Preloader";
-import {screenWidth, shortsDuration} from "./constants";
+import { shortsDuration } from "./constants";
 
 function App() {
+  /* eventlisteners */
+  window.addEventListener("resize", () => {setScreenWidth(window.screen.width)});
 
+    /* hooks */
+  const [screenWidth, setScreenWidth] = useState(window.screen.width);
   const [currentUser, setCurrentUser] = useState({});
   const [savedMovies, setSavedMovies] = useState([]);
-  // const [foundMovies, setFoundMovies] = useState([]);
   const [header, setHeader] = useState(true);
   const [footer, setFooter] = useState(true);
   const [isOpenMenuPopup, setIsOpenMenuPopup] = useState(false);
@@ -29,34 +32,29 @@ function App() {
   const history = useHistory();
   let {path, url} = useRouteMatch(); // По факту не используется, но только с ним работает приложение
 
-  const filmsQuantity = useMemo(() => {return screenWidth < 576 ? 5 : screenWidth < 930 ? 8 : 12;}, [screenWidth, history.location.pathname]);
+  const defaultFilmsQuantity = useMemo(() => {return screenWidth < 576 ? 5 : screenWidth < 930 ? 8 : 12;}, []);
 
   useEffect(() => {
-    // if (loggedIn) {
-    //   setPreload(true);
-    //   Promise.all([MainApi.getSavedMovies(), MoviesApi.getMovies()])
-    //     .then((values) => {
-    //       setSavedMovies(values[0]);
-    //       localStorage.setItem('movies', JSON.stringify(values[1]));
-    //     }).catch((err) => {console.log(err)}).finally(() => {setPreload(false)})
-    // }
-    setPreload(true);
-    MoviesApi.getMovies()
-      .then((res) => {localStorage.setItem('movies', JSON.stringify(res));})
-      .catch((err) => {console.log(err)})
-      .finally(() => {setPreload(false)})
+    if (loggedIn) {
+      setPreload(true);
+      Promise.all([MainApi.getSavedMovies(), MoviesApi.getMovies()])
+        .then((values) => {
+          setSavedMovies(values[0]);
+          localStorage.setItem('movies', JSON.stringify(values[1]));
+        }).catch((err) => {console.log(err)}).finally(() => {setPreload(false)})
+    }
   },[])
 
-  // useEffect(() => {
-  //   if (!loggedIn) {
-  //     setPreload(true);
-  //     MainApi.getCurrentUser().then((res) => {
-  //       setCurrentUser(res);
-  //       setLoggedIn(true);
-  //       history.push('/movies');
-  //     }).catch((err) => {console.log(err)}).finally(() => {setPreload(false)})
-  //   }
-  // }, [])
+  useEffect(() => {
+    if (!loggedIn) {
+      setPreload(true);
+      MainApi.getCurrentUser().then((res) => {
+        setCurrentUser(res);
+        setLoggedIn(true);
+        history.push('/movies');
+      }).catch((err) => {console.log(err)}).finally(() => {setPreload(false)})
+    }
+  }, [])
 
   useEffect(() => {
     /*Прослушка истории и при ее изменении проверяем необходимость footer и header*/
@@ -100,14 +98,6 @@ function App() {
     unblockScrollY();
     setIsOpenMenuPopup(false);
   }
-
-  // function handleMoreButton() {
-  //   if (screenWidth > 930) {
-  //     setFilmsQuantity(filmsQuantity + 3);
-  //   } else {
-  //     setFilmsQuantity(filmsQuantity + 2);
-  //   }
-  // }
 
   /*
    * Функции работы с MainApi
@@ -158,8 +148,8 @@ function App() {
 
   function handleFoundMovies(moviesArr, query, isShorts) {
     return moviesArr.filter((movie) => {
-      return movie.nameRU.toUpperCase().includes(query.toUpperCase()) && isShorts ? movie
-        : movie.nameRU.toUpperCase().includes(query.toUpperCase()) && !isShorts && movie.duration > 40
+      return movie.nameRU.toUpperCase().includes(query.toUpperCase()) && !isShorts ? movie
+        : movie.nameRU.toUpperCase().includes(query.toUpperCase()) && isShorts && movie.duration <= shortsDuration
           ? movie : false
     })
   }
@@ -183,6 +173,8 @@ function App() {
     setPreload(false);
   }
 
+  console.log(screenWidth);
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       {header ? <Header onMenuPopup={handleOpenMenuPopup} loggedIn={loggedIn} /> : <></>}
@@ -195,11 +187,12 @@ function App() {
           // movies={movies}
           savedMovies={savedMovies}
           // foundMovies={foundMovies}
-          filmsQuantity={filmsQuantity}
+          defaultFilmsQuantity={defaultFilmsQuantity}
           // onMoreButton={handleMoreButton}
           onPutLike={handlePutLike}
           onRemoveLike={handleRemoveLike}
           loggedIn={loggedIn}
+          screenWidth={screenWidth}
         />
 
         <ProtectedRoute
@@ -210,10 +203,11 @@ function App() {
           // movies={movies}
           savedMovies={savedMovies}
           // foundMovies={foundMovies}
-          filmsQuantity={filmsQuantity}
+          defaultFilmsQuantity={defaultFilmsQuantity}
           // onMoreButton={handleMoreButton}
           onRemoveLike={handleRemoveLike}
           loggedIn={loggedIn}
+          screenWidth={screenWidth}
         />
 
         <ProtectedRoute
