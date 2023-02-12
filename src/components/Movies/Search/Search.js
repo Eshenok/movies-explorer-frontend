@@ -2,32 +2,44 @@ import Button from "../../Button/Button";
 import { Input } from "../../Input/Input";
 import { useEffect, useState } from "react";
 
-export default function Search({ onSearch, onClear, movies, savedMovies, history, localFilms }) {
+export default function Search({ onSearch, onClear, movies, savedMovies, history, foundedMovies }) {
 
   const [searchQuery, setSearchQuery] = useState('');
   const [isShorts, setIsShorts] = useState(false);
 
   function handleSearch(e) {
     e.preventDefault();
-    if (searchQuery === '') {
+    // if (searchQuery === '') {
+    //   onClear();
+    // } else if (history.location.pathname === '/movies') {
+    //   onSearch(movies, searchQuery, isShorts, true)
+    // } else {
+    //   onSearch(savedMovies, searchQuery, isShorts, false)
+    // }
+    if (searchQuery === "") {
       onClear();
-    } else if (history.location.pathname === '/movies') {
-      onSearch(movies, searchQuery, isShorts, true)
     } else {
-      onSearch(savedMovies, searchQuery, isShorts, false)
+      onSearch(movies, searchQuery, isShorts, true);
     }
   }
 
   useEffect(() => {
-    if (history.location.pathname === '/saved-movies') {
-      setSearchQuery('');
-      setIsShorts(false);
-      onClear();
-    } else if (localFilms) {
-      setIsShorts(localFilms.isShorts);
-      setSearchQuery(localFilms.query);
+    if (foundedMovies) {
+      setSearchQuery(foundedMovies.query);
+      setIsShorts(foundedMovies.isShorts);
     }
-  }, [history.location.pathname]);
+  }, [])
+
+  // useEffect(() => {
+  //   if (history.location.pathname === '/saved-movies') {
+  //     setSearchQuery('');
+  //     setIsShorts(false);
+  //     onClear();
+  //   } else if (localFilms) {
+  //     setIsShorts(localFilms.isShorts);
+  //     setSearchQuery(localFilms.query);
+  //   }
+  // }, [history.location.pathname]);
 
   return (
     <section className="search">

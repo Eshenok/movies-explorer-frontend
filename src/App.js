@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Route, Switch, useHistory, useRouteMatch } from "react-router-dom";
 import Header from './components/Header/Header';
 import Footer from "./components/Footer/Footer";
@@ -14,55 +14,49 @@ import MoviesApi from "./utils/MoviesApi";
 import { CurrentUserContext } from "./contexts/CurrentUserContext";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import Preloader from "./components/Preloader/Preloader";
+import {screenWidth, shortsDuration} from "./constants";
 
 function App() {
 
-  const [filmsQuantity, setFilmsQuantity] = useState(0);
   const [currentUser, setCurrentUser] = useState({});
-  const [movies, setMovies] = useState([]);
   const [savedMovies, setSavedMovies] = useState([]);
-  const [foundMovies, setFoundMovies] = useState([]);
+  // const [foundMovies, setFoundMovies] = useState([]);
   const [header, setHeader] = useState(true);
   const [footer, setFooter] = useState(true);
   const [isOpenMenuPopup, setIsOpenMenuPopup] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
   const [preload, setPreload] = useState(false);
   const history = useHistory();
   let {path, url} = useRouteMatch(); // По факту не используется, но только с ним работает приложение
 
-  const screenWidth = window.screen.width;
+  const filmsQuantity = useMemo(() => {return screenWidth < 576 ? 5 : screenWidth < 930 ? 8 : 12;}, [screenWidth, history.location.pathname]);
 
   useEffect(() => {
-    if (screenWidth < 576) {
-      setFilmsQuantity(5);
-    } else if (screenWidth < 930) {
-      setFilmsQuantity(8);
-    } else {
-      setFilmsQuantity(12);
-    }
-  }, [history.location.pathname, screenWidth])
+    // if (loggedIn) {
+    //   setPreload(true);
+    //   Promise.all([MainApi.getSavedMovies(), MoviesApi.getMovies()])
+    //     .then((values) => {
+    //       setSavedMovies(values[0]);
+    //       localStorage.setItem('movies', JSON.stringify(values[1]));
+    //     }).catch((err) => {console.log(err)}).finally(() => {setPreload(false)})
+    // }
+    setPreload(true);
+    MoviesApi.getMovies()
+      .then((res) => {localStorage.setItem('movies', JSON.stringify(res));})
+      .catch((err) => {console.log(err)})
+      .finally(() => {setPreload(false)})
+  },[])
 
-  useEffect(() => {
-    if (loggedIn) {
-      setPreload(true);
-      Promise.all([MainApi.getSavedMovies(), MoviesApi.getMovies()])
-        .then((values) => {
-          setSavedMovies(values[0]);
-          setMovies(values[1]);
-        }).catch((err) => {console.log(err)}).finally(() => {setPreload(false)})
-    }
-  },[loggedIn])
-
-  useEffect(() => {
-    if (!loggedIn) {
-      setPreload(true);
-      MainApi.getCurrentUser().then((res) => {
-        setCurrentUser(res);
-        setLoggedIn(true);
-        history.push('/movies');
-      }).catch((err) => {console.log(err)}).finally(() => {setPreload(false)})
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (!loggedIn) {
+  //     setPreload(true);
+  //     MainApi.getCurrentUser().then((res) => {
+  //       setCurrentUser(res);
+  //       setLoggedIn(true);
+  //       history.push('/movies');
+  //     }).catch((err) => {console.log(err)}).finally(() => {setPreload(false)})
+  //   }
+  // }, [])
 
   useEffect(() => {
     /*Прослушка истории и при ее изменении проверяем необходимость footer и header*/
@@ -107,13 +101,13 @@ function App() {
     setIsOpenMenuPopup(false);
   }
 
-  function handleMoreButton() {
-    if (screenWidth > 930) {
-      setFilmsQuantity(filmsQuantity + 3);
-    } else {
-      setFilmsQuantity(filmsQuantity + 2);
-    }
-  }
+  // function handleMoreButton() {
+  //   if (screenWidth > 930) {
+  //     setFilmsQuantity(filmsQuantity + 3);
+  //   } else {
+  //     setFilmsQuantity(filmsQuantity + 2);
+  //   }
+  // }
 
   /*
    * Функции работы с MainApi
@@ -173,12 +167,17 @@ function App() {
   function handleSearchMovie(moviesArr, query, isShorts, isSave) {
     setPreload(true);
     const foundMovies = handleFoundMovies(moviesArr, query, isShorts);
-    setFoundMovies(foundMovies);
     if (isSave) {
-      localStorage.setItem('movies', JSON.stringify({
+      localStorage.setItem('foundedMovies', JSON.stringify({
         query: query,
         isShorts: isShorts,
-        moviesArr: foundMovies,
+        movies: foundMovies,
+      }))
+    } else {
+      localStorage.setItem('savedFoundedMovies', JSON.stringify({
+        query: query,
+        isShorts: isShorts,
+        movies: foundMovies,
       }))
     }
     setPreload(false);
@@ -193,11 +192,11 @@ function App() {
           component={Movies}
           history={history}
           onSearch={handleSearchMovie}
-          movies={movies}
+          // movies={movies}
           savedMovies={savedMovies}
-          foundMovies={foundMovies}
+          // foundMovies={foundMovies}
           filmsQuantity={filmsQuantity}
-          onMoreButton={handleMoreButton}
+          // onMoreButton={handleMoreButton}
           onPutLike={handlePutLike}
           onRemoveLike={handleRemoveLike}
           loggedIn={loggedIn}
@@ -208,11 +207,11 @@ function App() {
           component={Movies}
           history={history}
           onSearch={handleSearchMovie}
-          movies={movies}
+          // movies={movies}
           savedMovies={savedMovies}
-          foundMovies={foundMovies}
+          // foundMovies={foundMovies}
           filmsQuantity={filmsQuantity}
-          onMoreButton={handleMoreButton}
+          // onMoreButton={handleMoreButton}
           onRemoveLike={handleRemoveLike}
           loggedIn={loggedIn}
         />

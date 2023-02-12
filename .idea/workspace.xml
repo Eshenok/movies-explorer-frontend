@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="make Validation">
+    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="make local movies">
+      <change afterPath="$PROJECT_DIR$/src/constants.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Movies/Films/Films.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Films/Films.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Movies/Movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Movies.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Movies/Search/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Search/Search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useFormWithValidation.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,15 +17,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="level-3" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -157,14 +158,13 @@
       <workItem from="1675778790979" duration="35000" />
       <workItem from="1675780011137" duration="3586000" />
       <workItem from="1675881531964" duration="607000" />
-      <workItem from="1675936347143" duration="13309000" />
-    </task>
-    <task id="LOCAL-00012" summary="make html signup page">
-      <created>1672761473345</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1672761473346</updated>
+      <workItem from="1675936347143" duration="13512000" />
+      <workItem from="1675978126642" duration="618000" />
+      <workItem from="1676038285325" duration="596000" />
+      <workItem from="1676085661976" duration="89000" />
+      <workItem from="1676103587708" duration="613000" />
+      <workItem from="1676105892120" duration="30000" />
+      <workItem from="1676196306083" duration="6068000" />
     </task>
     <task id="LOCAL-00013" summary="make signup page 50%">
       <created>1672859186596</created>
@@ -502,7 +502,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675959315078</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="make local movies">
+      <created>1675975875784</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1675975875784</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -520,7 +527,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor 2.2" />
     <MESSAGE value="refactor 2.3" />
     <MESSAGE value="refactor 2.4" />
     <MESSAGE value="refactor 2.5" />
@@ -545,6 +551,7 @@
     <MESSAGE value="work build v2.2 (fix signup/signin resetForm());" />
     <MESSAGE value="drop Yandex validation + make Validation" />
     <MESSAGE value="make Validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="make Validation" />
+    <MESSAGE value="make local movies" />
+    <option name="LAST_COMMIT_MESSAGE" value="make local movies" />
   </component>
 </project>
