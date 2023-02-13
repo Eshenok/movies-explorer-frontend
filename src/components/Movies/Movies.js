@@ -7,7 +7,7 @@ export default function Movies({ history, onSearch, savedMovies, defaultFilmsQua
   const [filmsQuantity, setFilmsQuantity] = useState(defaultFilmsQuantity);
   const [isSearch, setIsSearch] = useState(0);
 
-  const savedFoundedMovies = JSON.parse(localStorage.getItem('savedFoundedMovies'));
+  const savedFoundedMovies = JSON.parse(sessionStorage.getItem('savedFoundedMovies'));
   const foundedMovies = JSON.parse(localStorage.getItem('foundedMovies'));
   const step = screenWidth > 930 ? 3 : 2;
 
@@ -28,11 +28,11 @@ export default function Movies({ history, onSearch, savedMovies, defaultFilmsQua
   }, [screenWidth])
 
   const moviesArr = useMemo(() => {
-    return isSearch && history.location.pathname === '/movies'
+    return isSearch && history.location.pathname === '/movies' && foundedMovies
       ? foundedMovies.movies : history.location.pathname === '/movies'
         ? allMovies : savedFoundedMovies
           ? savedFoundedMovies.movies : savedMovies;
-  }, [isSearch, history.location.pathname, allMovies])
+  }, [isSearch, history.location.pathname, allMovies, savedMovies])
 
   function handleMoreButton() {setFilmsQuantity(filmsQuantity + step)}
 
@@ -47,7 +47,7 @@ export default function Movies({ history, onSearch, savedMovies, defaultFilmsQua
     if (history.location.pathname === '/movies') {
       localStorage.removeItem('foundedMovies');
     } else {
-      localStorage.removeItem('savedFoundedMovies');
+      sessionStorage.removeItem('savedFoundedMovies');
     }
     setIsSearch(0);
   }

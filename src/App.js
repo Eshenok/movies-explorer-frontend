@@ -25,10 +25,11 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [savedMovies, setSavedMovies] = useState([]);
   const [allMovies, setAllMovies] = useState([]);
+  const [failure, setFailure] = useState("");
   const [header, setHeader] = useState(true);
   const [footer, setFooter] = useState(true);
   const [isOpenMenuPopup, setIsOpenMenuPopup] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [preload, setPreload] = useState(false);
   const history = useHistory();
   let {path, url} = useRouteMatch(); // По факту не используется, но только с ним работает приложение
@@ -41,10 +42,11 @@ function App() {
       MainApi.getSavedMovies()
         .then((res) => {
           setSavedMovies(res);
-        }).catch((err) => {console.log(err)})
+          setFailure("");
+        }).catch((err) => {setFailure("Не удалось получить сохраненные фильмы")})
         .finally(() => {setPreload(false)})
     }
-  },[])
+  },[loggedIn])
 
   useEffect(() => {
     if (localStorage.getItem('movies')) {
@@ -55,7 +57,8 @@ function App() {
         .then((res) => {
           setAllMovies(res);
           localStorage.setItem('movies', JSON.stringify(res));
-        }).catch((err) => {console.log(err)})
+          setFailure("");
+        }).catch((err) => {setFailure("Не удалось получить фильмы")})
         .finally(() => {setPreload(false)})
     }
   }, [loggedIn])
@@ -67,7 +70,8 @@ function App() {
         setCurrentUser(res);
         setLoggedIn(true);
         history.push('/movies');
-      }).catch((err) => {console.log(err)}).finally(() => {setPreload(false)})
+      }).catch((err) => {setFailure("")})
+        .finally(() => {setPreload(false)})
     }
   }, [])
 
@@ -75,6 +79,7 @@ function App() {
     /*Прослушка истории и при ее изменении проверяем необходимость footer и header*/
     history.listen(() => {
       closeAllPopups(); /*При переходе по ссылке будет закрывать все попапы*/
+      setFailure("") /*Убирать ошибки от Api*/
       if (history.location.pathname === '/signin' || history.location.pathname === '/signup') {
         setHeader(false);
         setFooter(false);
@@ -121,7 +126,8 @@ function App() {
   function handleSignup(name, email, pass) {
     MainApi.createUser(name, email, pass).then((res) => {
       handleSignIn(email, pass);
-    }).catch((err) => {console.log(err)});
+      setFailure("");
+    }).catch((err) => {setFailure(err.message ? err.message : "Что пошло не так...")});
   }
 
   function handleSignIn(email, pass) {
@@ -129,22 +135,27 @@ function App() {
       setCurrentUser(res);
       setLoggedIn(true);
       history.push('/movies');
-    }).catch((err) => {console.log(err)});
+      setFailure("");
+    }).catch((err) => {setFailure(err.message ? err.message : "Что пошло не так...")});
   }
 
   function handleUpdateUser(name, email) {
     setPreload(true);
-    MainApi.updateUser(name, email).then((res) => {
+    MainApi.updateUser(name, email)
+      .then((res) => {
       setCurrentUser(res);
-      history.push('/movies');
-    }).catch((err) => {console.log(err)}).finally(() => {setPreload(false)});
+      setFailure("");
+    }).catch((err) => {setFailure(err.message ? err.message : "Что пошло не так...")})
+      .finally(() => {setPreload(false)});
   }
 
   function handleSignOut() {
     MainApi.signOut().then((res) => {
       setCurrentUser({});
       setLoggedIn(false);
-      history.push('/signin');
+      history.push('/');
+      localStorage.removeItem('foundedMovies');
+      sessionStorage.removeItem('savedFoundedMovies');
       localStorage.removeItem('movies');
     })
   }
@@ -152,13 +163,20 @@ function App() {
   function handlePutLike(movie, thumbnail, image) {
     MainApi.putLike(movie, thumbnail, image).then((res) => {
       setSavedMovies([...savedMovies, res]);
-    }).catch((err) => {console.log(err)});
+    }).catch((err) => {setFailure("")});
   }
 
   function handleRemoveLike(id) {
-    MainApi.removeSavedMovie(id).then((res) => {
-      setSavedMovies(savedMovies.filter((elem) => elem.movieId !== res.movieId ? elem : false))
-    }).catch((err) => {console.log(err)})
+    MainApi.removeSavedMovie(id).
+    then((res) => {
+      setSavedMovies(savedMovies.filter((elem) => elem.movieId !== res.movieId ? elem : false));
+      if (sessionStorage.getItem('savedFoundedMovies')) {
+        const savedFoundedMovies = JSON.parse(sessionStorage.getItem('savedFoundedMovies'));
+        savedFoundedMovies.movies = savedFoundedMovies.movies.filter((elem) => elem.movieId !== res.movieId ? elem : false)
+        sessionStorage.setItem('savedFoundedMovies', JSON.stringify(savedFoundedMovies));
+      }
+    })
+      .catch((err) => {setFailure("")})
   }
 
   function handleFoundMovies(moviesArr, query, isShorts) {
@@ -179,7 +197,7 @@ function App() {
         movies: foundMovies,
       }))
     } else {
-      localStorage.setItem('savedFoundedMovies', JSON.stringify({
+      sessionStorage.setItem('savedFoundedMovies', JSON.stringify({
         query: query,
         isShorts: isShorts,
         movies: foundMovies,
@@ -187,8 +205,6 @@ function App() {
     }
     setPreload(false);
   }
-
-  console.log(screenWidth);
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -233,6 +249,7 @@ function App() {
           onSubmit={handleUpdateUser}
           onExit={handleSignOut}
           loggedIn={loggedIn}
+          failure={failure}
         />
         <Route exact path="/">
           <Main />
@@ -244,6 +261,7 @@ function App() {
             history={history}
             title={'Добро пожаловать!'}
             buttonTitle={'Зарегистрироваться'}
+            failure={failure}
           />
         </Route>
 
@@ -253,6 +271,7 @@ function App() {
             history={history}
             title={'Рады видеть!'}
             buttonTitle={'Войти'}
+            failure={failure}
           />
         </Route>
 

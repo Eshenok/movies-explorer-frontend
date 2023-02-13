@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="refactor)">
+    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="make search 100%">
+      <change afterPath="$PROJECT_DIR$/src/components/Profile/styles/__error-span/profile__error-span.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Sign/styles/__error-span/sign__error-span.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Movies/Movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Movies.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Movies/Search/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Search/Search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sign/Sign.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sign/Sign.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -55,11 +59,11 @@
       <recent name="C:\Users\Eshenok\Documents\dev\movies-explorer-frontend\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Eshenok\Documents\dev\movies-explorer-frontend\src\components\Sign\styles" />
       <recent name="C:\Users\Eshenok\Documents\dev\movies-explorer-frontend\src\components\containers\section\__title" />
       <recent name="C:\Users\Eshenok\Documents\dev\movies-explorer-frontend\src\components\containers" />
       <recent name="C:\Users\Eshenok\Documents\dev\movies-explorer-frontend\src\components" />
       <recent name="C:\Users\Eshenok\Documents\dev\movies-explorer-frontend\src\components\Button\styles" />
-      <recent name="C:\Users\Eshenok\Documents\dev\movies-explorer-frontend\src\components\Input\styles" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
@@ -163,21 +167,7 @@
       <workItem from="1676103587708" duration="613000" />
       <workItem from="1676105892120" duration="30000" />
       <workItem from="1676196306083" duration="27532000" />
-      <workItem from="1676287829033" duration="4021000" />
-    </task>
-    <task id="LOCAL-00015" summary="make header for all displays all pages">
-      <created>1673192532821</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1673192532821</updated>
-    </task>
-    <task id="LOCAL-00016" summary="make films 320px 50%">
-      <created>1673467233514</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1673467233514</updated>
+      <workItem from="1676287829033" duration="13528000" />
     </task>
     <task id="LOCAL-00017" summary="make films 320px 50%">
       <created>1673468472513</created>
@@ -508,7 +498,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676237260321</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="make search 100%">
+      <created>1676291952691</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1676291952692</updated>
+    </task>
+    <task id="LOCAL-00065" summary="make search 100%">
+      <created>1676291979650</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1676291979650</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -526,7 +530,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor 2.5" />
     <MESSAGE value="readme" />
     <MESSAGE value="figma" />
     <MESSAGE value="refactor after review" />
@@ -551,6 +554,7 @@
     <MESSAGE value="make local movies" />
     <MESSAGE value="localStorage yaMovies + search" />
     <MESSAGE value="refactor)" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor)" />
+    <MESSAGE value="make search 100%" />
+    <option name="LAST_COMMIT_MESSAGE" value="make search 100%" />
   </component>
 </project>
