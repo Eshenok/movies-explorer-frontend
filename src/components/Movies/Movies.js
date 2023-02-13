@@ -24,7 +24,7 @@ export default function Movies({ history, onSearch, savedMovies, defaultFilmsQua
 
   /*При изм разрешения добивать ряд до конца*/
   useEffect(() => {
-    setFilmsQuantity(filmsQuantity + (filmsQuantity%step == 0 ? 0 : (filmsQuantity+1)%step == 0 ? 1 : (filmsQuantity+2)%step == 0 ? 2 : 0));
+    setFilmsQuantity(filmsQuantity + (filmsQuantity%step === 0 ? 0 : (filmsQuantity+1)%step === 0 ? 1 : (filmsQuantity+2)%step === 0 ? 2 : 0));
   }, [screenWidth])
 
   const moviesArr = useMemo(() => {
