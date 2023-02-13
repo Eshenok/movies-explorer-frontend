@@ -2,44 +2,42 @@ import Button from "../../Button/Button";
 import { Input } from "../../Input/Input";
 import { useEffect, useState } from "react";
 
-export default function Search({ onSearch, onClear, movies, savedMovies, history, foundedMovies }) {
+export default function Search({ onSearch, onClear, allMovies, savedMovies, history, foundedMovies, savedFoundedMovies }) {
 
   const [searchQuery, setSearchQuery] = useState('');
   const [isShorts, setIsShorts] = useState(false);
 
-  function handleSearch(e) {
-    e.preventDefault();
-    // if (searchQuery === '') {
-    //   onClear();
-    // } else if (history.location.pathname === '/movies') {
-    //   onSearch(movies, searchQuery, isShorts, true)
-    // } else {
-    //   onSearch(savedMovies, searchQuery, isShorts, false)
-    // }
-    if (searchQuery === "" && !isShorts) {
-      onClear();
-    } else {
-      onSearch(movies, searchQuery, isShorts, true);
-    }
-  }
-
+  /*
+  * Проверка на сохраненные фильмы
+  */
   useEffect(() => {
-    if (foundedMovies) {
+    if (foundedMovies && history.location.pathname === '/movies') {
+      /*При загрузке страницы если есть найденные фильмы подставляем запрос*/
       setSearchQuery(foundedMovies.query);
       setIsShorts(foundedMovies.isShorts);
+    } else if (savedFoundedMovies && history.location.pathname === '/saved-movies') {
+      /*Храним только в текущей сессии, если есть найденные сохраненные фильмы*/
+      setSearchQuery(savedFoundedMovies.query);
+      setIsShorts(savedFoundedMovies.isShorts);
+    } else {
+      setSearchQuery('');
+      setIsShorts(false);
     }
-  }, [])
+  }, [history.location.pathname])
 
-  // useEffect(() => {
-  //   if (history.location.pathname === '/saved-movies') {
-  //     setSearchQuery('');
-  //     setIsShorts(false);
-  //     onClear();
-  //   } else if (localFilms) {
-  //     setIsShorts(localFilms.isShorts);
-  //     setSearchQuery(localFilms.query);
-  //   }
-  // }, [history.location.pathname]);
+  function handleSearch(e) {
+    e.preventDefault();
+    /*Пустой запрос - сбрасываем поиск*/
+    if (searchQuery === "" && !isShorts) {
+      onClear();
+    } else if (history.location.pathname === '/movies') {
+      /*Если запрос на Movies*/
+      onSearch(allMovies, searchQuery, isShorts, true);
+    } else {
+      /*Если запрос на Saved-movies*/
+      onSearch(savedMovies, searchQuery, isShorts, false);
+    }
+  }
 
   return (
     <section className="search">

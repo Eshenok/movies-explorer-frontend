@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="localStorage yaMovies + search">
+    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="refactor)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Movies/Films/Films.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Films/Films.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Movies/Movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Movies.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Movies/Search/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Search/Search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProtectedRoute/ProtectedRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProtectedRoute/ProtectedRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,14 +162,8 @@
       <workItem from="1676085661976" duration="89000" />
       <workItem from="1676103587708" duration="613000" />
       <workItem from="1676105892120" duration="30000" />
-      <workItem from="1676196306083" duration="27477000" />
-    </task>
-    <task id="LOCAL-00014" summary="make sign page for all displays">
-      <created>1673019895477</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1673019895477</updated>
+      <workItem from="1676196306083" duration="27532000" />
+      <workItem from="1676287829033" duration="4021000" />
     </task>
     <task id="LOCAL-00015" summary="make header for all displays all pages">
       <created>1673192532821</created>
@@ -510,7 +501,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676205854199</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="refactor)">
+      <created>1676237260321</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1676237260321</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -528,7 +526,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor 2.4" />
     <MESSAGE value="refactor 2.5" />
     <MESSAGE value="readme" />
     <MESSAGE value="figma" />
@@ -553,6 +550,7 @@
     <MESSAGE value="make Validation" />
     <MESSAGE value="make local movies" />
     <MESSAGE value="localStorage yaMovies + search" />
-    <option name="LAST_COMMIT_MESSAGE" value="localStorage yaMovies + search" />
+    <MESSAGE value="refactor)" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor)" />
   </component>
 </project>

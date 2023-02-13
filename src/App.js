@@ -24,6 +24,7 @@ function App() {
   const [screenWidth, setScreenWidth] = useState(window.screen.width);
   const [currentUser, setCurrentUser] = useState({});
   const [savedMovies, setSavedMovies] = useState([]);
+  const [allMovies, setAllMovies] = useState([]);
   const [header, setHeader] = useState(true);
   const [footer, setFooter] = useState(true);
   const [isOpenMenuPopup, setIsOpenMenuPopup] = useState(false);
@@ -37,13 +38,27 @@ function App() {
   useEffect(() => {
     if (loggedIn) {
       setPreload(true);
-      Promise.all([MainApi.getSavedMovies(), MoviesApi.getMovies()])
-        .then((values) => {
-          setSavedMovies(values[0]);
-          localStorage.setItem('movies', JSON.stringify(values[1]));
-        }).catch((err) => {console.log(err)}).finally(() => {setPreload(false)})
+      MainApi.getSavedMovies()
+        .then((res) => {
+          setSavedMovies(res);
+        }).catch((err) => {console.log(err)})
+        .finally(() => {setPreload(false)})
     }
   },[])
+
+  useEffect(() => {
+    if (localStorage.getItem('movies')) {
+      setAllMovies(JSON.parse(localStorage.getItem('movies')));
+    } else if (loggedIn && !(localStorage.getItem('movies'))) {
+      setPreload(true);
+      MoviesApi.getMovies()
+        .then((res) => {
+          setAllMovies(res);
+          localStorage.setItem('movies', JSON.stringify(res));
+        }).catch((err) => {console.log(err)})
+        .finally(() => {setPreload(false)})
+    }
+  }, [loggedIn])
 
   useEffect(() => {
     if (!loggedIn) {
@@ -193,6 +208,7 @@ function App() {
           onRemoveLike={handleRemoveLike}
           loggedIn={loggedIn}
           screenWidth={screenWidth}
+          allMovies={allMovies}
         />
 
         <ProtectedRoute
@@ -208,6 +224,7 @@ function App() {
           onRemoveLike={handleRemoveLike}
           loggedIn={loggedIn}
           screenWidth={screenWidth}
+          allMovies={allMovies}
         />
 
         <ProtectedRoute

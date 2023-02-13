@@ -2,36 +2,20 @@ import Search from "./Search/Search";
 import Films from "./Films/Films";
 import { useEffect, useMemo, useState } from "react";
 
-export default function Movies({ history, onSearch, savedMovies, defaultFilmsQuantity, onPutLike, onRemoveLike, screenWidth, loggedIn }) {
+export default function Movies({ history, onSearch, savedMovies, defaultFilmsQuantity, onPutLike, onRemoveLike, screenWidth, allMovies }) {
 
   const [filmsQuantity, setFilmsQuantity] = useState(defaultFilmsQuantity);
   const [isSearch, setIsSearch] = useState(0);
 
   const savedFoundedMovies = JSON.parse(localStorage.getItem('savedFoundedMovies'));
   const foundedMovies = JSON.parse(localStorage.getItem('foundedMovies'));
-  const allMovies = localStorage.getItem('movies') ? JSON.parse(localStorage.getItem('movies')) : [];
   const step = screenWidth > 930 ? 3 : 2;
-  // useEffect(() => {
-  //   if (localStorage.getItem('movies')) {
-  //     setIsSearch(true);
-  //   }
-  // }, [])
-
-  // useEffect(() => {
-  //   if (localStorage.getItem('movies') && history.location.pathname !== "/saved-movies") {
-  //     setMoviesArr(foundedMovies.moviesArr);
-  //   } else if (!isSearch && history.location.pathname === '/movies') {
-  //     setMoviesArr(movies);
-  //   } else if (isSearch) {
-  //     setMoviesArr(foundMovies);
-  //   } else {
-  //     setMoviesArr(savedMovies)
-  //   }
-  // }, [isSearch, savedMovies, history.location.pathname, foundedMovies])
 
   /*Предзагрузка если есть найденные фильмы в LS*/
   useEffect(() => {
     if (foundedMovies && history.location.pathname === '/movies') {
+      setIsSearch(isSearch+1);
+    } else if (savedFoundedMovies && history.location.pathname === '/saved-movies') {
       setIsSearch(isSearch+1);
     } else {
       setIsSearch(0);
@@ -48,7 +32,7 @@ export default function Movies({ history, onSearch, savedMovies, defaultFilmsQua
       ? foundedMovies.movies : history.location.pathname === '/movies'
         ? allMovies : savedFoundedMovies
           ? savedFoundedMovies.movies : savedMovies;
-  }, [isSearch, history.location.pathname])
+  }, [isSearch, history.location.pathname, allMovies])
 
   function handleMoreButton() {setFilmsQuantity(filmsQuantity + step)}
 
@@ -58,18 +42,22 @@ export default function Movies({ history, onSearch, savedMovies, defaultFilmsQua
     onSearch(moviesArr, query, isShorts, isSave);
   }
 
+  /*Функция очистки поиска, при разных роутах убираем разные Item'ы*/
   function clearSearch() {
-    localStorage.removeItem('foundedMovies');
-    localStorage.removeItem('movies');
+    if (history.location.pathname === '/movies') {
+      localStorage.removeItem('foundedMovies');
+    } else {
+      localStorage.removeItem('savedFoundedMovies');
+    }
     setIsSearch(0);
   }
 
   return (
     <main className="movies">
-      <Search movies={allMovies} foundedMovies={foundedMovies} savedMovies={savedMovies} isSearch={isSearch} onSearch={showFoundMovies} onClear={clearSearch} history={history}/>
+      <Search allMovies={allMovies} foundedMovies={foundedMovies} savedFoundedMovies={savedFoundedMovies} savedMovies={savedMovies} isSearch={isSearch} onSearch={showFoundMovies} onClear={clearSearch} history={history}/>
       <Films
         savedMovies={savedMovies}
-        moviesArr={moviesArr}
+        moviesArr={moviesArr ? moviesArr : []}
         filmsQuantity={filmsQuantity}
         onMoreButton={handleMoreButton}
         onPutLike={onPutLike}
