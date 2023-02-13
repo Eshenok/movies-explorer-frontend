@@ -1,4 +1,3 @@
-import './App.css';
 import React, { useState, useEffect, useMemo } from 'react';
 import { Route, Switch, useHistory, useRouteMatch } from "react-router-dom";
 import Header from './components/Header/Header';
@@ -163,7 +162,7 @@ function App() {
   function handlePutLike(movie, thumbnail, image) {
     MainApi.putLike(movie, thumbnail, image).then((res) => {
       setSavedMovies([...savedMovies, res]);
-    }).catch((err) => {setFailure("")});
+    }).catch((err) => {console.log(err)});
   }
 
   function handleRemoveLike(id) {
