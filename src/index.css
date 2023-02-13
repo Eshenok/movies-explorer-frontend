@@ -8,6 +8,7 @@
 @import url('./components/Button/styles/_theme/button_theme_grey.css');
 @import url('./components/Button/styles/_theme/button_theme_transparent-white.css');
 @import url('./components/Button/styles/_theme/button_theme_transparent-red.css');
+@import url('./components/Button/styles/_theme/button_theme_transparent-blue.css');
 @import url('./components/Button/styles/_icon/button_icon_burger.css');
 @import url('./components/Button/styles/_icon/button_icon_close.css');
 @import url('./components/Button/styles/_icon/button_icon_remove.css');

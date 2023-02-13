@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="make search 100%">
-      <change afterPath="$PROJECT_DIR$/src/components/Profile/styles/__error-span/profile__error-span.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Sign/styles/__error-span/sign__error-span.css" afterDir="false" />
+    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="remove like + validation full">
+      <change afterPath="$PROJECT_DIR$/src/components/Button/styles/_theme/button_theme_transparent-blue.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Movies/Movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Movies.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sign/Sign.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sign/Sign.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NotFound/NotFound.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NotFound/NotFound.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -167,14 +163,7 @@
       <workItem from="1676103587708" duration="613000" />
       <workItem from="1676105892120" duration="30000" />
       <workItem from="1676196306083" duration="27532000" />
-      <workItem from="1676287829033" duration="13528000" />
-    </task>
-    <task id="LOCAL-00017" summary="make films 320px 50%">
-      <created>1673468472513</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1673468472513</updated>
+      <workItem from="1676287829033" duration="14182000" />
     </task>
     <task id="LOCAL-00018" summary="make search">
       <created>1673532704750</created>
@@ -512,7 +501,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676291979650</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="remove like + validation full">
+      <created>1676312345925</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1676312345926</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -530,7 +526,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="readme" />
     <MESSAGE value="figma" />
     <MESSAGE value="refactor after review" />
     <MESSAGE value="lang" />
@@ -555,6 +550,7 @@
     <MESSAGE value="localStorage yaMovies + search" />
     <MESSAGE value="refactor)" />
     <MESSAGE value="make search 100%" />
-    <option name="LAST_COMMIT_MESSAGE" value="make search 100%" />
+    <MESSAGE value="remove like + validation full" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove like + validation full" />
   </component>
 </project>
