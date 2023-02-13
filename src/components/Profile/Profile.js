@@ -3,7 +3,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import {CurrentUserContext} from "../../contexts/CurrentUserContext.js";
 import { Input } from "../Input/Input";
 
-export default function Profile({ onSubmit, onExit }) {
+export default function Profile({ onSubmit, onExit, failure }) {
 
   const currentUser = useContext(CurrentUserContext); // subscribe
 
@@ -16,7 +16,6 @@ export default function Profile({ onSubmit, onExit }) {
   function handleSubmit(e) {
     e.preventDefault();
     onSubmit(name, email);
-    form.current.reset();
   }
 
   useEffect(() => {
@@ -51,6 +50,7 @@ export default function Profile({ onSubmit, onExit }) {
           <fieldset className="profile__fieldset">
             <label htmlFor={"input_type_editUserEmail"} className="profile__label">E-mail</label>
             <Input
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
               type="email"
               required={true}
               className="input input_type_profile"
@@ -65,6 +65,7 @@ export default function Profile({ onSubmit, onExit }) {
           </fieldset>
         </div>
         <div className="profile__button-container">
+          <span className="profile__error-span">{failure !== "" ? failure : ""}</span>
           <Button type="submit" className={`button button_place_profile button_theme_transparent-white ${!isValid ? "button_theme_text-disable" : ""}`} disabled={!isValid} name={'Редактировать'}/>
           <Button type="button" className={'button button_place_profile button_theme_transparent-red'} name={'Выйти из аккаунта'} onClick={onExit}/>
         </div>

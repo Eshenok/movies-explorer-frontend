@@ -7,7 +7,7 @@ export default function NotFound({ history }) {
         <h2 className="notFound__title">404</h2>
         <p className="notFound__text">Страница не найдена</p>
       </div>
-      <Button name={"Назад"} className="button notFound__button-backward" onClick={history.goBack} />
+      <Button name={"Назад"} className="button button_theme_transparent-blue" onClick={history.goBack} />
     </section>
   )
 }
