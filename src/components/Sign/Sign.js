@@ -4,7 +4,7 @@ import logo from "../../images/logo.svg";
 import Button from "../Button/Button";
 import { useEffect, useRef, useState } from "react";
 
-export default function Sign({ onSubmit, history, title, buttonTitle }) {
+export default function Sign({ onSubmit, history, title, buttonTitle, failure }) {
 
   const form = useRef();
 
@@ -13,12 +13,6 @@ export default function Sign({ onSubmit, history, title, buttonTitle }) {
   const [name, setName] = useState('');
   const [isValid, setIsValid] = useState(false);
 
-  function clearForm() {
-    setEmail('');
-    setPass('');
-    setName('');
-  }
-
   function handleSubmit(e) {
     e.preventDefault();
     if (history.location.pathname === '/signup') {
@@ -26,7 +20,7 @@ export default function Sign({ onSubmit, history, title, buttonTitle }) {
     } else {
       onSubmit(email, pass);
     }
-    clearForm();
+    setPass('');
     form.current.reset();
   }
 
@@ -41,7 +35,7 @@ export default function Sign({ onSubmit, history, title, buttonTitle }) {
   return (
     <section className="sign">
       <div className="sign__header">
-        <img className="logo" alt="logo" src={logo}/>
+        <Link className="sign__link" to="/"><img className="logo" alt="logo" src={logo}/></Link>
         <h2 className="sign__title">{title}</h2>
       </div>
       <form ref={form} className="sign__form" noValidate onSubmit={handleSubmit}>
@@ -64,6 +58,7 @@ export default function Sign({ onSubmit, history, title, buttonTitle }) {
 
           <label htmlFor="input_type_userEmail" className="sign__label">E-mail</label>
           <Input
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
             type="email"
             id="input_type_userEmail"
             className="input input_place_sign"
@@ -92,6 +87,7 @@ export default function Sign({ onSubmit, history, title, buttonTitle }) {
           />
         </div>
         <div className="sign__container">
+          <span className="sign__error-span">{failure !== "" ? failure : ""}</span>
             <Button type="submit" className={`button button_theme_blue button_place_sign ${!isValid ? "button_theme_disable" : ""}`} disabled={!isValid} name={buttonTitle} />
             <div className="sign__caption">
               <Route path="/signup">
