@@ -24,7 +24,7 @@ export default function Profile({ onSubmit, onExit, failure }) {
     } else {
       setIsValid(false);
     }
-  }, [email, name])
+  }, [email, name, currentUser]);
 
   return (
     <section className="profile">

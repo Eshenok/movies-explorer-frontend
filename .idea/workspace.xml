@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="last">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Movies/Search/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Search/Search.js" afterDir="false" />
+    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="checkbox search done">
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,14 +164,7 @@
       <workItem from="1676105892120" duration="30000" />
       <workItem from="1676196306083" duration="27532000" />
       <workItem from="1676287829033" duration="14881000" />
-      <workItem from="1676449338612" duration="3779000" />
-    </task>
-    <task id="LOCAL-00019" summary="make films all disp">
-      <created>1673551025467</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1673551025467</updated>
+      <workItem from="1676449338612" duration="4182000" />
     </task>
     <task id="LOCAL-00020" summary="make films all disp">
       <created>1673632520154</created>
@@ -510,7 +502,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676313011623</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="checkbox search done">
+      <created>1676453438373</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1676453438374</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -528,7 +527,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor after review" />
     <MESSAGE value="lang" />
     <MESSAGE value="make signin/up/out + autologon + preload movies" />
     <MESSAGE value="make views movies + putLike" />
@@ -553,6 +551,7 @@
     <MESSAGE value="make search 100%" />
     <MESSAGE value="remove like + validation full" />
     <MESSAGE value="last" />
-    <option name="LAST_COMMIT_MESSAGE" value="last" />
+    <MESSAGE value="checkbox search done" />
+    <option name="LAST_COMMIT_MESSAGE" value="checkbox search done" />
   </component>
 </project>

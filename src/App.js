@@ -166,8 +166,8 @@ function App() {
   }
 
   function handleRemoveLike(id) {
-    MainApi.removeSavedMovie(id).
-    then((res) => {
+    MainApi.removeSavedMovie(id)
+      .then((res) => {
       setSavedMovies(savedMovies.filter((elem) => elem.movieId !== res.movieId ? elem : false));
       if (sessionStorage.getItem('savedFoundedMovies')) {
         const savedFoundedMovies = JSON.parse(sessionStorage.getItem('savedFoundedMovies'));
