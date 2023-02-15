@@ -27,7 +27,15 @@ export default function Search({ onSearch, onClear, allMovies, savedMovies, hist
 
   function handleSearch(e) {
     e.preventDefault();
-    /*Пустой запрос - сбрасываем поиск*/
+    search(isShorts);
+  }
+
+  function handleChangeShorts (e) {
+    setIsShorts(!isShorts);
+    search(!isShorts);
+  }
+
+  function search(isShorts) {
     if (searchQuery === "" && !isShorts) {
       onClear();
     } else if (history.location.pathname === '/movies') {
@@ -59,7 +67,7 @@ export default function Search({ onSearch, onClear, allMovies, savedMovies, hist
             id="input_type_shorts"
             checked={isShorts}
             value={isShorts}
-            onChange={(e) => {setIsShorts(!isShorts)}}
+            onChange={handleChangeShorts}
           />
           <label htmlFor="input_type_shorts" className="search__fake-toggle"></label>
           <span className="search__toggle_text">Короткометражки</span>
