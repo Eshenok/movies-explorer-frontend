@@ -33,6 +33,8 @@ function App() {
   const history = useHistory();
   let {path, url} = useRouteMatch(); // По факту не используется, но только с ним работает приложение
 
+  // eslint-disable-next-line no-restricted-globals
+  const firstPath = useMemo(() => location.pathname, [])
   const defaultFilmsQuantity = useMemo(() => {return screenWidth < 576 ? 5 : screenWidth < 930 ? 8 : 12;}, []);
 
   useEffect(() => {
@@ -68,7 +70,8 @@ function App() {
       MainApi.getCurrentUser().then((res) => {
         setCurrentUser(res);
         setLoggedIn(true);
-        history.push('/movies');
+        history.push(firstPath);
+        console.log(firstPath);
       }).catch((err) => {setFailure("")})
         .finally(() => {setPreload(false)})
     }
@@ -249,6 +252,7 @@ function App() {
           onExit={handleSignOut}
           loggedIn={loggedIn}
           failure={failure}
+          history={history}
         />
         <Route exact path="/">
           <Main />

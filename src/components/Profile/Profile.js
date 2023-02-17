@@ -1,17 +1,20 @@
 import Button from "../Button/Button";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useMemo, useRef, useState } from "react";
 import {CurrentUserContext} from "../../contexts/CurrentUserContext.js";
 import { Input } from "../Input/Input";
 
-export default function Profile({ onSubmit, onExit, failure }) {
+export default function Profile({ onSubmit, onExit, failure, history }) {
 
   const currentUser = useContext(CurrentUserContext); // subscribe
+  const firstCurrentUser = useMemo(() => currentUser, [history.location.pathname]);
 
   const form = useRef();
 
   const [name, setName] = useState(currentUser.name);
   const [email, setEmail] = useState(currentUser.email);
   const [isValid, setIsValid] = useState(false);
+
+  const checkFailure = () => firstCurrentUser.name === currentUser.name && firstCurrentUser.email === currentUser.email;
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -65,7 +68,7 @@ export default function Profile({ onSubmit, onExit, failure }) {
           </fieldset>
         </div>
         <div className="profile__button-container">
-          <span className="profile__error-span">{failure !== "" ? failure : ""}</span>
+          <span className={`profile__error-span ${failure !== "" ? "profile__error-span_failure" : "profile__error-span_success"}`}>{failure === "" && checkFailure() ? "" : !checkFailure() && failure !== "" ? failure : "Профиль успешно обновлен"}</span>
           <Button type="submit" className={`button button_place_profile button_theme_transparent-white ${!isValid ? "button_theme_text-disable" : ""}`} disabled={!isValid} name={'Редактировать'}/>
           <Button type="button" className={'button button_place_profile button_theme_transparent-red'} name={'Выйти из аккаунта'} onClick={onExit}/>
         </div>
