@@ -13,7 +13,7 @@ import MoviesApi from "./utils/MoviesApi";
 import { CurrentUserContext } from "./contexts/CurrentUserContext";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import Preloader from "./components/Preloader/Preloader";
-import { shortsDuration } from "./constants";
+import { shortsDuration, filmsQantityL, filmsQantityM, filmsQantityS, breakPointLowResolution, breakPointHighResolutioln } from "./constants";
 
 function App() {
   /* eventlisteners */
@@ -35,7 +35,9 @@ function App() {
 
   // eslint-disable-next-line no-restricted-globals
   const firstPath = useMemo(() => location.pathname, [])
-  const defaultFilmsQuantity = useMemo(() => {return screenWidth < 576 ? 5 : screenWidth < 930 ? 8 : 12;}, []);
+  const defaultFilmsQuantity = useMemo(() => {
+    return screenWidth < breakPointLowResolution ? filmsQantityS : screenWidth < breakPointHighResolutioln ? filmsQantityM : filmsQantityL;
+    }, []);
 
   useEffect(() => {
     if (loggedIn) {
@@ -217,11 +219,8 @@ function App() {
           component={Movies}
           history={history}
           onSearch={handleSearchMovie}
-          // movies={movies}
           savedMovies={savedMovies}
-          // foundMovies={foundMovies}
           defaultFilmsQuantity={defaultFilmsQuantity}
-          // onMoreButton={handleMoreButton}
           onPutLike={handlePutLike}
           onRemoveLike={handleRemoveLike}
           loggedIn={loggedIn}
@@ -234,11 +233,8 @@ function App() {
           component={Movies}
           history={history}
           onSearch={handleSearchMovie}
-          // movies={movies}
           savedMovies={savedMovies}
-          // foundMovies={foundMovies}
           defaultFilmsQuantity={defaultFilmsQuantity}
-          // onMoreButton={handleMoreButton}
           onRemoveLike={handleRemoveLike}
           loggedIn={loggedIn}
           screenWidth={screenWidth}

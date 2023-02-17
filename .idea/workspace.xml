@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="make lock after submit profile">
+    <list default="true" id="5bbe781f-d632-440d-9e1f-8e480625ef1c" name="Changes" comment="failure/success profile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NotFound/NotFound.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NotFound/NotFound.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProtectedRoute/ProtectedRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProtectedRoute/ProtectedRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Movies/Movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Movies.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,14 +169,9 @@
       <workItem from="1676287829033" duration="14881000" />
       <workItem from="1676449338612" duration="10796000" />
       <workItem from="1676564223503" duration="5000" />
-      <workItem from="1676632385232" duration="3034000" />
-    </task>
-    <task id="LOCAL-00021" summary="make profile all disp">
-      <created>1673712897029</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1673712897029</updated>
+      <workItem from="1676632385232" duration="3913000" />
+      <workItem from="1676651907141" duration="537000" />
+      <workItem from="1676658770945" duration="440000" />
     </task>
     <task id="LOCAL-00022" summary="make NotFound all disp">
       <created>1673721126349</created>
@@ -515,7 +509,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676454061835</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="failure/success profile">
+      <created>1676635944633</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1676635944633</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -533,7 +534,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="make signin/up/out + autologon + preload movies" />
     <MESSAGE value="make views movies + putLike" />
     <MESSAGE value="CORS - dislike + make putLike!!!!!!!!!!!!!!!!!!!!!!" />
     <MESSAGE value="make putLike + remove like, but lags" />
@@ -558,6 +558,7 @@
     <MESSAGE value="last" />
     <MESSAGE value="checkbox search done" />
     <MESSAGE value="make lock after submit profile" />
-    <option name="LAST_COMMIT_MESSAGE" value="make lock after submit profile" />
+    <MESSAGE value="failure/success profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="failure/success profile" />
   </component>
 </project>
