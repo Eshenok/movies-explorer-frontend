@@ -137,6 +137,8 @@
 @import url('./components/Profile/styles/__label/profile__label.css');
 @import url('./components/Profile/styles/__input-container/profile__input-container.css');
 @import url('./components/Profile/styles/__error-span/profile__error-span.css');
+@import url('./components/Profile/styles/__error-span/profile__error-span_failure.css');
+@import url('./components/Profile/styles/__error-span/profile__error-span_success.css');
 /* notFound */
 @import url('components/NotFound/styles/NotFound.css');
 @import url('./components/NotFound/styles/__container/notFound__container.css');

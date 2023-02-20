@@ -1,6 +1,7 @@
 import Search from "./Search/Search";
 import Films from "./Films/Films";
 import { useEffect, useMemo, useState } from "react";
+import { stepQuantityS, stepQuantityM, breakPointHighResolutioln } from "../../constants";
 
 export default function Movies({ history, onSearch, savedMovies, defaultFilmsQuantity, onPutLike, onRemoveLike, screenWidth, allMovies }) {
 
@@ -9,7 +10,7 @@ export default function Movies({ history, onSearch, savedMovies, defaultFilmsQua
 
   const savedFoundedMovies = JSON.parse(sessionStorage.getItem('savedFoundedMovies'));
   const foundedMovies = JSON.parse(localStorage.getItem('foundedMovies'));
-  const step = screenWidth > 930 ? 3 : 2;
+  const step = screenWidth > breakPointHighResolutioln ? stepQuantityM : stepQuantityS;
 
   /*Предзагрузка если есть найденные фильмы в LS*/
   useEffect(() => {
