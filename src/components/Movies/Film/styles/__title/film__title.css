@@ -1,6 +1,7 @@
 .film__title {
+	display: block;
 	margin: 0;
-	word-wrap: anywhere;
+	overflow: hidden;
 	/*Шрифт*/
 	font-family: 'Inter', Arial, sans-serif;
 	font-style: normal;

@@ -17,7 +17,7 @@ export default function MenuPopup({ isOpen, onClose, history }) {
         <li><Link className={
           history.location.pathname === "/movies"
           ? "menu-popup__link menu-popup__link_current-page"
-            : "menu-popup__link"
+          : "menu-popup__link"
         }
               to="/movies">Фильмы</Link></li>
         <li><Link className={
